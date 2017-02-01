@@ -24,7 +24,8 @@
   
 # 2. `block`이 부모(bolck)안에 
 - margin-top이 부모가 아닌 다른 길막하고 있는 기준으로된다.
-- margin-right, left가 부모 기준으로 다. 
+- margin-right, left가 부모 기준으로 된다.  
+
 ### 2.1 html
 ```html
 <div class="img-bg">
