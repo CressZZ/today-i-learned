@@ -1,0 +1,45 @@
+
+// @import "carousel-indicator"
+@import "common-modules"
+body, .brand
+  @extend %reset-margin !optional
+
+%brand
+  background-color: green
+
+.gnb
+  @extend %set-nav
+
+  li
+    float: left
+    margin-right: 1rem
+    @extend %reset-list
+
+  a
+    display: block
+    padding: 0.6em 1.2em
+    background: #434343
+    color: #e3e3e3
+
+
+.footer-navigation
+  width: 50vw
+  @extend %set-nav
+  @extend %reset-list
+
+  ul
+
+    // background-color: yellow
+  li
+    float: left
+    margin-right: 3px
+
+  a
+    text-decoration: none
+    display: block
+    padding: 0.6em 1.2em
+    background-color: #343434
+    color: #e3e3e3
+
+.main-post
+  @import carousel-indicator

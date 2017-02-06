@@ -1,0 +1,40 @@
+@import "sass-script"
+
+
+%clearfix
+  &::after
+    content: ""
+    display: block
+    clear: both
+
+%set-nav-link
+  display: block
+  vertical-align: top
+  text-decoration: none
+
+%set-nav
+  ul
+    @extend %clearfix
+  a
+    @extend %set-nav-link
+  li
+    // @extend %reset-list
+
+%reset-link
+  text-decoration: none
+  display: inline-block
+
+%reset-button
+  border: none
+  padding: 0.34em
+  background: transparent
+  color: #343232
+
+
+
+%reset-list
+  list-style: none
+  padding-left: 0
+
+%reset-margin
+  margin: 0

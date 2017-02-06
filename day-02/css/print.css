@@ -1,0 +1,15 @@
+/*! print cressZZ.net, 2017 */
+@media print {
+  abbr[title]::after {
+    content: "(" attr(title) ")";
+  }
+  a[href^="http"]::after,
+  a[href^="http://"]::after {
+    content: "(" attr(href) ")";
+  }
+  body {
+    background: red;
+  }
+}
+
+/*# sourceMappingURL=../map/print.css.map */

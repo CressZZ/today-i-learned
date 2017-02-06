@@ -1,0 +1,13 @@
+.carousel-indicator {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.carousel-indicator {
+  border: none;
+  padding: 0.34em;
+  background: transparent;
+  color: #343232;
+}
+
+/*# sourceMappingURL=data:application/json;base64,ewoJInZlcnNpb24iOiAzLAoJImZpbGUiOiAiY3NzL2Nhcm91c2VsLWluZGljYXRvci5jc3MiLAoJInNvdXJjZXMiOiBbCgkJInNhc3MvY2Fyb3VzZWwtaW5kaWNhdG9yLnNhc3MiLAoJCSJfY29tbW9uLW1vZHVsZXMuc2FzcyIKCV0sCgkibmFtZXMiOiBbXSwKCSJtYXBwaW5ncyI6ICJBQUVBLEFDaUJBLG1CRGpCbUIsQ0NpQlA7RUFDVixlQUFlLEVBQUUsSUFBSTtFQUNyQixPQUFPLEVBQUUsWUFBWTtDQUFJOztBRG5CM0IsQUNxQkEsbUJEckJtQixDQ3FCTDtFQUNaLE1BQU0sRUFBRSxJQUFJO0VBQ1osT0FBTyxFQUFFLE1BQU07RUFDZixVQUFVLEVBQUUsV0FBVztFQUN2QixLQUFLLEVBQUUsT0FBTztDQUFJIgp9 */

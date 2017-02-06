@@ -1,0 +1,43 @@
+.button-big, .button, .button.button-default, .button.button-success, .button.button-primary, .button.button-info, .button.button-warn, .button.button-danger {
+  font-size: 22px;
+}
+
+.button {
+  padding-top: 0.86em;
+  padding-left: 1.57em;
+  text-align: center;
+  letter-spacing: -0.034em;
+  font-size: 14px;
+  color: #323232;
+}
+
+.button:not(.button-default) {
+  color: #fff;
+}
+
+.button.button-default {
+  color: #323232;
+  background: #fff;
+}
+
+.button.button-success {
+  background: #4b96d0;
+}
+
+.button.button-primary {
+  background: lime;
+}
+
+.button.button-info {
+  background: skyblue;
+}
+
+.button.button-warn {
+  background: aqua;
+}
+
+.button.button-danger {
+  background: pink;
+}
+
+/*# sourceMappingURL=../map/ui-button.css.map */

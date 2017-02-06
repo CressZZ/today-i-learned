@@ -1,0 +1,258 @@
+// * ------------------------------------
+// * Sass Data TYpes
+// * 1. Number 숫자형
+// * 2. String 문자형
+// * 3. Colors 컬러 유형
+// * 4. Boolean 논리형 (참/거짓)
+// * 5. Null 비어 있다 (Empty, 아무런 값이 설정되어 있지 않았다.)
+// * 6. List 리스트 (집합, 배열, Array)
+// * 7. Map 맵(객체, Object)
+// * ------------------------------------
+
+// 숫자형
+$num: 1.7;
+
+$num-plus-plus: $num + 1;
+
+:root {
+  content: $num-plus-plus;
+}
+
+
+// 문자형
+$str: 'Pseudo Content';
+
+.app::after{
+  content: $str;
+}
+
+// 논리형
+:root{
+  content: $str != $num;
+}
+
+// null
+
+// 전역 변수
+$letter-gap: null;
+
+body{
+  $letter-gap: 0.034em; // 지역 변수
+  font: 1rem/1.65 Verdana, sans-serif;
+  word-spacing: 0.023em;
+  letter-spacing: $letter-gap;
+}
+
+.memo{
+  font-size: 1.1rem;
+  letter-spacing: $letter-gap;
+}
+
+//color
+
+$keyword: hotpink;
+$hex: #1c8afb;
+$rgb: rgb(0,0,0);
+$hsl: hsl(70, 100%, 50%);
+
+a{
+  color: $keyword;
+  &::hover {
+    color:$hex;
+
+  }
+  &::focus {
+    outline: none;
+    color: $hsl;
+
+  }
+  &:actice{
+    background: $rgb;
+  }
+}
+
+// Seperator : Space
+$base-border-style: 1px solid #323232;
+
+// Seperator: Comma
+$base-font-stack: "Times New Roman", Times, Serif;
+
+.tabpanel{
+  border: $base-border-style;
+  font: 1.24rem/1.4 $base-font-stack;
+
+}
+
+
+//맵
+
+$heading-map: (
+  h1: 3rem,
+  h2: 2rem,
+  h3: 1.8rem,
+  h4: 1.5rem,
+  h5: 1.25rem,
+  h6: 1rem
+);
+
+h1, .h1 { font-size: map-get($heading-map, h1); }
+h2, .h2 {font-size: map-get($heading-map, h1);}
+h3, .h3 {font-size: map-get($heading-map, h1);}
+h4, .h4 {font-size: map-get($heading-map, h1);}
+h5, .h5 {font-size: map-get($heading-map, h1);}
+h6, .h6 {font-size: map-get($heading-map, h1);}
+
+
+
+//연산
+
+$base-padding-gap: 10px;
+$base-margin-gap: 0 !default;
+$page-width: 1280px;
+
+%container{
+  width: $page-width;
+  margin: {
+  left: auto;
+  right: auto;
+}
+}
+
+.container{
+  @extend %container;
+}
+
+
+%flex-vh-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.wrappercd{
+  @extend %flex-vh-center;;
+  width: $page-width - ($base-padding-gap * 2);
+  margin-top: $base-padding-gap / 2;
+  margin-bottom: $base-padding-gap*1.5;
+}
+
+.flex-vh-center{
+  @extend %flex-vh-center;
+}
+
+
+//산술 연산 과정에서 나눗셈은 주의가 요구!!! 특히 font형 작성시에!
+
+.page-footer{}
+
+
+// sass 변수를 접합할 때 사용하는 인터 폴레이션(보간법 )
+
+$namespace: 'FDS';
+$props: ('button','navigation','carousel','tab');
+
+.#{$namespace}-component-#{index($props, button)} {
+  content: #{nth($props, 1)};
+}
+
+.#{$namespace}-navigation {
+content: "";
+}
+
+.#{$namespace}-carousel {
+content: "";
+}
+
+.#{$namespace}-tab {
+content: "";
+}
+
+
+//보간법 + 웹폰트
+
+$g-font:"open"; // 'open', 'noto'
+@import url('https://fonts.googleapis.com/css?family=#{$g-font}+sand');
+
+body {
+  font-family: "noto sans", Sans-serif;
+}
+
+//box-sizing을 오늘날 스타일에 기본값으로 처리하는 방법
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; //부모의 박스 사이징 설정을 상속
+}
+
+html{
+  box-sizing: border-box;
+}
+
+//html5 새롭게 추가된 요소
+//section article, aside, navigation
+//header, footer
+
+
+//figure, figcation
+
+$html5-new-elements: (
+  section,
+  article,
+  aside,
+  nav,
+  header,
+  footer,
+  figure,
+  figcaption,
+  picture,
+  soure,
+  menu
+);
+
+$need-reset-margin: (
+h1,h2,h3,h4,h5,h6
+);
+
+#{$html5-new-elements} {
+  display:block;
+  & #{$need-reset-margin} {
+    margin-top: 0;
+  }
+}
+
+
+//@content디렉티브 사용
+
+$query: max-width;
+
+@mixin mq($scope, $query: min-width) {
+  @media screen and ($query:$scope) {
+    content: $query;
+    @content;
+
+  }
+}
+
+.form{
+  $form-width: 640px;
+  width: $form-width;
+  @include mq($form-width - 10)  {
+    P::before{
+      content: $query;
+    }
+  }
+}
+
+
+//
+// @mixin mq-2($scope){
+//   @media screen and (min-width:$scope){
+//
+//   }
+// }
+//
+// .form__2{
+//   @include mq-2(10px)
+// }

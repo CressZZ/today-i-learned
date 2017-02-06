@@ -1,0 +1,48 @@
+// UI - Button
+// 모양, 색, 글자 크기, 정렬, 버튼 크기
+// 사각형 버튼
+// 둥근 테두리형 버튼
+// 마름모꼴 버튼
+
+.button-big
+  font-size: 22px
+
+.button
+  @extend.button-big
+  padding:
+    top: 0.86em
+    left: 1.57em
+  text-align: center
+  letter-spacing: -0.034em
+  font-size: 14px // normal size
+  color: #323232
+
+
+  &:not(.button-default)
+    color: #fff
+
+  &.button-default
+    @extend.button-big
+    color: #323232
+    background: #fff
+    // CSS: not() 선택자
+
+  &.button-success
+    @extend.button-big
+    background: #4b96d0
+
+  &.button-primary
+    @extend.button-big
+    background: lime
+
+  &.button-info
+    @extend.button-big
+    background: skyblue
+
+  &.button-warn
+    @extend.button-big
+    background: aqua
+
+  &.button-danger
+    @extend.button-big
+    background: pink
