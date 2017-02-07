@@ -1,0 +1,35 @@
+/// @font-face 선언구문을 생성해주는 믹스인
+/// @access public
+/// @author cressZZ
+/// @param {데이터 유형 | 다른 데이터 유형} 매개변수_이름 [기본값] - 설명
+/// @return {데이터 유형 | 다른 데이터 유형} - 설명
+/// @content 믹스인 설명 (믹스인의 경우만, Markdown 문법 사용가능)
+/// @example 예제 작성
+/// @link [http://sassdoc.com/annotations/]
+
+@mixin font($font-path, $font-name, $font-option: normal normal) {
+  @font-face {
+      font-family: $font-name;
+      font-weight: nth($font-option, 1);
+      font-style: nth($font-option, 2);
+      src: url('#{$font-path}.eot');
+      src: url('#{$font-path}.eot?#iefix') format('embedded-opentype'),
+           url('#{$font-path}.woff') format('woff');
+  }
+}
+
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+
+
+//초기변수
+$columns: 12 !default;
+$page-width: 960px !default;
+@function grid($column-width: 1) {
+  
+  @return $page-width * ( $column-width / $columns)
+}

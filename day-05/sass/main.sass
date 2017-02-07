@@ -1,0 +1,26 @@
+@import 'mixin'
+@import 'functions'
+
++font('../fonts/youandi_modern_textregular', 'YouandiModernTR', bold oblique)
++font('../fonts/youandi_modern_textBold', 'YouandiModernTB', bold oblique)
++font('../fonts/youandi_modern_HeadExtrabold', 'YouandiModernHEB', bold oblique)
+
+$columns: 9
+
+
+.app
+  font-size: em(24)
+  width: grid(2)
+  font-family: 'youandimodernTR'
+  &-brand
+    font-family: 'YouandiModernHEB'
+  &-slogan
+    font-family: 'YouandiModernTB'
+  .article
+    // +float(rigt, 0, 0, 0, 10px)
+    // +position(relateive, )
+  .box
+    +size(100px)
+    background: #333
+    &--oblong
+      +size(100px, 60px)
