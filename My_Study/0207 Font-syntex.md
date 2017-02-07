@@ -1,0 +1,1 @@
+font: *font-style* *font-variant* *font-weight* *font-size/line-height font-family*|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit;

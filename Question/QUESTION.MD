@@ -10,10 +10,10 @@
     <img src="#" alt="child-img" class="child-img">
     <p class="child-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, labore.</p>
   </div>
-  ```
-  
+```
+
   ## css
-  ```css
+```css
 .parent2{
   width: 1000px;
   height: 1000px;
@@ -44,25 +44,25 @@
 }
 ```
 
-![예시](https://github.com/CressZZ/today-i-learned/blob/master/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-02-02%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%202.46.15.png)
+
+
 
 
   
+
   
+
   
+
+![스크린샷 2017-02-02 오후 2.46.15](/Users/cress00/Documents/programming/fastcampus-master/project/study/Question/스크린샷 2017-02-02 오후 2.46.15.png)  
+
   
+
   
+
   
+
   
+
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
