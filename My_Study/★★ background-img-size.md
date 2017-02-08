@@ -1,4 +1,4 @@
-# 배경 img의 사이즈는 배경이 들어가는 div의 size에 따라 늘어나거나, 줄어 들 수 있다. (img해상도는 깨지겠지 뭐..)
+# 배경 img의 사이즈는 배경이 들어가는 div의 back-ground size에 따라 늘어나거나, 줄어 들 수 있다. (img해상도는 깨지겠지 뭐..)
 - `background-size: (위아래) (양옆) ;`
 
 ## css
