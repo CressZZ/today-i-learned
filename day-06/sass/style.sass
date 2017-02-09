@@ -1,0 +1,32 @@
+@import "config2"
+// 라이브러리(유틸리티)로드
+@import "lib/functions"
+@import "lib/mixin"
+
+//base
+body
+  margin: 1px
+
+
+//BEM
+.icon-set
+  display: flex
+  flex-flow: row wrap
+  +element("item")
+    @each $index, $bg-color in $color-map
+      &:nth-child(#{$index})
+      // nth-child의 의미
+
+        background-color: $bg-color
+    height: rem(170px)
+    flex: 0 0 (100%/$item-columns)
+    // flex:<grow><shrink><basis>
+    display: flex
+    justify-content: center
+    align-items: center
+    @for $i from 1 through length($icon-list)
+      $icon-name: nth($icon-list, $i)
+      +modifier($icon-name)
+        +size(120px)
+        display: block
+        background: url('../img/icon-#{$icon-name}.png') no-repeat center

@@ -1,0 +1,61 @@
+// 한 행에 그려질 아이콘 세트 아이템 컴럼의 개수
+
+$item-columns: 4;
+
+
+//
+$light-tan: #fbf1e3;  //2 //
+$light-khaki: #f8e8da; //  4
+$pale-grey: #f6f8f8; //5//
+$light-tan-two: #faebd7; //7 //
+$beige: #faeae9; // 10
+$very-light-pink: #fdf8f1; // 12
+$pale-grey-two: #eadfe9; // 13
+$pale-grey-three: #f2f6f5;  // 15
+$beige-two: #faebea;  // 18
+$beige-three: #f7dcd5; // 20
+$light-khaki-two: #fbf6e4; // 21
+$light-tan-three: #fbf3e3;  // 23
+
+
+  $color-map: (
+    2 : $light-tan,
+    4 : $light-khaki,
+    5 : $pale-grey,
+    7 : $light-tan-two,
+    10 : $beige,
+    12 : $very-light-pink,
+    13 : $pale-grey-two,
+    15 : $pale-grey-three,
+    18 : $beige-two,
+    20 : $beige-three,
+    21 : $light-khaki-two,
+    23 : $light-tan-three,
+  )
+
+$icon-list: (
+  'Avocado',
+  'Bread',
+  'Burger',
+  'Cake',
+  'Cheese,'
+  'Cocktai,l'
+  'Coffee',
+  'Cupcake',
+  'Donut',
+  'Fastfood',
+  'Fish',
+  'Fruits',
+  'Honey',
+  'Hot-Dog',
+  'Ice-Cream',
+  'Milk',
+  'Pizza',
+  'Pop-Corn',
+  'Proteins',
+  'Salad',
+  'Sandwich',
+  'Soup',
+  'Sushi',
+  'Vine'
+  )

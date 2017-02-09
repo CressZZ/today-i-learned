@@ -30,6 +30,6 @@
 $columns: 12 !default;
 $page-width: 960px !default;
 @function grid($column-width: 1) {
-  
+
   @return $page-width * ( $column-width / $columns)
 }

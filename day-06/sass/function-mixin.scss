@@ -1,0 +1,42 @@
+@mixin reset-layout {
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+}
+
+@mixin background ($color_num){
+  @if $color_num == 1 {
+    background: white;
+  }
+  @else if $color_num == 2 {
+    background: #fbf1e3
+  }
+  @else if $color_num == 3 {
+    background: #fbf6e4
+  }
+  @else if $color_num == 4 {
+    background: #f6f8f8
+  }
+  @else if $color_num == 5 {
+    background: #faeae9
+  }
+  @else if $color_num == 5 {
+    background: #faeae9
+  }
+  @else if $color_num == 5 {
+    background: #faeae9
+  }
+}
+
+@mixin icon ($icon-name) {
+  background-image: url("../img/icon-#{$icon-name}.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+  // background-color: yellow;
+}
+@mixin location {
+
+}

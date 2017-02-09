@@ -1,0 +1,95 @@
+@import "function-mixin"
+
+
+html
+  @include reset-layout
+
+.wrapper
+  // background-color: pink
+  margin: 0 auto
+  max-width: 1056px
+  // height: 1020px
+  border: 1px black solid
+  display: flex
+  flex-flow: row wrap
+  div
+
+    box-sizing: border-box
+    max-width: 240px
+
+    width: 25%
+    height: (100 / 6) * 1%
+    border: 1px black solid
+
+    &.icon-1
+      @include background (1)
+      @include icon ('Cake')
+    &.icon-2
+      @include background (2)
+      @include icon ('cheese')
+    &.icon-3
+      @include background(1)
+      @include icon ('burger')
+    &.icon-4
+      @include background(3)
+      @include icon ('cheese')
+    &.icon-5
+      @include background(4)
+      @include icon ('cheese')
+    &.icon-6
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-7
+      @include background(2)
+      @include icon ('cheese')
+    &.icon-8
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-9
+      @include background(4)
+      @include icon ('cheese')
+    &.icon-10
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-11
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-12
+      @include background(5)
+      @include icon ('cheese')
+    &.icon-13
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-14
+      @include background(4)
+      @include icon ('cheese')
+    &.icon-15
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-16
+      @include background(4)
+      @include icon ('cheese')
+    &.icon-17
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-18
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-19
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-20
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-21
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-22
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-23
+      @include background(1)
+      @include icon ('cheese')
+    &.icon-24
+      @include background(1)
+      @include icon ('cheese')
