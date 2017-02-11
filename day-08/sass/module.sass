@@ -1,0 +1,26 @@
+// container
+.container
+  width: 1200px
+  margin: 0 auto
+
+// row
+.row
+  content: ""
+  clear: both
+  display: block
+
+// column
+[class*="column-"]
+  float: left
+  width: 80px
+  margin: 0 10px
+
+@for $i from 1 through 12
+  .column-#{$i}
+    width: 80px * $i
+
+
+// push 및 pull
+
+
+// prefix.suffix

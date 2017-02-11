@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>img-size-test</title>
+  <style>
+
+    /*html, body{
+      height: 100%;
+    }*/
+
+    .test{
+      /*height: 100%;*/
+    }
+    .rwd-img {
+      background: url("../images/cat.jpg") no-repeat;
+      width: 100%;
+      height: 0;
+      padding-bottom: calc(768 / 1024 * 100%);
+      background-size: cover;
+      /*height: 80%;*/
+      /*padding-top: 100%;*/
+    }
+
+    /*padding-bottom을 줌으로서, 부모요소의 height를 확보한다.*/
+    /*그런데 height를 0으로 준 이유는 무엇일까?*/
+
+    .test-2{
+      /*height: 400px;*/
+    }
+    .rwd-img-2 {
+      width: 100%;
+      /*height: auto;*/
+    }
+
+
+    .rwd-iframe {
+      width: 100%;
+      height: 0;
+      padding-bottom: calc(480 / 854 * 100%);
+      overflow: hidden;
+      position: relative;
+    }
+
+
+    .rwd-iframe iframe {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      /*height: 0;
+      padding-bottom: calc(480 / 854 * 100%);*/
+
+    }
+
+
+
+    .cutted-img{
+      width: 100%;
+      height: 200px;
+      background: url("../images/cat.jpg") no-repeat;
+      background-position: center;
+    }
+
+
+    .cutted-container{
+      width: 100%;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cutted-img-2{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  </style>
+
+
+</head>
+<body>
+  <p>1. 유연한 이미지 (background)</p>
+<div class="test">
+  <div class="rwd-img">
+  </div>
+</div>
+
+  <p>2. 유연한 이미지-2 (img 속성)</p>
+  <div class="test-2">
+  <img class="rwd-img-2" src="../images/cat.jpg" alt="cat">
+  </div>
+  <p>3. 유연한 iframe</p>
+  <div class="rwd-iframe">
+    test
+    <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/c487AyZG6Ww" allowfullscreen></iframe>
+  </div>
+
+  <p>4. 재단 이미지 (background)</p>
+    <div class="cutted-img">
+    </div>
+
+  <p>5. 재단이미지-2 (img)</p>
+    <div class="cutted-container">
+      <img class="cutted-img-2" src="../images/cat.jpg" alt="cat">
+    </div>
+
+</body>
+</html>
