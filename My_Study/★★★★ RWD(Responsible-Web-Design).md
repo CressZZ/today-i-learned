@@ -227,4 +227,6 @@
 
 - **absolute 및 transform: translate(-50%, -50%)가 핵심 !!**
 
+- **img
+
   ​

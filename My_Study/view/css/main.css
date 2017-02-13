@@ -1,0 +1,20 @@
+.wrapper {
+  max-width: 500px;
+  height: 900px;
+  position: relative;
+}
+
+.wrapper::after {
+  background: url("../image/image.png") no-repeat;
+  background-position: right top;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+/*# sourceMappingURL=data:application/json;base64,ewoJInZlcnNpb24iOiAzLAoJImZpbGUiOiAiY3NzL21haW4uY3NzIiwKCSJzb3VyY2VzIjogWwoJCSJzYXNzL21haW4uc2FzcyIKCV0sCgkibmFtZXMiOiBbXSwKCSJtYXBwaW5ncyI6ICJBQUFBLEFBQUEsUUFBUSxDQUFDO0VBQ1AsU0FBUyxFQUFFLEtBQUs7RUFDaEIsTUFBTSxFQUFFLEtBQUs7RUFDYixRQUFRLEVBQUUsUUFBUTtDQVlFOztBQWZ0QixBQUlFLFFBSk0sQUFJTixPQUFRLENBQUM7RUFDUCxVQUFVLEVBQUUseUJBQXlCLENBQUMsU0FBUztFQUMvQyxtQkFBbUIsRUFBRSxTQUFTO0VBRTlCLFFBQVEsRUFBRSxRQUFRO0VBQ2xCLEtBQUssRUFBRSxJQUFJO0VBQ1gsTUFBTSxFQUFFLElBQUk7RUFDWixPQUFPLEVBQUUsRUFBRTtFQUNYLEdBQUcsRUFBRSxDQUFDO0VBQ04sSUFBSSxFQUFFLENBQUM7RUFDUCxPQUFPLEVBQUUsRUFBRTtFQUNYLE9BQU8sRUFBRSxHQUFHO0NBQUkiCn0= */
