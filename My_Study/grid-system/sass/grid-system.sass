@@ -6,14 +6,12 @@ html, body
   padding: 0
 
 body
-  background-color: pink
+  // background-color: pink
 
-.wrapper
-  width: $wrapper-width-pt
-  margin: 0 auto
-  padding: 0
-  border: 0
-  background-color: green
+[class*=col]
+  float: left
+  margin-right: -100%
+
 
 
 .col-1-4
@@ -41,7 +39,12 @@ body
 
 
 .row
-  ::after
+  &::after
     clear: both
     content: ""
     display: block
+
+.h
+  @for $i from 1 through 30
+    &-#{$i}
+      height: $col-height * $i

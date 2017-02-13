@@ -1,0 +1,54 @@
+@import "variable"
+
+
+%reset-space
+  margin: 0
+  border: 0
+  outline: 0
+  padding: 0
+
+%reset-margin-auto
+  margin: 0 auto
+
+%reset-font-family
+  font-family: inherit
+
+%reset-list
+  list-style: none
+
+%reset-link
+  &:link
+    text-decoration: none
+    color: inherit
+%reset-visited
+  &:visited
+    text-decoration: none
+    color: inherit
+%reset-boxsizing
+  box-sizing: border-box
+
+
+@mixin btn-name
+  text-indent: 100%
+  overflow: hidden
+  white-space: nowrap
+
+@mixin text-center-center($height)
+    padding-top: 12px * $height / 2
+    box-sizing: border-box
+    text-align: center
+
+@mixin text-center-left($height)
+    padding-top: 12px * $height / 2
+    box-sizing: border-box
+    text-align: left
+
+
+
+
+
+@function padding($height)
+  @return ($col-height * $height) ($body-padding / $body-width * 100%)
+
+@function margin($height)
+  @return ($col-height * $height) ($body-padding / $body-width * 100%)

@@ -1,0 +1,18 @@
+body {
+  position: relative;
+}
+
+body::before {
+  background: linear-gradient(to right, transparent 10px, rgba(70, 80, 99, 0.5) 10px, rgba(70, 80, 99, 0.5) 100px, transparent 100px), linear-gradient(to bottom, transparent 23px, rgba(0, 0, 0, 0.8) 23px);
+  background-size: 110px 1px, 1px 24px;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 440px;
+  margin: 0 20px 0 20px;
+  height: 100%;
+}
+
+/*# sourceMappingURL=data:application/json;base64,ewoJInZlcnNpb24iOiAzLAoJImZpbGUiOiAiY3NzL2dyaWQtdmlldy5jc3MiLAoJInNvdXJjZXMiOiBbCgkJInNhc3MvZ3JpZC12aWV3LnNhc3MiCgldLAoJIm5hbWVzIjogW10sCgkibWFwcGluZ3MiOiAiQUFBQSxBQUFBLElBQUksQ0FBQztFQUNILFFBQVEsRUFBRSxRQUFRO0NBQUk7O0FBRXhCLEFBQUEsSUFBSSxBQUFBLFFBQVEsQ0FBQztFQUNYLFVBQVUsRUFBRSx1SEFBaUgsRUFBRSxxRUFBbUU7RUFDbE0sZUFBZSxFQUFFLG1CQUFtQjtFQUVwQyxRQUFRLEVBQUUsUUFBUTtFQUNsQixPQUFPLEVBQUUsR0FBRztFQUNaLEdBQUcsRUFBRSxDQUFDO0VBQ04sSUFBSSxFQUFFLENBQUM7RUFDUCxPQUFPLEVBQUUsRUFBRTtFQUNYLEtBQUssRUFBRSxLQUFLO0VBRVosTUFBTSxFQUFFLGFBQWE7RUFDckIsTUFBTSxFQUFFLElBQUk7Q0FBSSIKfQ== */
