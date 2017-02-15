@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Change</title>
+  <style>
+    .pallet {
+      border: 1px black solid;
+      box-sizing: border-box;
+      margin: 1rem;
+      display: inline-block;
+    }
+    .pallet::after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+
+    ul {
+      padding:0
+    }
+
+    li {
+      float: left;
+      border: 1px black solid;
+      margin: 0.5rem;
+      list-style: none;
+    }
+
+    a {
+      width: 1rem;
+      height: 1rem;
+      display: block;
+    }
+
+    .color-red{
+      background-color: red;
+    }
+    .color-blue{
+      background-color: blue;
+    }
+    .color-green{
+      background-color: green;
+    }
+    .color-orange{
+      background-color: orange;
+    }
+
+
+    .view-circle {
+      margin: 5rem auto;
+      border: 1px solid black;
+      border-radius: 50%;
+      width: 500px;
+      height: 500px;
+      text-indent: 600px;
+      white-space: none;
+      overflow: hidden;
+      background-color: skyblue;
+    }
+
+  </style>
+</head>
+<body>
+  <ul class="pallet" aria-label="select color">
+    <li><a href="#" class="color-red" role="button" title="red"></a></li>
+    <li><a href="#" class="color-blue" role="button" title="blue"></a></li>
+    <li><a href="#" class="color-green" role="button" title="green"></a></li>
+    <li><a href="#" class="color-orange" role="button" title="orange"></a></li>
+  </ul>
+
+  <div class="view-circle">
+    <span class="view-circle-content">star</span>
+  </div>
+
+  <script>
+    //컬러리스트 버튼 수집
+    // dom api, css 선택자 중에 클래스 선택자로 대상을 선택
+      var color_list = document.getElementsByClassName('pallet')[0];
+      var view_circle = document.getElementsByClassName('view-circle')[0];
+      var color = color_list.getElementsByTagName('a');
+
+      console.log(color_list);
+      console.log(view_circle);
+      console.log(color);
+
+
+
+    //버튼클릭
+    //화면에 보여지는 뷰써클 영역의 배경 색상 변경
+      color[0].onclick=function(){
+        var my_color = window.getComputedStyle(this).backgroundColor;
+        view_circle.style.backgroundColor = my_color;
+        return false;
+      };
+
+      color[1].onclick=function(){
+        var my_color = window.getComputedStyle(this).backgroundColor;
+        view_circle.style.backgroundColor = my_color;
+        return false;
+      };
+      color[2].onclick=function(){
+        var my_color = window.getComputedStyle(this).backgroundColor;
+        view_circle.style.backgroundColor = my_color;
+        return false;
+      };
+      color[3].onclick=function(){
+        var my_color = window.getComputedStyle(this).backgroundColor;
+        view_circle.style.backgroundColor = my_color;
+        return false;
+      };
+
+
+  </script>
+
+</body>
+</html>

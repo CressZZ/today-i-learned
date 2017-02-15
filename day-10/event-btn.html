@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event-btn</title>
+  <style>
+    .main-menu {
+      display: none;
+    }
+  </style>
+
+</head>
+
+
+<body>
+  <h1>main-menu</h1>
+  <button class="btn" type="button">open btn</button>
+  <div id="unique-panel" class="main-menu">
+    <ul>
+      <li>Lorem.</li>
+      <li>Lorem.</li>
+      <li>Lorem.</li>
+      <li>Lorem.</li>
+    </ul>
+  </div>
+
+  <script>
+    //버트능ㄹ 찾고 메뉴 페널 찾고
+    var btn = document.getElementsByTagName('button').item(0);
+    var panel = document.getElementById('unique-panel');
+    console.log(panel);
+    //버튼을 클릭하면
+    btn.onclick = function(){
+
+      //메뉴를 보여주고
+
+      panel.style.display = 'block';
+    };
+
+
+  </script>
+
+
+
+
+</body>
+</html>

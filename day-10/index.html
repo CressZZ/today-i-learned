@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client Side JavaScript</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <p id="para">Lorem ip <button type>Change Pa</button></p>
+  <p id="paras">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Коварный последний моей вдали имеет она меня дороге напоивший своего лучше безорфографичный жизни, необходимыми рекламных языком даль раз себя возвращайся?</p>
+
+
+
+  <script>
+    //No-console
+    // JavaScript Code
+    // 변수 선언
+    var element_node;
+
+    //선언된 변수에 값을 할당(대입) 받는다.
+    //문서에서 <p>요소노드를 찾아(선택) 변수에 담는다.
+    //Dom API에서는 문서 개게를 찾을 수 있는 방법을 제공한다.
+
+    para = window.document.getElementById('para')
+    //웹 브라우저에서 변수에 메모리(기억)된 문서 객체를 올바르게 참조 했는가 확인 하고자 한다.
+    console.log('element_node:', para);
+    //노듸의 유형을 숫자로 반환하여 처리된 결과를 콘솔에 출력한디.
+    console.log('para.nodeType:', para.nodeType);
+    //요소노드인지를 검증하여 결과를 true또는 false로 반환하여 콘솔에 출력한다.
+    console.log('element_node는 요소노드인가?:', para.nodeType == document.ELEMENT_NODE);
+
+    var paras = document.getElementById('paras');
+    console.log('paras:', paras);
+
+    var paragraphs = window.document.getElementsByTagName('p');
+    console.log('paragraphs:', paragraphs);
+    console.length(paragraphs)
+
+
+    var target_P, btn_control;
+
+    target_P = document.getElementById('para');
+    console.log('target_P:', target_P)
+    btn_control = document.getElementsByTagName('button');
+    console.log('btn_contol:', btn_control);
+
+    console.log('btn_control 집합의 첫번째 원소(item):', btn_control.itm(0));
+      console.log)'cliked button');
+      target_P.style.color='#fe4940';
+    };
+
+
+
+   </script>
+
+</body>
+</html>

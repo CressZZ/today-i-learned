@@ -49,16 +49,16 @@
 
   - 예시
 
-  ![스크린샷 2017-02-14 오전 8.32.37](/Users/cress00/Documents/programming/fastcampus-master/project/study/My_Study/asset/스크린샷 2017-02-14 오전 8.32.37.png)
+  ![스크린샷 2017-02-14 오전 8.32.37](/Users/cress00/Documents/programming/fastcampus-master/project/study/My_Study/data-structure/asset/스크린샷 2017-02-14 오전 8.32.37.png)
 
   - 단점을 보완한거: 3개의 공간만 필요하지만, 한 배열에 2개의 단위 공간이 필요하다. 즉, 6개의 공간이 필요. 
 
-![스크린샷 2017-02-14 오전 8.34.59](/Users/cress00/Documents/programming/fastcampus-master/project/study/My_Study/asset/스크린샷 2017-02-14 오전 8.34.59.png)
+![스크린샷 2017-02-14 오전 8.34.59](/Users/cress00/Documents/programming/fastcampus-master/project/study/My_Study/data-structure/asset/스크린샷 2017-02-14 오전 8.34.59.png)
 
 - 다항식 (poly) 의 zero term이 많으면 두번째 예시가, 별로 없으면 첫번째 예시가 좋다. 
 - 하나의 배열에 여러 다항식도 운영이 가능 하다. 
 
-![스크린샷 2017-02-14 오전 8.40.18](/Users/cress00/Documents/programming/fastcampus-master/project/study/My_Study/asset/스크린샷 2017-02-14 오전 8.40.18.png)
+![스크린샷 2017-02-14 오전 8.40.18](/Users/cress00/Documents/programming/fastcampus-master/project/study/My_Study/data-structure/asset/스크린샷 2017-02-14 오전 8.40.18.png)
 
 - Data Structure유형에 따라서 연산 방법이 다르다.
 
@@ -68,14 +68,14 @@
   - 함수에서의 복귀 주소 (return address): 스택에 저장
   - cpu 스케쥴링: 작업 큐
 
-### 2.1.5 stack	
+  ### 2.1.5 stack
 
 - 스택의 상단에서만 삽입과 제거가 이루어 진다. (순서대로 처리되는게 아니다.)
 - push, pop, create, destroy연산
 - LIFO (Last-In-first-Out)
 - 연산 구현시 stack_empty, stacj_full 조건 체크 필요
 
-![스크린샷 2017-02-14 오전 8.53.58](/Users/cress00/Documents/programming/fastcampus-master/project/study/My_Study/asset/스크린샷 2017-02-14 오전 8.53.58.png)
+![스크린샷 2017-02-14 오전 8.53.58](/Users/cress00/Documents/programming/fastcampus-master/project/study/My_Study/data-structure/asset/스크린샷 2017-02-14 오전 8.53.58.png)
 
 - **삽입할때는 stack이 full인지 확인!**
 - **제거할때는 stackt이 비어 있는지 확인!**
@@ -92,7 +92,7 @@
 
 ex) 만약 타자가 엄청 빠른 사람이 있으면 운영체제는 그사람의 타자를 `큐`에 저장해놨다가 쓴다.
 
-![스크린샷 2017-02-14 오전 9.00.15](/Users/cress00/Documents/programming/fastcampus-master/project/study/My_Study/asset/스크린샷 2017-02-14 오전 9.00.15.png)
+![스크린샷 2017-02-14 오전 9.00.15](/Users/cress00/Documents/programming/fastcampus-master/project/study/My_Study/data-structure/asset/스크린샷 2017-02-14 오전 9.00.15.png)
 
 #### 2.1.6.1 큐 구현
 

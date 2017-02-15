@@ -1,0 +1,63 @@
+%flex-align-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+%position-absol
+  position: absolute
+  top: 0
+  left: 0
+
+
+html
+  font-size: 10px
+
+body
+  margin: 0
+  @extend %flex-align-center
+  min-height: 100vh
+  font-size: 1.6rem
+  perspective: 950px
+
+.flip-card
+    position: relative
+    user-select: none
+    width: 240px
+    height: 360px
+    border: 3px solid #fdb0af
+    border-radius: 4px
+    @extend %flex-align-center
+    transform-style: preserve-3d
+    transform: perspective(450px) rotateY(0deg)
+    font-size: 10rem
+
+
+.flip-card__front
+  @extend %position-absol
+  @extend %flex-align-center
+
+  user-select: none
+  margin: 0
+  width: 100%
+  height: 100%
+  $card-color: #fdb0af
+  color: $card-color
+  background: mix($card-color, #fff, 8%)
+  transform-style: preserve-3d
+  transform: rotateY(0deg)
+  backface-visibility: hidden
+
+.flip-card__back
+  @extend %position-absol
+  @extend %flex-align-center
+
+  user-select: none
+  margin: 0
+  width: 100%
+  height: 100%
+  $card-color: blue
+  color: $card-color
+  background: mix($card-color, #fff, 8%)
+  transform-style: preserve-3d
+  transform: rotateY(180deg)
+  backface-visibility: hidden

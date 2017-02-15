@@ -1,0 +1,33 @@
+=flex-align($j: null, $a: null)
+  display: flex
+  justify-content: $j
+  align-items: $a
+
+
+%flex-align-center
+  +flex-align(center, center)
+
+body
+  @extend %flex-align-center
+  min-height: 100VH
+  margin: 0
+
+$rect-bg: #474cc5
+$circle-bg: #de368d
+$dimention-w: 300px
+$dimention-h: 300px
+
+%dimention
+  flex: 0 0 $dimention-w
+  height: $dimention-h
+
+
+.rect
+  @extend %flex-align-center
+  @extend %dimention
+  background: $rect-bg
+
+.circle
+  @extend %flex-align-center
+  @extend %dimention
+  background: $circle-bg
