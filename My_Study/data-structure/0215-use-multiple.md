@@ -54,6 +54,25 @@ char dequeue (int *front, int rear){
 - 대부분의 컴파일러에서는 `후위 표기법`을 많이 사용한다. 
   - 1회 스캔
   - 괄호 불필요
-  - 스택을 사용하여 계산
+  - 스택을 사용하여 계산 
 
-#### 
+### 2.2.2 연산 예) AB+CD-* 의 계산과정 스택!!
+
+![스크린샷 2017-02-16 오전 8.20.55](/Users/cress00/Documents/programming/fastcampus-master/project/study/My_Study/data-structure/asset/스크린샷 2017-02-16 오전 8.20.55.png)
+
+- C, D 뺄때는 나중에 pop한 C에서 처음에 pop한 D를 빼준다. 
+
+![스크린샷 2017-02-16 오전 8.54.10](/Users/cress00/Documents/programming/fastcampus-master/project/study/My_Study/data-structure/asset/스크린샷 2017-02-16 오전 8.54.10.png)
+
+
+
+- 위의 후위 표기의 계산을 간단하게 하기 위한 가정 (assumption)
+
+  - 후위 표기식이 배열 expression에 저장 되어 있다. 
+  - 식의 마지막은 ';'이다. 
+  - 피연산자는 하나의 숫자 `문자`이다. 
+  - 연산자는 +, - ,*, % 로만 구성된다. 
+  - 함수 get_token()은 expression에서 하나의 문자를 반환하고, 인덱스 값을 1 증가 시킨다. 
+  - 함수 is_digi() 는 주어진 문자가 피연산자(숫자 하나)이면 true, 그렇지 않으면 false를 반환한다. 
+
+  ​

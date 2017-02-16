@@ -41,7 +41,7 @@ body {
   color: #fdb0af;
   background: #fff9f9;
   transform-style: preserve-3d;
-  transform: rotateY(0deg);
+  transform: perspective(450px) rotateY(0deg);
   backface-visibility: hidden;
 }
 

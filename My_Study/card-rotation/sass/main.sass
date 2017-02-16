@@ -1,0 +1,88 @@
+*
+  margin: 0
+  padding: 0
+  border: 0
+  box-sizing: border-box
+  font-size: 10px
+
+
+%flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+%flex-around
+  display: flex
+  justify-content: space-around
+  justify-content: space-around
+
+
+
+
+=width($width)
+  flex: 0 0 $width
+
+=border
+  border-radius: inherit
+
+
+body
+  @extend %flex-around
+  flex-wrap: wrap
+  width: 100%
+  height: 100vh
+  color: white
+  //Basic style
+
+
+.card
+  position: relative
+  @extend %flex-center
+  // background-color: rgba(yellow, 0.4)
+  +width(25%)
+  height: 30%
+  margin: auto 10px
+  border-radius: 30px
+  //Basic style
+  transform-style: preserve-3d
+  transform: perspective(550px)
+  // transform: perspective(550px) rotateY(0deg) translateX(100%)
+  transform-origin: right
+
+  transition: transform 1s
+  // transform: translate(30rem)
+
+
+
+[class*=card-]
+  position: absolute
+  +border
+  width: 100%
+  // +width(100%)
+  height: 100%
+  font-weight: 900
+  font-size: 10rem
+  @extend %flex-center
+  //Basic style
+  cursor: pointer
+  user-select: none
+
+
+
+.card-front
+  top: 0
+  left: 0
+  background-color: hotpink
+  //Basic style
+  transform: rotateY(0deg)
+  backface-visibility: hidden
+
+
+.card-back
+  top: 0
+  left: 0
+  background-color: aqua
+  display: flex
+  //Basic style
+  transform: rotateY(180deg)
+  backface-visibility: hidden
