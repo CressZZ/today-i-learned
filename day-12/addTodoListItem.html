@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TodoList</title>
+  <style>
+    .app {
+      margin: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="input-group" role="group">
+      <label for="input-todo">Input your Doing...</label>
+      <input type="text" placehoder="to do...">
+      <button type"button" class="add-todo__button">ADD</button>
+    </div>
+
+    <ul class="todolist">
+      <li sclass="todolist__item">user input content</li>
+    </ul>
+  </div>
+  <script>
+  // #input-todo 변수에 참조
+  var input = document.querySelector('#input-todo'); //for랑 관련이 되어 있네;;;
+
+  // #input-todo 인풋 요소에 사용자가 콘텐츠를 입력하고
+  // add-todo__button 버튼을 사용자가 클릭하면
+  var button = document.querySelector('.add-todo__button');
+  console.log('input:', input);
+  console.log('button:', button);
+
+  //.todolist 요소를 변수에 참조 한다.
+ var todolist = document.querySelector('.todolist');
+ button.onclick = function() {
+    // console.log('O.K');
+    //동적으로 li.todolist__item 요소를 생성한다.
+    var item = document.createElement('li');
+    var item_text_node = document.createTextNode(input.value);
+    item.setAttribute('class', 'todolist__item');
+    item.appendChild(item_text_node);
+    todolist.appendChild(item);
+    input.value = '';
+    input.focus();
+
+  };
+  // .todolist내부에 li.todolist__item 코드가 동적으로 생성되어 추가된다.
+
+
+
+  // (사용자가 입력한 콘텐츠 포함. )
+
+
+
+  </script>
+
+
+</body>
+</html>
