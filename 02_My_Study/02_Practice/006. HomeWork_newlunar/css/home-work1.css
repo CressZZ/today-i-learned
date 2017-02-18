@@ -1,0 +1,575 @@
+@charset "UTF-8";
+/*@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css";*/
+
+.hidden, legend{
+  background: red;
+  position: absolute;
+  left: -9999em;
+}
+
+
+
+
+/* NOTE: 스타일 초기화 */
+
+h1, h2, h3, h4, h5, h6, ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+html,body,div,header,nav,section,aside,article,footer,figure,figcaption,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,fieldset{
+	margin:0;
+	padding:0;
+}
+
+input, button, select, textarea{
+  font-family: inherit;
+}
+
+ul{
+  list-style-type: none;
+}
+
+a:link, a:visited{
+color:inherit;
+text-decoration: none;
+}
+
+a:hover, a:focus{
+  color:red;
+}
+
+html{
+  font-size: 10px;
+  font-family: "poppins", sans-serif;
+  font-weight: 400;
+  color: #333333;
+  margin: auto;
+}
+
+
+/* NOTE: 스타일 통합버전! */
+
+
+
+
+fieldset{
+  border:0;
+}
+
+
+
+strong{
+  display: block;
+}
+
+.heading{
+  font-size: 4.4rem;
+  letter-spacing: -0.025em;
+  line-height: 1.318;
+  color: #333333;
+  font-weight: 600;
+
+}
+
+.descrip{
+  color: rgba(51, 51, 51, 0.60);
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+
+}
+.list-strong{
+  font-size: 1.4rem;
+  line-height: 1.1428em;
+  color: #333333;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.list-span{
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: rgba(51, 51, 51, 0.25);
+  font-weight: 500;
+  display: inline-block;
+}
+
+
+.list-descrip{
+  color: rgba(51, 51, 51, 0.60);
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+
+}
+
+
+
+
+
+/* NOTE: Float Clear both */
+
+.header::after, .intro::after
+,.features-list::after{
+  display: block;
+  content:"";
+  clear:both;
+}
+
+
+
+
+/* NOTE: body */
+
+body{
+  margin: 0 auto;
+}
+
+
+
+/* NOTE: wrapper */
+
+.wrapper{
+  width: 1440px;
+  border: #ebebeb 1px solid;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+
+/* NOTE: header */
+.header{
+}
+
+.logo{
+
+  float: left;
+  width: 70px;
+  height: 21px;
+  margin: 80px 0 0 150px;
+}
+
+.navigation{
+  float: left;
+  margin: 85px 150px 0 29px;
+  width: 19.3%;
+  height: 15px;
+
+
+}
+
+.main-menu{
+  display: flex;
+  justify-content: space-between;
+  font-family: "popp©ins", sans-serif;
+  margin: -0.325em 0 -0.325em 0 ;
+  /*main-menu line-high는 1.65이기 때문에 위아래 line-high를 제거하기 위해 margin에서 0.325em을 뺀다.*/
+  font-size: 1.4em;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 0.90);
+}
+
+
+
+
+.login-signup{
+  float: right;
+  font-family: "poppins", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-right: 150px;
+
+}
+.login{
+  float:left;
+  margin: calc(85px - 0.325em) 20px -0.325em 0;
+  color: rgba(51, 51, 51, 0.90);
+
+
+}
+.login-signup .signup{
+  float:left;
+  border-radius: 4px;
+  margin-top: 71px;
+  padding:  calc(13px - 0.325em) 35px calc(10px - 0.325em) 35px;
+  border: 1px solid rgba(3, 166, 123, 0.90);
+  color: rgba(3, 166, 123, 0.90);
+}
+/* NOTE: 점수를 올리기 위한 이중 선택자
+         signup의 경우 ::link와 ::visit의  color 값을 상속하면 안되기 때문에
+         (.login-signup 값을 가져오는것 같음)
+         별도로 color값을 주어야 하는데.....이때 통합 system으로  a::link, a::visited로 10점
+         짜리로 값을 주어, 20점 짜리로 만들어야 했음 */
+
+.login-signup .signup:hover,
+.login-signup .signup:focus{
+  color:red;
+}
+/* NOTE: 점수를 올리기 위한 이중 선택자,
+        login-signup의 경우만 포커스 및 호버를 할 경우 red가 안벅는 이유는
+        뭘까;;; */
+
+
+
+
+
+
+
+/* NOTE: intro 시작 */
+
+
+.intro{
+  /*margin: 0 1 0 150px;*/
+  border-bottom: 1px solid #ebebeb;
+
+}
+.column1{
+  float:left;
+  margin-left: 150px;
+}
+
+.column2{
+  float:right;
+}
+
+.intro-heading{
+  font-size: 5.2em;
+  line-height: 1.115;
+  display: inline-block;
+  color: #333333;
+  letter-spacing: -0.025em;
+  margin: calc(227px - 0.0575em) 0 -0.0575em 0;
+
+}
+
+.intro .descrip {
+  margin: calc(25px - 0.25em) 0  -0.25em 0 ;
+  width: 540px;
+}
+
+.search{
+  /*display: inline-block;*/
+  /*width: 489px;*/
+  /*height: 50px;*/
+  margin-top: 36px;
+  border: 0  ;
+}
+
+.search-box{
+  float:left;
+  height: 50px;
+  width: 289px;
+  padding: 0 0 0 24px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 0px ;
+  border-radius: 4px 0 0 4px;
+  font-size: 1.4em;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 0.90);
+  line-height: 1.571em;
+}
+
+.btn-search{
+  float:left;
+  height: 50px;
+  width: 200px;
+  color: #fff;
+  font-size: 1.2em;
+  letter-spacing: 3px;
+  background-color: #03a67b;
+  border: 0;
+  padding: 0;
+  border-radius: 0 4px 4px 0 ;
+}
+
+.column2{
+  float:right;
+  margin-top: 58px;
+  width: 254px;
+  height: 533.3px;
+  margin-right: 297.9px;
+  margin-bottom: 100.7px;
+  background: url("/images/home-work1/mockup.png");
+}
+
+.search-result{
+  position: relative;
+  top: 63px;
+  left: 13.5px;
+
+}
+
+
+
+
+
+/* NOTE: feature 시작 */
+
+
+.features{
+  padding-bottom:104px;
+  border-bottom: 1px solid #ebebeb;
+  text-align: center;
+  }
+
+.features .heading {
+  margin: calc(104px - 0.159em) 0 -0.159em 0;
+}
+
+.features .descrip{
+  margin: calc(25px - 0.25em) 0 -0.25em 0;
+  display: inline-block;
+  width: 690px;
+}
+
+
+.features-list{
+  margin-top: 66px;
+}
+.features-list-1,.features-list-2,.features-list-3{
+  float:left;
+  width: 312px;
+  text-align: center;
+  background:  url(/images/home-work1/Icon.png) no-repeat 50% 0;
+
+}
+.features-list-1{
+  margin-left: 178px;
+}
+.features-list-2{
+  margin-left: 75px;
+}
+
+.features-list-3{
+  margin-left: 75px;
+
+}
+
+
+/*.features-list-icon{
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin-left: calc(50% - 32px);
+
+}*/
+
+
+.features .list-strong{
+  margin: calc(30px + 64px - 0.0714em) 0 -0.0714em 0;
+  display: inline-block;
+
+}
+
+.features .list-descrip{
+  margin-top: calc(25px - 0.25em);
+  margin-bottom: -0.25em;
+  width: 312px;
+}
+
+
+/* NOTE: movie 시작 */
+
+.movie{
+  text-align: center;
+  border-bottom: 1px solid #ebebeb;
+
+}
+
+.movie .heading{
+  margin-top: calc(113px - 0.159em);
+  margin-bottom: -0.159em;
+}
+
+.movie fieldset{
+  margin-top: 41px;
+  margin-bottom: 93px;
+  width: 650px;
+  height: 437px;
+  display: inline-block;
+  background:  url("/images/home-work1/movie.png");
+}
+
+.btn-movie{
+  width: 104px;
+  height: 104px;
+  margin-top: 167px;
+  border: 0;
+  text-indent: 104px;
+  overflow: hidden;
+  white-space: nowrap;
+  background: url("/images/home-work1/play button.png");
+}
+
+
+
+/* NOTE: try 시작 */
+.try{
+  text-align: center;
+  padding-bottom: 99px;
+  border-bottom: 1px solid #ebebeb;
+
+}
+
+.try .heading{
+  margin-top: calc(105px - 0.159em);
+  margin-bottom: -0.159em;
+}
+
+.try .descrip{
+
+  width: 550px;
+  margin-top: calc(14px - 0.25em);
+  margin-bottom: -0.25em;
+  display: inline-block;
+
+}
+
+.btn-try {
+  margin-top: 26px;
+}
+
+.btn-try-1{
+  /*padding: calc(21px - 0.325em) 69px calc(20px - 0.325em) 69px;*/
+  width: 200px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 0;
+  color: #fff;
+  background-color: #03a67b;
+  border: 1px #03a67b solid;
+  border-radius: 4px;
+  letter-spacing: 0.25em;
+  line-height: 48px;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-right: 15px;
+
+ 
+}
+
+.btn-try-2{
+  /*padding: calc(21px - 0.325em) 69px calc(20px - 0.325em) 69px;*/
+  width: 200px;
+  height: 50px;
+  padding: 0;
+  box-sizing: border-box;
+  color: #03a67b;
+  background-color: #fff;
+  border: 1px solid #03a67b;
+  border-radius: 4px;
+  letter-spacing: 0.25em;
+  line-height: 48px;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+
+
+
+/* NOTE: client 시작 */
+
+.clients{
+  text-align: center;
+  padding-bottom: 97px;
+  border-bottom: 1px solid #ebebeb;
+
+}
+
+.clients .heading{
+  margin-top: calc(100px - 0.159em);
+  margin-bottom: -0.159em;
+}
+
+.clients .descrip{
+  margin-top: calc(25px - 0.25em);
+  margin-bottom: -0.25em;
+  width: 685px;
+  display: inline-block;
+}
+
+.clients-list{
+  margin-top: 66px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clients-list-1{
+
+  margin-left: 193px;
+}
+
+
+.clients-list-2{
+}
+
+
+.clients-list-3{
+  margin-right: 193px;
+}
+.clients img{
+  width: 100px;
+  height: 100px;
+}
+
+.clients .list-strong{
+  margin-top: calc(30px - 0.0714em);
+  margin-bottom: -0.0714em;
+}
+
+.clients .list-span{
+  margin-top: calc(11px - 0.25em);
+  margin-bottom: -0.25em;
+}
+
+.clients .list-descrip{
+  margin-top: calc(21px - 0.25em);
+  margin-bottom: -0.25em;
+  width: 290px;
+}
+
+
+
+/* NOTE: footer 시작 */
+
+.footer{
+  padding: 0 150px 0 150px;
+  height: 151px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.footer-heading{
+  font-size: 1.4rem;
+  letter-spacing: -0.00714em;
+  color: rgba(51, 51, 51, 0.70);
+  font-weight: 500;
+  margin-top: calc(70px - 0.325em);
+}
+.footer-lnb{
+  width: 418px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  letter-spacing: -0.00714em;
+  color: #333333;
+  font-weight: 500;
+  margin-top: calc(70px - 0.325em);
+}
+
+.footer-icons{
+  margin-top: 70px;
+  width: 115px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-icons li{
+  width: 18px;
+  height: 18px;
+}

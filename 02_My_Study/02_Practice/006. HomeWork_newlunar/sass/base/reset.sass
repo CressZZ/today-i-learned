@@ -1,0 +1,23 @@
+// NOTE: RESET
+
+
+html, body, div, header, nav, section, aside, article, footer, figure, figcaption, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, p, fieldset
+  @extend %reset-space
+
+// input, button, select, textarea 에 font-family reset(font-familly: inherite)은 왜 해주는 거지?
+input, button, select, textarea
+  @extend %reset-font-family
+
+a
+  @extend %reset-link
+  @extend %reset-visited
+
+ul
+  @extend %reset-list
+
+strong
+  @extend %reset-block
+
+.wrapper
+  @extend %reset-space
+  @extend %reset-margin-auto

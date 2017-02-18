@@ -1,0 +1,11 @@
+{
+  "name": "home-works",
+  "version": "1.0.0",
+  "description": "converting from sass to css",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w -r sass -o css --output-style expanded --source-map-embed"
+  },
+  "author": "",
+  "license": "ISC"
+}

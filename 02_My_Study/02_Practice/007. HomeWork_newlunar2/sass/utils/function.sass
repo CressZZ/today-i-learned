@@ -1,0 +1,12 @@
+@import "../base/config"
+
+//단위 삭제
+@function de-unit($unit)
+  @return $unit/(($unit * 0) + 1)
+
+//em 단위로 변경하기
+@function em($px, $base: $base-font-size)
+  @return de-unit($px)/de-unit($base) * 1em
+
+@function rem($px, $base: $base-font-size)
+  @return de-unit($px)/de-unit($base) * 1rem

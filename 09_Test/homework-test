@@ -1,0 +1,29 @@
+
+      <div class="intro">
+        <h2 class="intro-heading">
+          Blakk Wireframe Kit
+        </h2>
+        <p class="descrip">
+             At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.
+        </p>
+      </div>
+
+      <div class="search">
+        <h2 class="hidden">
+          intro의 검색창
+        </h2>
+        <form action="왼쪽 Iphone화면에 해당 img를 띄었으니 확인 하세요;">
+          <fieldset>
+            <legend>검색 폼</legend>
+            <!-- NOTE: absol로 날림 -->
+            <input class="search-box" type="search" required placeholder="Input Field Text" aria-label="검색 img(?)">
+            <button type="search" class="btn-search-box"></button>
+            <div class="search-result">
+              <h2 class="hidden">
+                이미지 검색결과
+              </h2>
+              <img src="#" alt="검색결과(그때그때 다름)">
+            </div>
+          </fieldset>
+        </form>
+      </div>

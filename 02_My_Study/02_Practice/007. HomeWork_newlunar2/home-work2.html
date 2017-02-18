@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Home-work2</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet">
+  <link rel="stylesheet" href="css/home-work2.css">
+</head>
+
+  <body>
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous">
+    </script>
+
+
+    <script>
+      $(function(){
+        $(".tab").on("click", function(e){
+          e.preventDefault();
+          $(this).next().toggleClass("act");
+        });
+      });
+    </script>
+
+    <script>
+      $(function(){
+        $(".lang").on("click", function(e){
+          e.preventDefault();
+          $(this).addClass("on").siblings().removeClass("on");
+        });
+      });
+    </script>
+
+
+    <div class="wrapper">
+      <div class="header">
+
+        <h1 class="logo">
+          <img src="#" alt="main-Logo">
+        </h1>
+
+        <nav class="navigation">
+          <button type="button" class="btn-main-menu tab">main-menu</button>
+          <ul class="main-menu">
+              <li><a href="#">Stories</a></li>
+              <li><a href="#">Company</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="language">
+          <h2 class="hidden">
+            언어선택
+          </h2>
+            <a class="lang on" href="#">Eng </a>
+            <span>/</span>
+            <a class="lang" href="#"> De</a>
+        </div>
+
+
+
+      </div>
+
+      <div class="main">
+        <div class="intro">
+          <h2 class="heading">
+            Blokk Wireframe Kit
+          </h2>
+          <p class="descrip">
+            At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.
+          </p>
+          <form action="javascript:alert('사진을 보여줍니다. ');">
+            <fieldset>
+              <legend>사진 보여주기</legend>
+              <button class="btn-movie" type="submit" >
+                ICON BUTTON
+              </button>
+              <div class="img-bg">
+                <img src="images/home-work1/2-intro-img.png" alt="intro-picture" class="intro-picture">
+              </div>
+
+            </fieldset>
+          </form>
+
+        </div>
+
+        <div class="movie">
+          <h2 class="hidden">
+            movie-play
+          </h2>
+          <form action="javascript:alert('영상을 재생합니다.');" class="movie-play">
+            <legend>소개영상 재생</legend>
+            <botton class="btn-movie-play" type="submit">동영상 재생</botton>
+            <p class="descrip">
+              At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.
+            </p>
+          </form>
+
+        </div>
+
+        <div class="feature">
+          <h2 class="heading">Feature</h2>
+          <p class="descrip">
+            At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.
+          </p>
+          <div class="feature-list">
+            <div class="column column1">
+              <section class="section1">
+                <strong class="list-strong">
+                  First One
+                </strong>
+                <p class="list-descrip">
+                  At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.
+                </p>
+              </section>
+              <section class="section2">
+                <strong class="list-strong">
+                  Second One
+                </strong>
+                <p class="list-descrip">
+                  At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.
+                </p>
+              </section>
+            </div>
+            <div class="column column2">
+              <img src="images/home-work1/image here.png" alt="Picture of Feature" class="feature-picture">
+            </div>
+            <div class="column column3">
+              <section class="section3">
+                <strong class="list-strong">
+                  Third One
+                </strong>
+                <p class="list-descrip">
+                  At half-past eight the door opened, the policeman appeared.
+                </p>
+              </section>
+              <section class="section4">
+                <strong class="list-strong">
+                  Fourth One
+                </strong>
+                <p class="list-descrip">
+                  At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallary">
+          <h2 class="heading">
+            Gallery
+          </h2>
+          <div class="gallary-list">
+            <button class="btn-left">
+              왼쪽으로 넘기기
+            </button>
+            <button class="btn-right">
+              오른쪽으로 넘기기
+            </button>
+            <div class="gallary-image">
+              <div class="gallary-image-1">
+                <img src="images/home-work1/2-intro-img.png" alt="sad">
+              </div>
+              <div class="gallary-image-2">
+                <img src="images/home-work1/2-intro-img.png" alt="joy">
+              </div>
+              <div class="gallary-image-3">
+                <img src="images/home-work1/2-intro-img.png" alt="blue">
+              </div>
+              <div class="gallary-image-4">
+                <img src="images/home-work1/2-intro-img.png" alt="anger">
+              </div>
+              <div class="gallary-image-5">
+                <img src="images/home-work1/2-intro-img.png" alt="funny">
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="find">
+          <h2 class="heading">
+            Find Your Store
+          </h2>
+          <div class="map-wrapper">
+            <img src="#" alt="find-map" class="find-map">
+            <div class="find-descrip">
+              <strong class="list-strong">
+                Blokk Wireframing Kit
+              </strong>
+              <p class="list-descrip">
+                At half-past eight the door opened The policeman appeared. Requesting them to follow him.
+              </p>
+            </div>
+            </div>
+        </div>
+
+      </div>
+
+      <div class="footer">
+        <div class="column column1">
+          <h1 class="footer-logo">
+            <img src="images/home-work1/logo.png" alt="footer-logo">
+          </h1>
+          <p class="descrip">
+            At half-past eight the door opened The policeman appeared.
+          </p>
+        </div>
+        <div class="column column2">
+          <ul class="footer-lnb">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Stories</a></li>
+            <li><a href="#">Company</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <ul class="footer-icons">
+            <li><a href="#"><img src="images/home-work1/facebook.png" alt="페이스북 링크 아이콘"></a></li>
+            <li><a href="#"><img src="images/home-work1/dribbble.png" alt="드리블 링크 아이콘"></a></li>
+            <li><a href="#"><img src="images/home-work1/google plus.png" alt="구글 링크 아이콘"></a></li>
+            <li><a href="#"><img src="images/home-work1/instagram.png" alt="인스타링크 아이콘"></a></li>
+            <li><a href="#"><img src="images/home-work1/instagram.png" alt="인스타링크 아이콘"></a></li>
+            <li><a href="#"><img src="images/home-work1/instagram.png" alt="인스타링크 아이콘"></a></li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </body>
+</html>

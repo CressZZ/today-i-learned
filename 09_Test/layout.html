@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+    <title>플로트를 활용한 레이아웃</title>
+    <style>
+    body{
+      margin:0 ;
+    }
+    #header{
+      background: yellow;
+      height: 20vh;
+    }
+    #container{
+      background: skyblue;
+      border:10px solid red;
+    }
+    #container::after{
+      content:"container가상 요소(after)";
+      background: gray;
+      display:block;
+      clear: both;
+    }
+    #content{
+      background: pink;
+      height: 50vh;
+      width: 80%;
+      float:right;
+    }
+    #sidebar{
+      background: orange;
+      height: 30vh;
+      width: 20%;
+      float:right;
+    }
+    #sidebar:hover::after{
+      content:"sidebar2";
+      display:block;
+      background: #FFF;
+    }
+    #footer{
+      background: green;
+      height: 20vh;
+    }
+</style>
+</head>
+<body>
+  <header id="header">헤더</header>
+  <div id="container">
+    <main id="content">메인 컨텐츠</main>
+    <aside id="sidebar">사이드 바
+      <!-- <div class="sidebar2">사이드 바2</div> -->
+    </aside>
+  </div>
+  <footer id="footer">푸터</footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+@charset "utf-8"
+
+body{
+  margin:0;
+}
+
+/*body{
+  margin:0;
+}*/
+
+#header{
+  background: yellow;
+  height: 20vh;
+}
+#container{
+  background: skyblue;
+  border:10px solid red;
+}
+#container::after{
+  content:"container가상 요소(after)";
+  background: gray;
+  display:block;
+  clear: both;
+}
+#content{
+  background: pink;
+  height: 50vh;
+  width: 80%;
+  float:right;
+}
+#sidebar{
+  background: orange;
+  height: 30vh;
+  width: 20%;
+  float:right;
+}
+#footer{
+  background: green;
+  height: 20vh;
+}

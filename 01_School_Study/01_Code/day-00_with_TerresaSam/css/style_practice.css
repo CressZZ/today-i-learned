@@ -1,0 +1,701 @@
+@charset "utf-8";
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css";
+@import "fonts.css";
+
+html{
+  font-size: 10px;
+}
+body{
+  margin:0;
+  font-size:1.4rem;
+  color: #181818;
+  font-family : 'noto Sans regular';
+  background: #ccc linear-gradient(to bottom, #aaa, #fff 50%, #fff);
+
+
+  /* NOTE: Font를 다른걸로 바꿨을때, font가 기본적으로 가지고 있는 padding 때문인지, magine인지, line-height인지는 모르겠으나, 여백을 먹고 들어가서, inline display 속성으로는 여백을 완벽하게 맞추기 어려운것 같습니다. font를 다르게 하면 상관없는데 font를 바꿨을 경우 여백을 reset할수 있는지 궁금합니다. inline-box만이 정답일까요???? */
+
+  /*background: #fff*/
+
+}
+
+/*h1, h2, h3, h4, h5, h6, ul {
+    margin: 0;
+    padding: 0;
+}*/
+html,body,div,header,nav,section,aside,article,footer,figure,figcaption,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,fieldset{
+	margin:0;
+	padding:0;
+}
+
+/*list 스타일 삭제하기*/
+ul{
+  list-style-type:none;
+}
+
+a:link, a:visited{
+color: inherit;
+text-decoration: none;
+}
+input, button, select, textarea{
+  font-family: inherit;
+}
+
+/*숨김 컨텐츠*/
+.hidden,.skip-nav, legend{
+  background: red;
+  position: absolute;
+  left: -9999em;
+ }
+
+
+
+ .main-menu::after, .term-list::after{
+   content: "";
+   clear: both;
+   display:block;
+
+ }
+
+
+  .skip-nav:focus{
+ left:0;
+  z-index: 100;
+  background: skyblue;
+}
+/*숨김 컨텐츠*/
+
+
+.wrapper{
+  /*background: rgb(155, 182, 77);*/
+    background:  url(images/bg_flower.png) no-repeat 50% 0;
+    /*이미지 위치 %일 경우 이상한 계산기법이 들어가나요*/
+
+  height: 100vh;
+
+}
+.header, .visual, .main-content, .slogan, .footer {
+    width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;/* 이건 뭐지*/
+}
+.header{
+
+background: #fff;
+position:relative;
+height: 120px;
+padding: 0 30px 50px 30px;
+border-radius: 0 0 15px 15px;
+/*border-bottom-color: radius: 5px 15px;*/
+/*border-bottom-right-radius: 15px;*/
+
+
+}
+
+.logo{
+
+  position: absolute;
+  top: 45px;
+  left: 65px;
+  /*background: #e7bbbb;*/
+
+}
+.lnb{
+
+  /*background: rgb(222, 197, 172);*/
+  text-align: right;
+  text-transform: uppercase;
+  padding: 2px 0;
+
+
+}
+.lnb a, .lnb li{
+  display: inline-block;
+
+}
+.lnb a{
+  padding: 8px 8px 8px 0;
+  /*background-color: yellow;*/
+}
+.lnb li::before {
+  content: ":";
+  /*background: white;*/
+  padding-right: 10px;
+}
+
+
+.lnb li:first-child::before{
+  content:"";
+}
+
+.lnb li:last-child a{
+  padding-right:0px;
+}
+
+.main-menu{
+border-top: 2px solid black;
+background-color: red;
+
+background: linear-gradient(to bottom, rgba(176,221,11,1) 0%,rgba(190,219,74,1) 33%,rgba(203,219,142,1) 66%,rgba(208,219,177,1) 100%);;
+padding-left: 280px;
+/*margin: 30px;*/
+box-sizing: border-box;
+/*line-height: 2;*/
+/*height: 45px;*/
+}
+
+.main-menu >li {
+position: relative;
+/*height: 20px;*/
+/*background-color: blue;*/
+/*border: 1px solid #fff;*/
+/*display: inline-block;*/
+/*line-height: 0;*/
+
+float:left;
+
+}
+
+/*.main-menu::after{
+
+}*/
+
+
+.main-menu >li> a{
+/*background-color: pink;*/
+/*border: 10px solid black;*/
+/*line-height: px;*/
+border-left: 2px solid #fff;
+/*height: 45px;*/
+text-shadow: 1px 0 0 #181818 , 0px 1px 0 #181818, -1px 0 0 #181818, 0 -1px 0 #181818;
+font-size: 1.6rem;
+font-family : 'Noto Sans Bold';
+
+color:white;
+padding: 0 20px;
+display: block;
+/*position: relative;*/
+/* NOTE: 맨위에 font 여백 관련 질문에 해당 하는 부분 */
+/*margin:10px;*/
+
+/*padding: 0;*/
+
+/*font-size: 0.6rem;*/
+/*line-height: 0px;*/
+line-height: 45px;
+
+}
+
+.main-menu>li>a:hover::after,
+.main-menu>li>a:focus::after{
+  content:"";
+  display: block;
+  position: relative;;
+  top: -7px;
+  /*height: 10px;*/
+  background-color: blue;
+  padding: 0px;
+  /*position: absolute;*/
+
+
+  /*top: 8px;*/
+  border: 2px solid black;
+}
+.main-menu>li>a:hover,
+.main-menu>li>a:focus{
+  color:yellow;
+  outline: none;
+}
+
+
+/*.main-menu>li>ul{
+display: none;
+}*/
+
+.main-menu ul{
+  position: absolute;
+  top:47px;
+  /*background-color: blue;*/
+  /*width: 150px;*/
+  white-space: nowrap;
+  /*font-family : 'Noto Sans Bold';*/
+
+
+}
+
+
+
+
+
+ul.about-html{
+  /*display: block;*/
+  /*background: yellow;*/
+  /*position: absolute;*/
+  /*padding: 10px 0;*/
+  left:0;
+}
+
+ul.about-css{
+
+  display:none;
+  left:0;
+}
+ul.web-standard{
+
+  display:none;
+  left:0;
+}
+ul.web-accessibility{
+
+  display:none;
+  left: -135px;
+}
+ul.qna{
+
+  display:none;
+  right:0;
+
+}
+ul.archive{
+
+  display:none;
+  right:0;
+}
+.main-menu ul li{
+  /*position: relative;*/
+
+  display:block;
+  /*background-color: red;*/
+  /*float:left;*/
+  display: inline-block;
+
+}
+.main-menu ul a{
+  padding: 9px 10px 9px 0;
+  /*line-height: 32px*/
+
+
+}
+
+
+.main-menu ul a::before{
+  content:"r";
+  font-family: 'webcafeIcon';
+  position: relative;
+  top:2px
+}
+
+.main-menu ul a:hover::before,
+.main-menu ul a:focus::before{
+  /*content: "\f13b";*/
+  /*font-family: 'fontello';*/
+  content: 'c';
+  font-family: 'webcafeicon';
+  position: relative;
+  top:2px
+}
+
+.visual{
+  /*background: rgb(164, 145, 204);*/
+  height: 120px;
+  position: relative;
+
+}
+
+
+
+@keyframes ani-text {
+  0%{
+    font-size:12px;
+    /*color:rgba(0,0,0,0.2);*/
+    opacity: 0.2;
+    transform:translate(0,0);
+    }
+
+
+  100%{
+    font-size:24px;
+    /*color:rgba(0,0,0,0.7);*/
+    opacity:0.7;
+    transform:translate(400px, 75px);
+
+  }
+}
+
+.visual-text{
+  /*left:500px;*/
+  font-family: "noto sans bold";
+  /*color: red;*/
+  /* NOTE: color를 줘봐야 소용없다. */
+  animation: ani-text 0.5s forwards ease-in-out;
+}
+
+
+@keyframes flower-ani {
+ 0%{
+   opacity: 0;
+ }
+
+ 100%{
+   opacity: 1;
+ }
+}
+.visual::before, .visual::after{
+  content:"";
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  /*animation: flower-ani 2s alternate infinite;*/
+  /* NOTE: animation에서 공통적인 부분은 한번에 쓸 수 없나요? */
+  /*왜 준거지?*/
+   /*animation: flower-ani 2s ease-in-out alternate both infinite ;*/
+
+}
+
+
+.visual::before{
+    background:url(images/ani_flower_01.png) no-repeat 0 -15px, url(images/ani_flower_02.png) no-repeat 670px 0 ;
+    /*display: block;*/
+   animation: flower-ani 2s ease-in-out alternate both infinite ;
+  }
+
+  .visual::after{
+    background:url(images/ani_flower_03.png) no-repeat 300px 0px, url(images/ani_flower_04.png) no-repeat 800px 20px ;
+       animation: flower-ani 2s 1s ease-in-out alternate both infinite ;
+  }
+
+
+
+
+.main-content{
+  background: yellow;
+  height: 60vh;
+  padding: 30px;
+/*box-sizing: border-box;*/
+  display: flex;
+  flex-flow: row nowrap;
+  border-radius: 15px  15px 0 0;
+  justify-content: space-around;
+
+}
+
+.column{
+  background-color: pink;
+}
+
+.column1{
+
+  order:1;
+  width: 250px;
+}
+
+
+.login{
+  padding: 10px;
+  background: orange radial-gradient(circle at right top, #e9cd96, #d07f06);
+  border-radius: 10px;
+
+}
+.login-heading{
+  /*background-color: blue;*/
+  color:yellow;
+  font-size:1.6rem;
+  margin-left: 10px;
+
+}
+
+.login form{
+  padding: 10px 10px 0 10px;
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 5px 5px 0 0;
+
+}
+
+.login fieldset{
+  /*background-color: #fff;*/
+  border :0 ;
+  border-radius: 5px 5px 0 0 ;
+  /*padding: 10px 10px 0 10px;*/
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 10px;
+  position: relative;
+
+}
+
+label{
+  /*background-color: red;*/
+  width: 4em;
+  display: inline-block;
+
+}
+
+
+.user-id{
+  margin-bottom: 5px;
+  /*background-color: blue;*/
+}
+.login input{
+  width: 90px;
+  height: 22px;
+
+  margin: 0;
+  /*display: inline;*/
+  /*background-color: yellow;*/
+  padding : 1px 1px 1px 5px ;
+  border: 1px solid #aaa;
+
+}
+
+.btn-login{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	font-size: 1.2rem;
+	padding: 2px;
+	font-weight: bold;
+	border:1px solid #ff4e00;
+	border-radius: 3px;
+	background-color: #fb5d1f;
+	background-image: linear-gradient(to bottom, #fe5f18 0%,#fa4306 100%);
+}
+
+
+
+
+
+.member{
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+}
+
+.member ul{
+  display: flex;
+  justify-content: space-between;;
+  margin: 0 10px;
+
+}
+
+.member li{
+}
+
+.member a{
+  display: block;
+  padding: 10px 0;
+}
+.signup{
+  /*background-color: yellow;*/
+}
+.find{
+  /*background-color: aqua;*/
+}
+.member a::before{
+  font-family: "webcafeIcon";
+  content:"g";
+  color:red;
+  position: relative;
+  top:2px;
+  /*background-color: pink;*/
+
+}
+
+
+
+
+/* NOTE: validation */
+
+
+.validation ul {
+  /*background-color:aqua;*/
+  margin: 20px 0;
+}
+.validation li{
+  background: gray linear-gradient(to bottom, #181818,  rgba(214, 207, 207, 0.58) 60% , rgba(173, 168, 168, 0.14) 100%);
+  /*background: #ccc linear-gradient(to bottom, #aaa, #fff 50%, #fff);*/
+
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+
+
+/* NOTE: term 시작 */
+
+
+.term {
+  background: #ccc linear-gradient(to bottom, #eee, #ccc);
+  margin-top: 20px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+
+.term-heading{
+  font-size: 1.6rem;
+  font-family: "noto sans bold";
+  }
+
+.term a{
+
+  display:block;
+  margin-top: 10px;
+  /*background-color: yellow;*/
+
+}
+.term-list-heading, .term-list-brief{
+
+  float:right;
+  width: 145px;
+}
+.term-list-heading{
+  margin-top:-2px;
+  color: #296784;
+  font-weight: bold;
+}
+.term-list-thumbnail{
+
+  float:left;
+}
+.term-list-brief p{
+  line-height: 1.4;
+  margin-top: 3px;
+}
+/* lign-hieght는 배수*/
+/*바꿔야 할 수 있음.*/
+
+.term-list-brief{
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+/* NOTE: 새소식 */
+
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.column2{
+
+  order:2;
+  width: 380px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.column3{
+
+  order:3;
+  width: 190px;
+}
+
+.search{
+  background: #ccc linear-gradient(to bottom, #ccc 0%, #fff 80%, #fff 100%);
+
+  border: 1px solid #aaa;
+  border-bottom: 0;
+  border-radius: 15px 15px 0 0;
+  padding: 15px 25px;
+}
+
+.search-heading{
+  display:inline-block;
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: #181818;
+  vertical-align: middle;
+}
+.search-heading::before{
+  content:"z";
+  font-family: "webcafeicon";
+  position: relative;
+  top: 2px;
+  color:#333
+}
+
+.search-form{
+  display: inline-block;
+  /*background-color: green;*/
+  vertical-align: middle;
+
+}
+.search fieldset{
+  border:0;
+  /*padding: 0px;*/
+}
+.search-box{
+  width: 200px;
+  height: 22px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  /*background-color: red;*/
+  padding: 1px 1px 1px 5px;
+  font-size: 1.3rem;
+  margin: 0 5px;
+  box-sizing: border-box;
+}
+
+.btn-search{
+  display: inline-block;
+  height: 22px;
+  border: 1px solid #aaa;
+  color: #fff;
+  border-radius: 5px;
+  background: black linear-gradient(to bottom, #ccc, #333);
+  padding: 0 7px;
+  font-size: 1.2rem
+}
+
+
+
+.slogon{
+  background: #eb7c90;
+
+}
+.footer-bg{
+  background: rgb(227, 215, 176);
+  height: 10vh;
+  /*width: 700px;
+}
+.footer{
+  background: rgb(163, 213, 209);
+  height: 10vh;
+
+}

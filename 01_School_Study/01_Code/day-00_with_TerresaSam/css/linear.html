@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background Gradient</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+    .container {
+      width: 960px;
+      margin: 0 auto;
+      height: 100vh;
+      line-height: 100vh;
+      text-align: center;
+    }
+    .container:hover {
+      /*background-image: linear-gradient(to bottom, transparent 98%,
+         rgba(0, 102, 255, 0.4) 98%),
+         linear-gradient(to right, transparent 10px, rgba(0, 102, 255, 0.3) 10px, rgba(0, 102, 255, 0.3) 70px, transparent 70px);
+      background-size: 100% 21px, 80px;*/
+      /*size 100%은 왜 있는 거지?*/
+      /*transparent 값없는건 왜 있는거지?*/
+      /*background-image: linear-gradient(to bottom, transparent 50px, transparent 50%, red 100%);*/
+      background-image: linear-gradient(to bottom, transparent, transparent 98%,
+         rgba(0, 102, 255, 0.4) 98%), linear-gradient(to right, transparent 10px, rgba(0, 102, 255, 0.3) 10px, rgba(0, 102, 255, 0.3) 70px, transparent 70px);
+      background-size: 21px, 80px;
+
+
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    마우스를 여기에 올려보세요!
+  </div>
+</body>
+</html>

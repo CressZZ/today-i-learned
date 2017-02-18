@@ -1,0 +1,1446 @@
+@charset "UTF-8";
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css";
+@import "fonts.css";
+
+
+/*숨김 컨텐츠*/
+
+.hidden, .skip-nav, legend{
+  background: red;
+  position: absolute;
+va
+  left: -9999em;
+}
+
+.skip-nav:focus{
+  left:0;
+  z-index: 100;
+  background-color: #0066ff;/
+}
+
+
+
+
+/*float issue 해결!!*/
+.member::after, .term-list::after,.news::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+
+
+/*스타일 초기화*/
+
+h1, h2, h3, h4, h5, h6, ul {
+    margin: 0;
+    padding: 0;
+}
+html,body,div,header,nav,section,aside,article,footer,figure,figcaption,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,fieldset{
+	margin:0;
+	padding:0;
+
+}
+
+input, button, select, textarea{
+  font-family: inherit;
+}
+ul{
+  list-style-type: none;
+}
+
+a:link, a:visited{
+color: inherit;
+text-decoration: none;
+}
+
+
+a:hover, a:focus{
+  color:red;
+}
+
+html{
+  font-size:10px;
+  /*margin: auto;*/
+
+}
+
+body {
+    margin: 0 auto;
+    font-size:1.4rem;
+        color: #181818;
+    font-family : 'noto Sans regular';
+    background: #ccc linear-gradient(to bottom, #aaa, #fff 50%, #fff);
+    /*position : block;*/
+}
+.wrapper {
+
+    position: relative;
+    background:  url(images/bg_flower.png) no-repeat 50% 0;
+    /*이미지 위치 %일 경우 이상한 계산기법이 들어가나요*/
+    height: 100vh;
+}
+
+.header, .visual, .main-content, .slogan, .footer {
+    width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;/* 이건 뭐지*/
+}
+
+.header {
+    background-color: #fff;
+    position:relative;
+    height: 120px;
+    padding: 0 30px 50px 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+  /*웹까페 로고*/
+
+.logo{
+    /*background: blue;*/
+    position: absolute;
+    top:45px;
+    left: 65px;
+}
+
+  /*안내 링크*/
+  .lnb{
+    background-color: aqua;
+    text-transform: uppercase;
+    text-align: right;
+    padding: 2px 0;
+}
+
+  .lnb li, .lnb a{
+    display: inline-block;
+    background-color:yellow;
+}
+
+  .lnb a{
+    background-color: ;
+    padding:8px 8px 8px 0px;
+}
+.lnb a:focus{
+  outline:2px solid rgb(151, 169, 215);
+  outline-offset: -5px;
+
+}
+.lnb li::before{
+  content: ":";
+  background-color: white;
+  padding-right: 10px;
+}
+  .lnb li:first-child::before{
+    content:"";
+}
+
+  .lnb li:last-child a{
+    padding-right:0px;
+}
+
+
+
+/*메인메뉴*/
+
+.main-menu{
+
+  /*background-image: linear-gradient(to bottom, red 0%, green 50%, blue 100%);*/
+  background: linear-gradient(to bottom, rgba(232,169,11,1) 0%,rgba(232,178,53,1) 30%,rgba(232,183,60,1) 70%,rgba(229,205,126,1) 100%);
+  background-color:  rgba(232,169,11,1);
+  /*background-image: url(images/validation_icon.png);*/
+  /*background-repeat: no-repeat;
+  background-position: 100px 5px;*/
+  /*background-size: 30px 30px;*/
+  /*z-index: 1000;*/
+  padding-left: 280px;
+  height: 45px;
+  border-top: 2px solid black;
+  border-radius: 0 0 5px 5px / 0 0 5px 5px;
+}
+.main-menu::after{
+  content:"";
+  display: block;
+  background: pink;
+  clear: both;
+}
+.main-menu > li{
+  float:left;
+  position: relative;
+  /*height: 100px;*/
+
+}
+.main-menu>li>a{
+  position: relative;
+  color:white;
+  /*background-color: blue;*/
+
+  /*background: blue;*/
+  font-family : 'Noto Sans Bold';
+  font-size: 1.6rem;
+  line-height: 45px;
+  display: block;
+  padding: 0 20px;
+  height: 45px;
+  border-left: 2px solid #fff;
+  text-shadow: 1px 0 0 #000 , 0px 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+  /*16px*/
+}
+
+.main-menu>li>a:hover,
+.main-menu>li>a:focus{
+  color: gold;
+  outline: 0;
+  /*border 바깥으로 보이는 선 (영역없음)*/
+
+}
+
+.main-menu>li>a:hover::after,
+.main-menu>li>a:focus::after{
+  content:"";
+  position: relative;
+  /* NOTE: 왜 absolute 로 하면 안되지? 영역이 부모를 따라 가는거 같은데?
+
+  - 글쎄 영역이 부모를 따라 간다는게 어떤 의미인지 확실히 모르겠지만, 적어도 absol은 자신의content크기만큼 넓이가 정해져. 일반적으로 다른 block같은 경우는 크기가 지정되어 있지 않을 경우 부모의 content크기를 따라가고, 부모가 float인 경우는 부모가 자신의 content 혹인 자식의 content크기만큼 너비가 지정되지. 즉 absol의 너비는 부모랑 전혀 무관하다는게 문제야*/
+  top: -9px;
+  /*왜 left?*/
+  left:0;
+  /*width: 100%;*/
+  /*height: 20px;*/
+  display: block;
+  border-top:2px solid #000;
+  /*background: skyblue;*/
+}
+
+
+.main-menu ul{
+  /*background: blue;*/
+  position: absolute;
+  top:47px;
+  white-space: nowrap;
+  display:none;
+
+  /*padding: 10px 0;*/
+    /*display:none;*/
+}
+
+
+
+/*구체성이 높아 지는 선택성*/
+ .main-menu .act {
+  display:block !important;
+
+}
+
+ul.about-html{
+
+
+left:0;
+}
+
+ul.about-css{
+
+
+  left:0;
+}
+ul.web-standard{
+
+  left:0;
+}
+ul.web-accessibility{
+
+  left: -135px;
+}
+ul.qna{
+
+  right:0;
+
+}
+ul.archive{
+
+  right:0;
+}
+.main-menu ul li{
+  /*position: absolute;*/
+  display:inline-block;
+  /*background-color: red;*/
+
+}
+
+
+.main-menu ul a{
+  padding: 9px 10px 9px 0;
+  /*display: inline-block;*/
+
+}
+.main-menu ul a::before{
+  content:"r";
+  font-family: 'webcafeIcon';
+  position: relative;
+  top:2px
+}
+
+.main-menu ul a:hover::before,
+.main-menu ul a:focus::before{
+  /*content: "\f13b";*/
+  /*font-family: 'fontello';*/
+  content: '\f13b';
+  font-family: 'fontello';
+  position: relative;
+  top:2px
+}
+
+/*.main-menu{
+  background: orange;
+  padding-left: 225px;
+  border-top: 2px solid #000;
+  overflow:hidden;
+}
+.main-menu > li{
+  float:left;
+
+}
+.main-menu > li > a{
+  font-size; 1.4rem;
+  font-family: "noto sans bold";
+  color: #fff ;
+  line-height: 45px;
+  display:block;
+}
+
+.main-menu ul{
+  background: pink;
+  position: absolute;
+  display: none;
+}*/
+
+
+
+  /*하위 선택자 */
+
+
+
+
+/*비주얼*/
+.visual {
+    /*background-color: #e9c2b4;*/
+    height: 120px;
+    position: relative;
+    }
+
+@keyframes ani-text {
+  0%{
+    font-size: 12px;
+    color: rgba(0,0,0,0.2);
+    transform: translate(0,0);
+}
+
+  100%{
+    font-size: 24px;
+    color: rgba(0,0,0,0.7);
+    transform: translate(400px, 75px);
+  }
+}
+
+/*텍스트 애니메이션*/
+.visual-text{
+  /*animation: ani-text 3s forwards 2s 3 alternate ease-in-out;
+  position: absolute;
+  background: lime;
+  z-index: -2;*/
+  left: 500px;
+  font-family: "noto sans bold";
+  color: rgba(0,0,0,0.5);
+  animation: ani-text 0.5s forwards ease-in-out;
+}
+
+/*배경애니메이션*/
+@keyframes ani-flower {
+  0%{
+    opacity: 0;
+    /*width: 00px;*/
+  }
+  100%{
+    /*width:;*/
+    opacity: 1;  }
+}
+@keyframes flower-ani {
+  0%{
+    opacity:1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+.visual::before, .visual::after{
+  content:"";
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  animation: flower-ani 2s alternate infinite;
+  /*왜 준거지?*/
+
+}
+.visual::before{
+    background:url(images/ani_flower_01.png) no-repeat 0 -15px, url(images/ani_flower_02.png) no-repeat 670px 0 ;
+    display: block;
+    /*background-color: skyblue;*/
+
+    animation: ani-flower 2s ease-in-out alternate both infinite ;
+  /*animation-delay: 1s*/
+}
+.visual::after{
+  background:url(images/ani_flower_03.png) no-repeat 300px 0px, url(images/ani_flower_04.png) no-repeat 800px 20px ;
+  animation: ani-flower 2s  1s ease-in-out alternate both infinite;
+
+
+}
+
+
+
+/*메인 컨텐츠*/
+.main-content {
+    background-color: #fff;
+    border-radius: 15px 15px 0 0;
+    height: 60vh;
+    padding: 30px;
+    min-height: 40px;
+    display: flex; /*default 는 row 값* 겁나 중요함./
+
+    /*flex-direction: row;
+    flex-wrap:wrap; /*줄바꿈을 허용한다*/
+
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+
+
+.column1 {
+  order: 1;
+  width: 250px;
+}
+.column2{
+  order: 2;
+  width: 380px;
+}
+.column3{
+  order: 3;
+  width: 190px;
+}
+
+/* NOTE: 로그인 */
+.login{
+  background: #d07f06 radial-gradient(circle at right top, #e9cd96, #d07f06);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 0 0 rgba(0,0,0,0.3)
+  /*margin-bottom: 10px;*/
+
+}
+
+.login-heading{
+  /*background: aqua;*/
+  color: #ff0;
+  font-size:1.6rem;
+  font-family: "noto sans bold";
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.login form{
+  background-color: #fff;
+  border-radius : 5px 5px 0 0;
+  padding: 10px 10px 0 10px;
+}
+ .login fieldset{
+   border:0;
+   /*background: lime;*/
+   position: relative;
+   border-bottom: 1px solid #aaa;
+   padding-bottom: 10px ;
+ }
+ /* NOTE: filedset 은 기본적으로 border를 같는다 */
+
+ .login label{
+   /*background-color: aqua;*/
+   display: inline-block;
+   cursor: pointer;
+   /*border: 1px solid black;*/
+   width:4em;
+
+   /* NOTE: inline은 width 안먹지 않냐!! */
+ }
+ .user-id {
+   /*background: green;*/
+   margin-bottom: 5px;
+ }
+ /* NOTE: label과 input사이의 여백은 html에서 줄바꿈을 했기 때문이다. 감안 해야 한다. */
+
+.login input{glog
+  /*background-color: yellow;*/
+  /*border:0;*/
+  box-sizing: border-box;
+  width: 90px;
+  height: 22px;
+  margin: 0;
+  padding: 1px 1px 1px 5px;
+  border: 1px solid #aaa;
+}
+/* NOTE: 가능한 id로 호출하지 않는다. 100점이기때문에 나중에 수정이 어려울 수 있다.  */
+
+ /*.login label{
+   background: aqua;
+   width: 4em;
+   display: inline-block;
+/* NOTE: 자기글자 크기 * 4 */
+
+
+
+
+
+
+.btn-login{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	font-size: 1.2rem;
+	padding: 2px;
+	font-weight: bold;
+	border:1px solid #ff4e00;
+	border-radius: 3px;
+	background-color: #fb5d1f;
+	background-image: linear-gradient(to bottom, #fe5f18 0%,#fa4306 100%);
+}
+/* NOTE: button tag의 기본설정값은 브라우저마다 다르고, 운영체제 마다 다르다.
+role이라는 테그는, tag에게 해당 role을 부여 한다  */
+
+/*.member{
+  position: relative;
+}*/
+
+/*.member a::before{
+  font-family: 'webcafeIcon';
+  content: "g";
+  color:red;
+  position: relative;
+  display: inline-block;
+  margin: 10px 0;
+  margin-left:5px;
+  top: 0px;
+  left: 0px;
+  top:2px;
+}*/
+
+
+
+
+/*
+.member{
+  float:left;
+}
+.login::after{
+  content:"";
+  clear: both;
+  display:block;
+}
+.member a::before{
+  font-family: 'webcafeIcon';
+  content: "g";
+  color:red;
+
+}*/
+
+
+
+
+
+
+/*.member{
+  backgroud: #fff;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+.signup, .find{
+  background: yellow;
+  padding: 10px 0;
+
+}
+
+.signup::before,
+.find::before{
+  font-family: 'webcafeIcon';
+  content:"g";
+  position: relative;
+  top:2px;
+  color:red;
+}
+  /* NOTE: felx는 좌우에 여백 안먹는다?? */
+
+
+
+
+
+.member{
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    padding: 0 10px;
+    /*border: 10px solid black;*/
+  }
+
+  .signup, .find{
+
+    padding: 10px 0 ;
+  }
+
+  .signup{
+    float: left;
+  }
+  .find{
+    float:right;
+  }
+
+  .signup::before,
+  .find::before{
+    font-family: 'webcafeIcon';
+    content:"g";
+    position: relative;
+    top:2px;
+    color:red;
+  }
+
+
+
+
+
+
+
+
+
+
+/*링크*/
+.validation1{
+  margin: 20px 0;
+}
+.validation1 a {
+  display:block;
+  /*position: relative;*/
+  box-sizing: border-box;
+  background: url(images/validation_icon.png) no-repeat 20px 50%, linear-gradient(to bottom, #aaa, #fff 50%, #fff);
+
+  /*background:#ccc linear-gradient(to bottom, #aaa, #fff 50%, #fff);*/
+
+  border :1px #aaa solid;
+  border-radius: 40px;
+  padding: 10px 0;
+  padding-left : 50px;
+  margin : 10px 0;
+  /*height: 30px;*/
+  /*font-size:10px;*/
+
+}
+.validation1 li{
+  /*background: url(images/validation_icon.png) no-repeat 50% 0;*/
+
+}
+
+.validation1 a:hover{
+  color:red;
+}
+
+
+
+.validation{
+/*background-color:yellow;*/
+margin-top: 20px;
+
+}
+
+.validation a{
+display: block;
+/*box-sizing: border-box;*/
+border:1px solid #aaa;
+margin: 10px 0;
+padding : 8px 0;
+text-indent: 45px;
+border-radius: 20px;
+/*중간크기를 벗어 나봐야, 중간크기가 한계이다.*/
+background: url(images/validation_icon.png) no-repeat 20px 50%,
+linear-gradient(to bottom, #eee, #ccc );
+
+
+/*첫줄 들여쓰기*/
+}
+
+
+
+/*웹관련 용어*/
+/*.term{
+  background-color: yellow;
+  padding : 20px;
+}
+.term-heading{
+  background-color: red;
+  padding-bottom:20px;
+
+}
+
+.term-list{
+  background-color: blue;
+
+   }
+
+.term-list-heading{
+
+  background-color: aqua;
+  display: inline;
+
+}
+
+.term-list-thumbnail{
+
+  float: left;
+
+  top: 0;
+  left: 0;
+
+  background-color: gray;
+}
+.term-list-brief{
+  background-color: pink;
+
+  padding-top: 10px;
+  padding-left: 10px;
+
+
+}*/
+
+
+.term{
+  background: #ccc linear-gradient(to bottom, #eee, #ccc);
+  margin-top: 20px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+
+.term-heading{
+  font-size: 1.6rem;
+  font-family: "noto sans bold";
+  }
+
+.term a{
+
+  display:block;
+  margin-top: 10px;
+  /*background-color: yellow;*/
+
+}
+.term-list-heading, .term-list-brief{
+
+  float:right;
+  width: 145px;
+}
+.term-list-heading{
+  margin-top:-2px;
+  color: #296784;
+  font-weight: bold;
+}
+.term-list-thumbnail{
+
+  float:left;
+}
+.term-list-brief p{
+  line-height: 1.4;
+  margin-top: 3px;
+}
+/* lign-hieght는 배수*/
+/*바꿔야 할 수 있음.*/
+
+.term-list-brief{
+  margin-top: 10px;
+}
+
+
+
+/*
+.search {
+  padding: 20px 30px 10px 30px;
+  background-color: gray;
+  background: linear-gradient(to bottom , rgba(73, 46, 163, 0.53),rgba(73, 46, 163, 0));
+  border-radius: 30px 30px 0 0;
+}
+.search fieldset{
+  border:0;
+}
+.search h2{
+  background-color: red;
+  float : left;
+  line-height: normal;
+  height: 30px;
+
+
+
+}
+
+.search-box{
+  background-color: yellow;
+  float: left;
+  margin: 0 10px;
+  width: 180px;
+  height: 30px;
+
+}
+.search-btn{
+  float:left;
+  height: 30px;
+  background-color: blue;
+  border: 0;
+  margin : 0;
+}*/
+
+
+
+/* NOTE: 검색! */
+
+.search{
+  background: #ccc linear-gradient(to bottom, #ccc 0%, #fff 80%, #fff 100%);
+
+  border: 1px solid #aaa;
+  border-bottom: 0;
+  border-radius: 15px 15px 0 0;
+  padding: 15px 25px;
+}
+.search-heading, .search form{
+  display: inline-block;
+  vertical-align: middle;
+}
+.search-heading{
+  /*background-color: pink;*/
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: #181818;
+
+}
+
+.search-heading::before{
+  content:"z";
+  font-family: "webcafeicon";
+  position: relative;
+  top: 2px;
+  color:#333
+}
+
+
+.search form{
+  /*background-color: lime;*/
+  /*border:0;*/
+  /*padding: 0;*/
+
+}
+.search fieldset{
+  border:0;
+  /*padding: 0px;*/
+}
+.search input{
+  width: 200px;
+  height: 22px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  /*background-color: red;*/
+  padding: 1px 1px 1px 5px;
+  font-size: 1.3rem;
+  margin: 0 5px;
+  box-sizing: border-box;
+}
+
+.search button{
+  height: 22px;
+  border: 1px solid #aaa;
+  color: #fff;
+  border-radius: 5px;
+  background: black linear-gradient(to bottom, #ccc, #333);
+  padding: 0 7px;
+  font-size: 1.2rem
+}
+
+/*
+
+.off{
+  display:none;
+}
+
+.board{
+  position: relative;
+}
+.tab{
+  float:left;
+}
+
+.bullet{
+  position: absolute;
+  right:0;
+  background-color: gray;
+}
+.board ul{
+  position: absolute;
+  top:50px;
+  left:0;
+  width: 100%;
+}
+.notice{
+  background-color: red;
+}
+.pds{
+  background-color: green;
+}
+
+.board-date{
+  float:right;
+}
+
+.board-subject{
+  float:left;
+}
+.notice-list{
+  background-color: aqua;
+}
+.pds-list{
+  background-color:lime;
+}
+
+.board li::after{
+  clear:both;
+  content:"";
+  display: block;
+}*/
+
+
+
+/*게시판*/
+.bullet::before{
+  /*background-color: #f00!important;*/
+  font-family: 'webcafeIcon';
+  position: relative;
+  top: 0;
+  margin-right: 5px;
+}
+
+.notice-more::before, .pds-more::before,
+.news-more::before,.favorite-more::before{
+  content:"p";
+  color: green;
+}
+
+.board-rec::before{
+  content: "r";
+
+}
+
+.board{
+  margin-top: 20px;
+  /*background-color: yellow;*/
+  position: relative;
+  height: 180px;
+}
+
+.notice-heading, .pds-heading{
+  /*background-color: orange;*/
+  float: left;
+}
+
+.tab{
+  display: block;
+  font-size: 1.4rem;
+  padding: 8px 10px;
+  border-radius: 10px 10px 0 0 ;
+
+    border:1px solid #666;
+    background: #ccc linear-gradient(to bottom, #eee, #ccc);
+    color: black;
+}
+/* NOTE: tab=default design */
+
+.act .tab{
+  border:1px solid #f0f;
+  border-bottom-color; #fff;
+  background-color: #fff;
+  color: #f00
+}
+/* NOTE: act는 활성화 디자인 */
+
+.off .tab{
+}
+
+.notice-more, .pds-more,
+.notice-list, .pds-list{
+  display: none;
+}
+
+.act .notice-more, .act .pds-more,
+.act .notice-list, .act .pds-list{
+  display: block;
+}
+
+.notice-more, .pds-more{
+  /*background-color: aqua;*/
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.notice-list, .pds-list{
+  /*background-color: lime;*/
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+}
+
+
+.notice-list li, .pds-list li{
+  margin: 8px 0;
+}
+.board-subject{
+  /*background-color: skyblue;*/
+  display: inline-block;
+  width: calc(100% - 100px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.board-date{
+  /*background-color: silver;*/
+  float:right;
+}
+
+
+
+
+/* NOTE: 새소식 */
+/*
+.news{
+  background-color: red;
+  margin-top: 10px ;
+  position: relative;
+}
+
+.news-heading{
+  background-color: lime;
+  padding: 10px 0;
+  border-bottom: 1px #aaa solid;
+}
+
+.news-item-heading, .news-item-date,.news-item-brief{
+  float:right;
+  display: inline-block: ;
+  background-color: aqua;
+  width: 65%;
+
+}
+.news-item-heading{
+background-color: orange;
+}
+
+.news-item-date{
+background-color: purple;
+}
+.news-item-brief{
+
+}
+
+.news figure{
+  background-color: yellow;
+  display:
+  border-right: 3px solid red;
+  float:left;
+  padding: 0;
+  margin: 0;
+}
+
+.news-more{
+  position: absolute;
+  background-color: red;
+  top: 0;
+  right: 0;
+}*/
+
+
+
+.news{
+  margin-top: 20px;
+  position: relative;
+}
+.news::before{
+  content: "";
+  background:#aaa linear-gradient(to right, #aaa, #fff);
+  position: absolute;
+  top: 25px;
+  left: 0;
+  height: 1px;
+  width: 80%;
+  margin:auto;
+
+
+}
+.news-heading{
+  color:#f00;
+  font-size: 1.6rem;
+}
+
+.news-item{
+  margin-top: 25px;
+  padding-left: 130px;
+  position: relative;
+
+}
+
+.news-item-heading{
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.news-item figure{
+position: absolute;
+top: 0;
+left: 0;
+}
+.news-item-heading::before{
+  content:"r";
+  top: 3px;
+}
+
+.news-item-date,.news-item-brief{
+  margin-left: 20px
+}
+
+.news-item-brief{
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.news-item img{
+  box-shadow:0px 15px 15px 0px rgba(0,0,0,0.3);
+}
+
+
+
+
+.news-item figcaption{
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+.news-more{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+
+}
+
+
+
+/*
+.event-related{
+  background-color: aqua;
+}
+
+.event{
+  background-color: yellow;
+  padding: 10px;
+}
+
+.event h2{
+  margin-bottom: 10px;
+
+}
+
+.btn-event-prev, .btn-event-next{
+  padding-top: 14px;
+  border: 0;
+  margin: 0;
+  padding-top: 18px;
+
+  display: inline-block;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: white url(images/back_forward.png) no-repeat;
+  background-color: red;
+  width: 19px;
+  height: 15px;
+
+}
+
+.event-brief em{
+  text-decoration: none;
+}*/
+
+.event{
+  position: relative;
+}
+.event-related, .favorite{
+  background: #ccc linear-gradient(to bottom, #eee, #ccc);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.event-heading, .related-heading, .favorite-heading{
+  font-size: 1.6rem;
+  font-family: "noto sans bold";
+
+}
+
+.event-heading span, .related-heading span, .favorite-heading span{
+  color:#f00;
+}
+
+#event-detail{
+  margin-top: 10px  ;
+}
+
+ .event-thumbnail{
+ }
+
+.event-thumbnail img{
+  max-width: 100%;
+  height: auto;
+  box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.3);
+}
+
+.event-brief{
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.event-brief em{
+  font-style: normal;
+}
+
+.btn-event{
+  /*background-color: yellow;*/
+  height: 18px;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+
+}
+
+.btn-event-prev, .btn-event-next{
+  width: 19px;
+  margin: 0;
+  height: 18px;
+  text-indent: 19px;
+  white-space: nowrap;
+  border: 0;
+  background: pink url(images/back_forward.png) no-repeat;
+  overflow: hidden;
+
+cursor:pointer;
+}
+
+.btn-event-next{
+  background-position : 0 0;
+
+}
+
+.btn-event-next{
+  background-position : 100% 0;
+}
+
+/*.btn-event-prev, .btn-event-next{
+  width: 19px;
+  height: 0px;
+  ;
+  padding-top: 18px;
+  border: 0;
+  margin: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  background-color: red;*/
+
+/*
+.related{
+}
+.related-heading{
+}
+
+.related{
+  padding-top: 10px;
+  border-top: 1px solid black;
+}
+.related-list{
+  margin-top: 10px  ;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding-left: 15px;
+  line-height: 25px;
+  transition: height 0.4s;
+  height: 25px;
+  overflow:hidden;
+
+
+
+}
+.related-list:hover{
+
+
+  height: 125px;
+  padding: 10px 15px ;
+  background: #fff linear-gradient(to bottom, #fff, #aaa);
+
+}*/
+
+
+.related{
+  border-top: 1px solid #aaa;
+  padding-top: 10px;
+}
+.related-list{
+  background-color: #fff;
+  margin-top: 10px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  height: 25px;
+  overflow:hidden;
+  transition: all 2s;
+
+
+}
+
+.related-list a{
+  display: block;
+  line-height: 25px;
+  height:25px;
+  text-indent: 20px;
+}
+
+.related-list:hover{
+  height: 125px;
+  padding: 10px 0;
+  /*background-color: yellow;*/
+
+}
+
+
+
+
+
+
+
+
+
+
+.favorite{
+    margin-top: 20px;
+    position: relative;
+
+}
+.favorite-list{
+  overflow: hidden;
+}
+.favorite-list li{
+  margin: 10px 0;
+  counter-increment:number;
+  /*background-color:yellow;*/
+  position: relative;
+}
+
+.favorite-list li::before{
+  content:counter(number, decimal);
+  color:#fff;
+  background:#aaa;
+  padding: 0px 5px 0;
+  font-size:1.2rem;
+  border-radius: 3px ;
+  margin-right: 5px;
+}
+
+.favorite em{
+  background: url(images/rank.png) no-repeat;
+  font-style: normal;
+
+ position: absolute;
+ top: 50%;
+ margin-top:-5px;
+ right: 0;
+  width: 9px;
+  text-indent: 9px;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 11px;
+
+}
+
+.stop{
+  background-position: 0 50% !important;
+}
+.down{
+  background-position: 0 100% !important;
+}
+
+.favorite-more{
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  padding: 8px;
+}
+
+/*
+}
+
+.favorite-heading{
+  background-color: #000;
+}
+.favorite li{
+  border:1px solid black;
+  vertical-align: bottom;
+
+
+}
+
+.favorite-list em {
+  float:right;
+  display:inline-block;
+  padding-left:8px;
+  background-color: pink;
+  background: url(images/rank.png) no-repeat;
+  font-style: normal;
+  height: 11px;
+  width:0;
+}
+.favorite-more{
+  position: absolute;
+  background-color: red;
+  top: 10px;
+  right: 0;
+}
+
+*/
+
+
+
+.slogan {
+    background-color: #d0e8b5;
+    height: 100px;
+}
+
+.footer-bg {
+    background-color: rgb(80, 117, 133);
+    height: 100px;
+}

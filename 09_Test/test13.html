@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <style>
+.parent{
+  display:flex;
+  align-items: center;
+  text-align: center;
+  width: 1400px;
+  height: 1500px;
+  background-color: pink;
+
+}
+
+.child{
+  background-color: skyblue;
+  width: 300px;
+  margin-right: 30px;
+  text-align: center;
+}
+
+.child-1{
+  height: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.child-2{
+  height: 1400px;
+
+}
+.child-3{
+  height: 1300px;
+
+}
+
+.child-c{
+  display:block;
+  /*background-color: yellow  ;*/
+
+}
+
+.child-1-1{
+  width: 200px;
+  margin: auto;
+}
+
+
+.parent2{
+  width: 1000px;
+  height: 1000px;
+  margin-top: 10px;
+  background-color: aqua;
+  border: 1px black solid;
+
+}
+.child-inbl{
+  display: inline-block;
+  background-color: red;
+  height: 100px;
+}
+.child-bl{
+  background-color: yellow;
+  height: 100px;
+}
+
+.child-img{
+  width: 100px;
+  height: 100px;
+  background: green;
+  border: 0;
+}
+.child-p{
+  background-color: orange;
+  margin:0;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="child child-1">
+      <div class="child-c child-1-1">1번 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed eos dolore, saepe adipisci, mollitia magnam alias. Dicta inventore quisquam facilis reprehenderit, corporis at, est molestias aliquam, consequuntur atq1번 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed eos dolore, saepe adipisci, mollitia magnam alias. Dicta inventore quisquam facilis reprehenderit, corporis at, est molestias aliquam, consequuntur atqueue labore aperiam. adipisicing elit. Sed eos dolore, saepe adipisci, mollitia magnam alias. Dicta inventore quisquam facilis reprehenderit, corporis at, est molestias aliquam, consequuntur atq1번 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed eos dolore, saepe adipisci, mollitia magnam alias. Dicta  adipisicing elit. Sed eos dolore, saepe adipisci, mollitia magnam alias. Dicta inventore quisquam facilis reprehenderit, corporis at, est molestias aliquam, consequuntur atq1번 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed eos dolore, saepe adipisci, mollitia magnam alias. Dicta </div>
+    </div>
+    <div class="child child-2">
+      <div class="child-c child-2-1">2번</div>
+    </div>
+    <div class="child child-3">
+      <div class="child-c child-3-1">3번</div>
+    </div>
+  </div>
+  <div class="parent2">
+    <div class="child-inbl">inline-block 요소</div>
+    <p class="child-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, labore.</p>
+    <div class="child-bl">block 요소</div>
+    <p class="child-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, labore.</p>
+    <img src="#" alt="child-img" class="child-img">
+    <p class="child-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, labore.</p>
+  </div>
+</body>
+</html>

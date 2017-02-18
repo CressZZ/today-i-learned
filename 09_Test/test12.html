@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+  <meta charset="UTF-8">
+  <title>Test12</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet">
+  <link rel="stylesheet" href="css/home-work2.css">
+  <style>
+    .act1{
+      display: none;
+    }
+    .act{
+      display:block !important;
+    }
+  </style>
+
+</head>
+  <body>
+
+    <script>
+      src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+      integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+      crossorigin="anonymous">
+    </script>
+    <script>
+      $(function(){
+        $(".main-menu>li>a").hover(function(){
+          $(this).parent().find("ul").addClass("act")
+          .parent().siblings().find("ul").removeClass("act");
+
+        });
+      });
+    </script>
+
+    <script>
+    $(function(){
+      $(".tab").on("click", function(e){
+        e.preventDefault();
+        $(this).parent().parent().addClass("act").siblings().removeClass("act");
+      });
+    });
+      // $(function(){
+      //   $(".tab").click(function(e){
+      //     e.preventDefault();
+      //     $(e.target).parent().parent().addClass("on").removeClass("off")
+      //     .siblings().addClass("off").removeClass("on");
+      //   });
+      // });
+    </script>
+
+
+<div class="parent1 act1 act">
+
+  <div class="parent2">
+    <a href="#" class="tab">클릭하세요</a>
+    <a href="#" class="">act1</a>
+
+  </div>
+</div>
+
+
+<div class="parent3 act1">
+  <div class="parent4">
+    <a href="#" class="tab">클릭하세요2</a>
+    <a href="#" class="">act2</a>
+
+  </div>
+
+</div>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,38 @@
+@import "config"
+@import "../utils/function"
+@import "../utils/mixin"
+
+html
+  font:
+    weight: $base-font-weight
+    size: $base-font-size
+    family: $base-font-family
+  line-height: $base-line-height
+
+h2
+  @include font(600, 44px, 58px, -1.1px)
+
+p
+  @include font(400, 16px, 24px)
+
+button
+  font:
+    size: 1.2rem
+
+
+// NOTE: intro
+
+.intro
+  &-heading
+    @include font(600, 52px, 58px, -1.3px)
+  &-list-strong
+    @include font(600, 12px, 16px, 3px)
+  &-list-descrip
+    @include font(400, 14px, 22px)
+
+[class*="-list-category"]
+  @include font(600, 14px, 16px, 3.5px)
+
+[class*=-list-name]
+  @include font(600, 28px, 32px, - 0.7px)
+  // @debug $letter-spacing

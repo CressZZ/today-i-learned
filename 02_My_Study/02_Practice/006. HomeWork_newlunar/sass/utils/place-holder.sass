@@ -1,0 +1,38 @@
+%reset-space
+  margin: 0
+  border: 0
+  outline: 0
+  padding: 0
+
+%reset-margin-auto
+  margin-left: auto
+  margin-right: auto
+
+%reset-block
+  display: block
+
+%clearfix
+  &::after
+    content: ""
+    display: block
+    clear: both
+
+%reset-list
+  list-style-type: none
+
+%reset-link
+  &:link
+    text-decoration: none
+    color: inherit
+
+%reset-visited
+  &:visited
+    text-decoration: none
+    color: inherit
+
+%reset-hover-focus
+  &:hover
+    color: red
+
+%reset-font-family
+  font-family: inherit

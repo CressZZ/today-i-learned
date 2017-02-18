@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home-work3</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet">
+  <link rel="stylesheet" href="css/home-work3.css">
+
+</head>
+
+<body>
+
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous">
+  </script>
+
+
+  <script>
+    $(function(){
+      $(".section").hover(function(e){
+        e.preventDefault();
+        $(this).children().toggleClass("on");
+      });
+    });
+  </script>
+
+  <script>
+    $(function(){
+      $(".btn-intro").on("click", function(e){
+        e.preventDefault();
+        $(this).next().children(".on").removeClass("on").next().addClass("on");
+      });
+    });
+  </script>
+
+
+  <div class="wrapper">
+    <header class="header">
+      <h1 class="logo">
+        <img src="#" alt="blokk">
+      </h1>
+      <h2 class="hidden">메인메뉴</h2>
+      <ul class="main-menu">
+        <li><a href="#">Story</a></li>
+        <li><a href="#">Company</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+
+    <!-- NOTE: intro 시작 -->
+
+    <div class="main">
+
+      <div class="intro">
+        <div class="intro-heading">Blokk Wireframe Kit</div>
+        <p class="descrip">
+          At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.
+        </p>
+        <button class="btn-intro">
+          BUTTON
+        </button>
+        <div class="btn-action">
+          <div class="btn-action-1 on"></div>
+          <div class="btn-action-2"></div>
+          <div class="btn-action-3"></div>
+        </div>
+
+      </div>
+
+      <div class="movie">
+        <div class="column column1">
+          <h2 class="heading">Blokk Wireframe Kit</h2>
+          <p class="descrip">
+            At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.
+          </p>
+        </div>
+        <div class="column column2">
+          <form action="javascript::alert('동영상을 재생합니다. ')">
+            <legend>동영상 재생</legend>
+            <button class="btn-movie" type="submit">movie-button</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="feature">
+        <section class="feature-list-1">
+          <strong class="list-strong">
+            3600
+          </strong>
+          <span class="list-span">
+            CLIENTS
+          </span>
+          <p class="list-descrip">
+            At half-past eight the door opened, the policeman appeared.
+          </p>
+        </section>
+        <section class="feature-list-2">
+          <strong class="list-strong">
+            25
+          </strong>
+          <span class="list-span">
+            PRODUCTS
+          </span>
+          <p class="list-descrip">
+            At half-past eight the door opened, the policeman appeared.
+          </p>
+        </section>
+        <section class="feature-list-3">
+          <strong class="list-strong">
+            24K
+          </strong>
+          <span class="list-span">
+            SALES
+          </span>
+          <p class="list-descrip">
+            At half-past eight the door opened, the policeman appeared.
+          </p>
+        </section>
+        <section class="feature-list-4">
+          <strong class="list-strong">
+            116
+          </strong>
+          <span class="list-span">
+            SALES
+          </span>
+          <p class="list-descrip">
+            At half-past eight the door opened, the policeman appeared.
+          </p>
+        </section>
+      </div>
+
+      <div class="look">
+        <h2 class="heading">Look What We’ve Got</h2>
+        <p class="descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+        <div class="look-list">
+          <section class="section1">
+            <span class="list-span">FIRST ONE</span>
+            <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining.</p>
+          </section>
+          <section class="section2">
+            <span class="list-span">SECOND ONE</span>
+            <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining.</p>
+          </section>
+          <section class="section3">
+            <span class="list-span">THIRD ONE</span>
+            <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining.</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="stories">
+        <h2 class="heading">Stories</h2>
+        <p class="descrip">
+          At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.
+        </p>
+        <div class="stories-list">
+          <section class="section1">
+            <img src="#" alt="~하는 사진">
+            <span class="list-span">The Guide To Living Creatively</span>
+            <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an</p>
+          </section>
+          <section class="section2">
+           <img src="#" alt="~하는 사진">
+            <span class="list-span">The Guide To Living Creatively</span>
+            <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+          </section>
+          <section class="section3">
+            <img src="#" alt="~하는 사진">
+            <span class="list-span">The Guide To Living Creatively</span>
+            <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="team">
+        <h2 class="heading">Team</h2>
+        <p class="descrip">
+          At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.
+        </p>
+          <div class="column column1">
+
+            <section href="#" class="section section1">
+              <img class="on" src="images/home-work1/user icon.png", alt="~사진">
+              <span class="list-span">John Doe</span>
+              <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p>
+            </section>
+            <section href="#" class="section section2">
+              <img class="on"src="images/home-work1/user icon.png", alt="~사진">
+              <span class="list-span">John Doe</span>
+              <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p>
+            </section>
+            <section href="#" class="section section3">
+              <img class="on" src="images/home-work1/user icon.png", alt="~사진">
+              <span class="list-span">John Doe</span>
+              <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p>
+            </section>
+            <section href="#" class="section section4">
+              <img class="on" src="images/home-work1/user icon.png", alt="~사진">
+              <span class="list-span">John Doe</span>
+              <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p>
+            </section>
+            <section href="#" class="section section5">
+              <img class="on" src="images/home-work1/user icon.png", alt="~사진">
+              <span class="list-span">John Doe</span>
+              <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p>
+            </section>
+            <section href="#" class="section section6">
+              <img class="on" src="images/home-work1/user icon.png", alt="~사진">
+              <span class="list-span">John Doe</span>
+              <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him.</p>
+            </section>
+          </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="column column1">
+        <h1 class="footer-logo">
+          <img src="#" alt="blokk">
+        </h1>
+        <p class="list-descrip">
+          At half-past eight the door opened, the policeman appeared.
+        </p>
+      </div>
+      <div class="column column2">
+        <span class="list-span"> Contact Us </span>
+          <p class="list-descrip">At half-past eight the door opened, the policeman appeared, and, requesting them to follow him, led the way to an adjoining hall.</p>
+
+      </div>
+      <div class="column column3">
+        <span class="list-span"> Subscribe        </span>
+
+          <p class="list-descrip">At half-past eight the door opened.</p>
+        <form action="javascript::alert('검색을 완료 하였습니다.')" class="search">
+          <legend>검색창</legend>
+          <input type="search" required placeholder="Input Field Text">
+          <button type="submit"></button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
