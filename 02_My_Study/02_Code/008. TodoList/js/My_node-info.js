@@ -84,6 +84,24 @@ h1.nodeName.toLowerCase();
 console.log('h1.nodeType:' , h1.nodeType);
 console.log('h1.nodeValue:', h1.nodeValue);
 
-//h1 변수가 참조하는 객체의 자식 텍스트 노드에 접근하려면?
+// h1 변수가 참조하는 객체의 자식 텍스트 노드에 접근하려면?
 console.log('h1_link.firstChild:', h1_link.firstChild);
+console.log('h1.nodeValue:', h1_link.firstChild.nodeValue);
+
+// children은 직계 element노드만을 제공하며 element가 아닌 노드 (예: text 노드)는 제외된다.
+// 'firstChild'및 'lastChild' 같은건 element노드 뿐 아니라 모든 자식을 찾기 때문에 띄어쓰기도 Text노드로 인식 해버린다.
 console.log('h1_link.children:', h1_link.children);
+
+// 텍스트 노드와 텍스트 값?
+// *차이점을 이해하라!
+// 텍스트 값은 nodeType을 가지고 있지 않다?
+console.log('h1_link.firstChild.nodeType:', h1_link.firstChild.nodeType);
+console.log('h1_link.firstChild.nodeValue.nodeType:', h1_link.firstChild.nodeValue.nodeType);
+
+//요소노드가 자식 노드를 가졌는가 확인하려면?
+// hasChildNodes는 띄어 쓰기도 인식한다. ..... 즉, 'firstChild'및 'lastChild'처럼 element 뿐 아니라 모든 자식을 찾는다.
+var containers = document.getElementsByClassName('container');
+
+console.log (containers[0].hasChildNodes());
+console.log (containers[1].hasChildNodes());
+console.log (containers[2].hasChildNodes());
