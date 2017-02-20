@@ -1,0 +1,36 @@
+body
+  magin: 0
+
+.button-set
+  min-height: 100px
+  border-bottom: 3px solid #0697c3
+  padding: 1rem 3rem
+
+button
+  $button-color: lightblue
+  border: 0
+  border-radius: 6px
+  padding: 0.42em 0.84em
+  background: $button-color
+  color: darken($button-color, 20%)
+
+.wrapper
+  display: flex
+  flex-flow: row wrap
+  > *
+    box-sizing: border-box
+    flex: 0 0 50%auto
+    border: 3px solid #e0e0e0
+    padding: 1.5rem 3em
+  li
+    padding-top: 0.6em
+    bottom: 0.6em
+    &:active
+      outline: 3px solid #8471cd
+
+.activation
+  border: 3px solid #8471cd
+
+.will-remove
+  background-color: #dedede
+  color: #787878
