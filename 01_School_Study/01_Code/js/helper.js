@@ -76,15 +76,70 @@ function After(target_node, insert_node) {
 
 }
 
+
+
+
+/**
+ *  전달된 요소노드를 부모노드로부터 제거하는 헬퍼 함수
+ *  @param    {HTMLElement}  element_node 제거할 요소노드
+ *  @return   {HTMLElement}  제거된 요소노드 반환
+ */
+
+
+function remove(element_node){
+  element_node.parentnode.removeChild(element_node);
+  return element_node;
+}
+
+/* 내가 만든 remove 함수
 function remove() {
   // var remove_el = repo.children[0];
   var remove_el = queryAll('.will-remove');
-
   for (i=0; i< remove_el.length; i=i+1) {
     // console.log('remove:',remove_el[i]);
-
     remove_el[i].parentNode.removeChild(remove_el[i]);
-
   };
-
 };
+*/
+
+
+/**
+* 새로운 노드로 이전 노드를 대체하는 헬퍼 함수
+* @param {HTMLElement} replace_node 대체할 노드
+* @param {HTMLElemnet} replaced_node 대체할 노드
+* @return {HTMLElement} [description] 대체될 노드 반환
+*/
+
+
+function replace(replace_node, replaced_node){
+  replaced_node.parentNode.replaceChild(replace_node, replaced_node);
+  return replaced_node;
+}
+  /**
+  * 노드 A와 노드 B의 위치를 교체하는 헬퍼 함수
+  * @param {HTMLElement} replace_node 대체할 노드
+  * @param {HTMLElemnet} replaced_node 대체할 노드
+  * @retrn {HTMLElement} [description] 대체될 노드 반환
+  */
+
+function change(replace_node, replaced_nod){
+  var target = replace_node.nextElementSibling;
+  if(target !== null){
+    //형제
+    //before (삽입, 목표)
+    before(replacted_node, target);
+  } else {
+    target = replace_node.parentNode;
+    //부모
+    //append(부모, 자식)
+    append(target, repaced_node);
+  }
+  replace(replace_node, replaced_node);
+}
+
+
+
+function clone(target){
+  var copy = target.cloneNode();
+
+}
