@@ -1,0 +1,13 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "strat":"npm run jsdoc | npm run sassdoc",
+    "jsdoc":"./
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
