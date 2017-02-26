@@ -160,3 +160,44 @@ function change(replace_node, replaced_node) {
     append(parent, replaced_node);
   }
 }
+
+/**
+ * clone 함수
+ * 노드를 가볍게 또는 깊게(자손, 인라인 스크립트 이벤트 까지)복제하는 헬퍼 함수
+ * @author   cressZZ
+ * @version  1.0.0
+ * @param    {HTMLElement} node 복사할 노드
+ * @param    {Boolean} 깊은 복사 설정
+ * @return   {HTMLElement} 복제된 노드 반환
+ */
+
+function clone(node, deep) {
+  if(deep === undefined) {
+    deep = false;
+  }
+  return node.cloneNode(deep);
+}
+
+
+/**
+ * hasClass, 요소노드에 전달된 class 속성 이름 값이 일치하는 것이 있는지 파악하는 헬퍼 함수
+ * @author   cressZZ
+ * @version  1.0.0
+ * @param    {}
+ * @param    {}
+ * @return   {ElementNode} 문서 요소 노드 반환
+ */
+
+function hasClass(el_node, class_name){
+  // el_node의 class를 공백을 기준으로 분리시키면 각각의 class명이 나온다.
+  // original_classes =
+  original_classes = query(el_node).getAttribute('class').split(' ');
+  console.log(original_classes);
+
+  for(i=0; i<original_classes.length; i++) {
+    if (original_classes[i] === class_name) {
+      return true;
+    }
+  }
+  return false;
+}
