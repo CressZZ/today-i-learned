@@ -1,9 +1,31 @@
 /**
+ *  요소 노드를 생성하는 헬퍼 함수
+ *  @param   {String}  el_name   생성하고자 하는 노드 이름
+ *  @return  {HTMLElement}       생성된 요소 노드 반환
+ */
+function createElement(el_name) {
+  return document.createElement(el_name);
+}
+
+
+/**
+ *  텍스트 노드를 생성하는 헬퍼 함수
+ *  @param   {String}  content   생성하고자 텍스트 콘텐츠
+ *  @return  {TextNode}          생성된 텍스트 노드
+ */
+function createText(content) {
+  return document.createTextNode(content);
+}
+
+
+
+
+/**
 * querySelector 헬퍼 함수
 * @author   cressZZ
 * @version  1.0.0
 * @param    {string} selector_str
-* @param    {string} context
+* @param    {HTMLElement} context
 * @return   {ElementNode} 문서 요소 노드 반환
 */
 
@@ -24,8 +46,8 @@ function query(selector_str, context) {
 * @author   cressZZ
 * @version  1.0.0
 * @param    {string} selector_str
-* @param    {string} context
-* @return   {ElementNode} 문서 요소 노드 반환
+* @param    {HTMLElement} context
+* @return   {Nodelist} 문서 요소 노드 반환
 */
 
 function queryAll(selector_str, context) {
@@ -183,21 +205,71 @@ function clone(node, deep) {
  * hasClass, 요소노드에 전달된 class 속성 이름 값이 일치하는 것이 있는지 파악하는 헬퍼 함수
  * @author   cressZZ
  * @version  1.0.0
- * @param    {}
- * @param    {}
- * @return   {ElementNode} 문서 요소 노드 반환
+ * @param    {HTMLElement} el_node -class 속성 값을 포함하는지 확인 하고자 하는 요소노드
+ * @param    {String} class_name -일치 유무를 파악하고자 하는 `문자형` 데이터
+ * @return   {boolean} 일치 유무 파악 후 결과 반환
  */
 
 function hasClass(el_node, class_name){
-  // el_node의 class를 공백을 기준으로 분리시키면 각각의 class명이 나온다.
-  // original_classes =
-  original_classes = query(el_node).getAttribute('class').split(' ');
-  console.log(original_classes);
+
+  original_class = el_node.getAttribute('class');
+  original_classes = original_class.split(' ');
 
   for(i=0; i<original_classes.length; i++) {
+
     if (original_classes[i] === class_name) {
       return true;
     }
   }
+
   return false;
+}
+
+
+
+/**
+ *  요소노드에 class 속성을 추가하는 헬퍼 함수
+ *  @param  {HTMLElement}  el_node    - class 속성을 추가할 HTML 요소노드
+ *  @param  {String}       class_name - 적용할 class 속성 값 이름
+ */
+
+function addClass(el_node, class_name) {
+  if (el_node.nodeType !== 1) {
+    throw new Error("첫번째 전달 인자의 유형은 요소노드여야 한다.");
+  }
+
+  if (!hasClass(el_node, class_name)){
+    //1. HTML DOM
+    // el_node.className += ' ' + class_name;
+
+    //2. Core DOM
+    var original_classes = el_node.getAttribute('class') || '';
+    el_node.setAttribute('class', original_classes + ' ' +class_name);
+  }
+}
+
+
+/**
+ * 요소노드에 class 속성을 제거하는 헬퍼 함수
+ * @author   cressZZ
+ * @version  1.0.0
+ * @param    {HTMLElement} el_node
+ * @param    {string} class_name
+ */
+
+function removeClass(el_node, class_name) {
+  if (el_node.nodeType !== 1) {
+    throw new Error ("첫번째 인자는 요소노드여야 합니다.");
+  }
+
+  if (hasClass(el_node, class_name)){
+    var original_classes = el_node.getAttribute('class').split(' ');
+    for (i=0; i<original_classes.length; i++){
+      if (original_classes[i] === class_name) {
+        original_classes.splice(i, 1);
+        i = i - 1;
+      }
+    }
+    el_node.setAttribute('class', original_classes.join(' '));
+  }
 }

@@ -26,7 +26,7 @@ var demo_button = query('button');
 // 1.2 Core DOM 방식 (setAttribute는 재설정 이다.)
   demo_button.setAttribute('class', 'demo-button');
   demo_button.setAttribute('class', 'demo-button' + ' ' + 'demo-buttton--pressed');
-  // console.log(demo_button.getAttribute('class'));
+  console.log("getAttribute:",demo_button.getAttribute('class'));
 
 
 
@@ -34,3 +34,28 @@ var demo_button = query('button');
 // hasClass
 // addClass(el_node, class_name)
 // removeClass(demo_button, 'demo-button');
+
+// // classList API 활용
+// demo_button.classList.add('demo-button');
+// demo_button.onclick = function() {
+//   // if(this.classList.contains('on')){
+//   //   this.classList.remove('on');
+//   // } else {
+//   //   this.classList.add('on');
+//   // }
+//  this.classList.toggle('on');
+// };
+
+
+//DocumentFragment객체 생성
+var doc_frag = document.createDocumentFragment();
+console.log('doc_frag 1:', doc_frag); // #document-fragment
+//
+
+var _div = document.createElement('div');
+doc_frag.appendChild(_div);
+console.log('_div:', _div);
+
+_div = createElement('span');
+doc_frag.appendChild(_div);
+console.log('_div:', _div);

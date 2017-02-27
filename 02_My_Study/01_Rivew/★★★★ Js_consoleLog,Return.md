@@ -14,9 +14,9 @@ function function_2(C, D) {
   // 밑의 `A, B`인자를 `C, D` 인자로 받아들임
   replaced_node.parentNode.replaceChild(C, D);
 
-  // *중요!* .parentNode 메서드는 애초에 변수 D값을 리턴한다.!!
+  // *중요!* .replaceChild 메서드는 애초에 변수 D값을 리턴한다.!!
   // 하지만, 리턴은 function_2에만 해당 하기 때문에 function_1에서 console.log(function_2)를 해봐야 D값이 나오지는 않는다.
-  
+
   return 'a'; //의미 없는 text return
 
 }

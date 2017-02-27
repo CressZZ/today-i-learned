@@ -8,6 +8,8 @@
 function createElement(el_name) {
   return document.createElement(el_name);
 }
+
+
 /**
  *  텍스트 노드를 생성하는 헬퍼 함수
  *  @param   {String}  content   생성하고자 텍스트 콘텐츠
@@ -16,6 +18,8 @@ function createElement(el_name) {
 function createText(content) {
   return document.createTextNode(content);
 }
+
+
 /**
  *  요소노드를 생성(콘텐츠[HTML 유형 가능] 포함)하거나, 특정 부모노드에 자식노드로 삽입하는 헬퍼 함수
  *  @param   {String}        el_name  생성할 노드 이름
@@ -41,6 +45,8 @@ function makeEl(el_name, html_str, context, method) {
   // 생성된 요소노드 반환
   return el;
 }
+
+
 /**
  *  querySelector 헬퍼 함수
  *  @param    {String}      selector_str  CSS 선택자
@@ -50,6 +56,8 @@ function makeEl(el_name, html_str, context, method) {
 function query(selector_str, context) {
   return (context || document).querySelector(selector_str);
 }
+
+
 /**
  *  querySelectorAll 헬퍼 함수
  *  @param    {String}      selector_str  CSS 선택자
@@ -59,6 +67,8 @@ function query(selector_str, context) {
 function queryAll(selector_str, context) {
   return (context || document).querySelectorAll(selector_str);
 }
+
+
 /**
  *  부모 노드 내부에 마지막 자식노드로 요소를 추가하는 헬퍼 함수
  *  @param    {HTMLElement|Selector}  parent 부모노드 또는 선택자(문자열)
@@ -75,6 +85,8 @@ function append(parent, child) {
   // return parent.appendChild(child);
   return parent.insertAdjacentElement('beforeend', child);
 }
+
+
 /**
  *  부모 노드 내부에 첫번째 자식노드로 요소를 추가하는 헬퍼 함수
  *  @param    {HTMLElement|Selector}  parent 부모노드 또는 선택자(문자열)
@@ -92,6 +104,8 @@ function prepend(parent, child) {
   // return child;
   return parent.insertAdjacentElement('afterbegin', child);
 }
+
+
 /**
  *  insertNode를 targetNode 앞에 삽입하는 헬퍼 함수 (형제로서 삽입)
  *  @param    {HTMLElement}  insert_node 삽입 요소 노드
@@ -102,6 +116,8 @@ function before(insert_node, target_node) {
   target_node.parentNode.insertBefore(insert_node, target_node);
   return insert_node;
 }
+
+
 /**
  *  insertNode를 targetNode 뒤에 삽입하는 헬퍼 함수 (형제로서 삽입)
  *  @param    {HTMLElement}  target_node 목표 요소 노드
@@ -120,6 +136,8 @@ function after(target_node, insert_node) {
   }
   return insert_node;
 }
+
+
 /**
  *  전달된 요소노드를 부모노드로부터 제거하는 헬퍼 함수
  *  @param    {HTMLElement}  element_node 제거할 요소노드
@@ -129,6 +147,8 @@ function remove(element_node) {
   element_node.parentNode.removeChild(element_node);
   return element_node;
 }
+
+
 /**
  *  새로운 노드로 이전 노드를 대체하는 헬퍼 함수
  *  @param    {HTMLElement}  replace_node   대체할 노드
@@ -139,6 +159,8 @@ function replace(replace_node, replaced_node) {
   replaced_node.parentNode.replaceChild(replace_node, replaced_node);
   return replaced_node;
 }
+
+
 /**
  *  노드 A와 노드 B의 위치를 교체하는 헬퍼 함수
  *  @param    {HTMLElement}  replace_node   대체할 노드
@@ -160,6 +182,8 @@ function change(replace_node, replaced_node) {
     append(parent, replaced_node);
   }
 }
+
+
 /**
  *  노드를 가볍게 또는 깊게(자손, 인라인 스크립트 이벤트 까지) 복제하는 헬퍼 함수
  *  @param    {HTMLElement}  node   복사할 노드
@@ -172,6 +196,8 @@ function clone(node, deep) {
   }
   return node.cloneNode(deep);
 }
+
+
 
 /**
  * 요소노드에 전달된 class 속성 이름 값이 일치하는 것이 있는지 유무 파악 헬퍼 함수
@@ -201,10 +227,12 @@ function hasClass(el_node, class_name) {
   return false;
 }
 
+
+
 /**
  *  요소노드에 class 속성을 추가하는 헬퍼 함수
- *  @param  {HTMLElement}  el_node - class 속성을 추가할 HTML 요소노드
- *  @param  {String}  class_name   - 적용할 class 속성 값 이름
+ *  @param  {HTMLElement}  el_node    - class 속성을 추가할 HTML 요소노드
+ *  @param  {String}       class_name - 적용할 class 속성 값 이름
  */
 function addClass(el_node, class_name) {
   // 전달인자 검증(Arguments Validation)
@@ -215,56 +243,37 @@ function addClass(el_node, class_name) {
   if ( typeof class_name !== 'string' ) {
     throw new Error('두번째 전달 인자의 유형은 문자형 이어야 합니다.');
   }
-  // HTML DOM 방식
-  // Core DOM 방식
   if ( !hasClass(el_node, class_name) ) {
-    el_node.className += ' ' + class_name;
-    //el_node.setAttribute('class', class_name);
-  }
+    // HTML DOM 방식
+    //el_node.className += ' ' + class_name;
 
+    // Core DOM 방식
+    var old_class = el_node.getAttribute('class') || '';
+    el_node.setAttribute('class', old_class + ' ' + class_name);
+  }
 }
 
 
-// 요소노드에 class속성을 제거하는 헬퍼 함수
-//*  @param  {HTMLElement}  el_node - class 속성을 추가할 HTML 요소노드
-//*  @param  {String}  class_name   - 적용할 class 속성 값 이름
-
-function removeClass(el_node, class_name){
-  // [옵션]class_name값을 사용자가 전달하지 않았을 경우
-  if (!class_name){
-    el.node.setAttribute('class', '');
+/**
+ *  요소노드에 class 속성을 제거하는 헬퍼 함수
+ *  @param  {HTMLElement}  el_node    - class 속성을 제거할 HTML 요소노드
+ *  @param  {String}       class_name - 제거할 class 속성 값 이름
+ */
+function removeClass(el_node, class_name) {
+  // [옵션] class_name 값을 사용자가 전달하지 않았을 경우
+  if ( !class_name ) {
+    //el_node.removeAttribute('class');
+    el_node.setAttribute('class', '');
   }
-
-  if (hasClass(el_node, class_name)){
+  // 해당 클래스 속성 이름이 존재하면 제거
+  if ( hasClass(el_node, class_name) ) {
     var old_classes = el_node.getAttribute('class').split(' ');
-    for (var i=0; i<old_classes.length; i++){
+    for ( var i=0; i<old_classes.length; i++ ) {
       var class_item = old_classes[i];
-      if (class_item === class_name) {
+      if ( class_item === class_name ) {
         old_classes.splice(i, 1);
-        i = i-1;
       }
     }
     el_node.setAttribute('class', old_classes.join(' '));
   }
 }
-
-demo_button.classList.add('demo-button');
-demo_button.onclick = function (){
-  if(this.classList.contains('on')) {
-    this.classList.remove('on');
-  } else {
-    this.classList.add('on');
-  }
-  // VS
-  this.clssList.toggle('on');
-
-};
-
-// DocumentFragment 객체 생성
-var doc_frag = document.creat.createDocumentFragment();
-console.log('doc_frag:', doc_frag);
-
-//첫번째 자식 생성한 후 doc_frag에 삽입
-
-doc_frag.innerHTML("<h1>hi</h1>");
-console.log(doc_frag);

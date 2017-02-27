@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../js/helper.js"></script>
+  <title>Js-core</title>
+</head>
+<body>
+  <button type="button" class="increase-count-button">increase</button>
+  <button type="button" class="decrease-count-button">decrease</button>
+
+  <p class="print-count">print count value</p>
+
+  <script src="js/js-core.js"></script>
+  <script>
+  // one click Event
+  // 이벤트 속성의 초기 값은 null이다.
+  document.onclick; //null
+  // 이벤트 연결
+  // 이벤트에 연결 가능한 데이터 유형은 오직 함수
+  document.onclick = function (){
+    this.body.style.backgroundColor = '#926eda'
+    // 이벤트 제거란?
+    // 이벤트 초기 값으로 돌려 놓는 것을 말한다.
+    this.onclick = null;
+  };
+
+</script>
+</body>
+</html>
