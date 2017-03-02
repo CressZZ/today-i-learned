@@ -77,5 +77,5 @@ for ( var i=0; i<section_b_lis.length; i=i+1 ) {
 
 
 var copy_A = function copy() {
-  
+
 }

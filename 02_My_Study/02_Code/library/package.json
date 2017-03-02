@@ -2,12 +2,14 @@
   "name": "library",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "My_helper.js",
   "scripts": {
-    "strat":"npm run jsdoc | npm run sassdoc",
-    "jsdoc":"./
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jsdoc": "^3.4.3"
+  }
 }
