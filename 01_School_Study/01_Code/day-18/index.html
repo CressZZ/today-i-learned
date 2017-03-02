@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body style="height: 100vh;">
+
+
+<script>
+  var num, str, boo, fnc, arr, obj;
+
+  num = 897;
+  str = '' +num; //'897'
+  boo = 0; //true
+  fnc = function() {}; // 함수 표현식(Function Expression) : 변수에 함수 값 (Literal)을 참조 (Reference)
+  // anonymous function
+  arr = [];
+  obj = {}; // Singleton
+
+console.log('num:', !!num);
+console.log('str:', !!str);
+console.log('boo:', !!boo);
+console.log('fnc:', !!fnc);
+console.log('arr:', !!arr);
+console.log('obj:', !!obj);
+
+
+// 함수값 (리터럴)을 참조한 변수는 변수에 실행 연산자 ()를 붙임으로 참조된 함수를 실행 할 수 이싸.
+
+var fn = function(){console.log('call me:', this);};
+var fnc = fn; // fn이 참조한 함수 객체를 fnc 변수 또한 참조
+var fun = fnc; // fnc가 참조한 함수 객체를 fuc 변수 또한 참조
+
+//fn(), fnc(), fun() -> 각 변수는 동일한 함수 객체를 참조하였기에 실행 시 동일한 함수가 실행된다.
+
+// 객체의 속성(변수)에도 함수 값을 할당 (참조)
+document.body.onmousedown=fun; // fun이 참조한 함수가 객체의 속성에 참조
+
+// 객체의 속성(변수)에도 함수 값을 할당 (참조)
+var body = document.body;
+body.onmousedown = fun;
+
+var mouseOverAction = function(){
+  // console.log('mouse over on body');
+};
+
+// body.onmouseover = mouseOverAction;
+body.onmouseover = mouseOverAction();  // 함수 참조가 아닌, 실행의 형태를 사용하면 안되는 이유
+
+
+//키보드 이벤트 핸들링
+//WCAG 2
+body.onkeyup = function pressKeyEvent(evt){
+  evt = evt || window.event;
+  console.log('pressed key:', evt.keyCode);
+}
+
+var members = new Array('희찬,', '의찬', '기찬');
+
+// 배열 객체가 소유한 함수들(객체의 매서드)
+// .concat()
+// .pop()
+// .unshift()
+// .splice()
+// .join()
+
+var people = [];
+
+people['group_name'] = 'musictroica';
+people['gorup_gender'] = 'only girls';
+
+console.log('people[\'group_name\'];', people['group_name']);
+console.log('people[\'gorup_gender\'];', people['group_name']);
+
+console.log('people.group_name:', people.group_name);
+console.log('people.group_gender:', people.group_gender);
+
+
+var magic_mouse = {
+  'dimension': {
+    'width': '5cm',
+    'hight': '11cm'
+  },
+  'color': 'white',
+  'price': '110,000원',
+  'maker': 'Apple',
+  'click': function(direction){
+    if(direction === 'left'){}else{}
+  },
+  'whell': function(direction){
+    if(direction === 'up' ){}else{}
+  }
+};
+
+
+
+</script>
+</body>
+</html>
