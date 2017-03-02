@@ -1,3 +1,4 @@
 *.log
 04_DOM Enlightenment/
-*/node_modules/
+node_modules/
+.sass-cache/
