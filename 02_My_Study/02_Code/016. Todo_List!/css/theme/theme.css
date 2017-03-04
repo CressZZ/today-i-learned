@@ -1,0 +1,25 @@
+body {
+  background-color: #a2fafa;
+}
+
+.theme-list {
+  background-color: #d9e1ff;
+}
+
+.theme-list .theme--color-1 {
+  background: linear-gradient(135deg, #ebe9f9 1%, #c1bfea 100%, #cec7ec 100%);
+}
+
+.theme-list .theme--color-2 {
+  background: linear-gradient(135deg, #f9e9eb 1%, #eabec6 100%, #ecc8ca 100%);
+}
+
+.theme-list .theme--color-3 {
+  background: linear-gradient(135deg, #f9f8e9 1%, #eae3be 100%, #ecebc8 100%);
+}
+
+.theme-list .theme--color-4 {
+  background: linear-gradient(135deg, #e9f9ee 1%, #beeac9 100%, #c8ecd6 100%);
+}
+
+/*# sourceMappingURL=data:application/json;base64,ewoJInZlcnNpb24iOiAzLAoJImZpbGUiOiAiY3NzL3RoZW1lL3RoZW1lLmNzcyIsCgkic291cmNlcyI6IFsKCQkic2Fzcy90aGVtZS90aGVtZS5zYXNzIiwKCQkic2Fzcy91dGlscy9taXhpbl9mdW5jdGlvbi5zYXNzIgoJXSwKCSJuYW1lcyI6IFtdLAoJIm1hcHBpbmdzIjogIkFBU0EsQUFBQSxJQUFJLENBQUM7RUFDSCxnQkFBZ0IsRUFSUCxPQUFrQjtDQVFHOztBQUVoQyxBQUFBLFdBQVcsQ0FBQztFQUNWLGdCQUFnQixFQU5DLE9BQWtCO0NBZVA7O0FBVjlCLEFBR0UsV0FIUyxDQUdULGVBQWUsQ0FBQztFQUNkLFVBQVUsRUFiSCwrREFBaUc7Q0FhaEY7O0FBSjVCLEFBS0UsV0FMUyxDQUtULGVBQWUsQ0FBQztFQUNkLFVBQVUsRUFkSCwrREFBaUc7Q0FjaEY7O0FBTjVCLEFBT0UsV0FQUyxDQU9ULGVBQWUsQ0FBQztFQUNkLFVBQVUsRUFmSCwrREFBaUc7Q0FlaEY7O0FBUjVCLEFBU0UsV0FUUyxDQVNULGVBQWUsQ0FBQztFQUNkLFVBQVUsRUFoQkgsK0RBQWlHO0NBZ0JoRiIKfQ== */

@@ -1,0 +1,34 @@
+@import "../utils/mixin_function"
+
+[class*=theme--color]
+  cursor: pointer
+
+button
+  cursor: pointer
+
+#new-list-input
+  +shadow-style
+
+.new-list-btn
+  +shadow-style
+  cursor: pointer
+
+  &:active
+    +shadow-style__clikc
+
+.todo-list
+  button
+    user-select: none
+    cursor:
+  span
+    +shadow-style
+    user-select: none
+    cursor: pointer
+    // &:active
+    //   +shadow-style__clikc
+    //   text-decoration: line-through red
+
+.todo-list-cancel
+  display: none
+  &.selected
+    display: block

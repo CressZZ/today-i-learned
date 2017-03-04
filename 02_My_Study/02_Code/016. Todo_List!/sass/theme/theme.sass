@@ -1,0 +1,23 @@
+@import "../utils/mixin_function"
+
+$main-bgc: rgb(162, 250, 250)
+$li-1-col: linear-gradient(135deg, rgba(235,233,249,1) 1%,rgba(193,191,234,1) 100%,rgba(206,199,236,1) 100%)
+$li-2-col: linear-gradient(135deg, rgba(249,233,235,1) 1%,rgba(234,190,198,1) 100%,rgba(236,200,202,1) 100%)
+$li-3-col: linear-gradient(135deg, rgba(249,248,233,1) 1%,rgba(234,227,190,1) 100%,rgba(236,235,200,1) 100%)
+$li-4-col: linear-gradient(135deg, rgba(233,249,238,1) 1%,rgba(190,234,201,1) 100%,rgba(200,236,214,1) 100%)
+$theme-list-color: rgb(217, 225, 255)
+
+body
+  background-color: $main-bgc
+
+.theme-list
+  background-color: $theme-list-color
+
+  .theme--color-1
+    background: $li-1-col
+  .theme--color-2
+    background: $li-2-col
+  .theme--color-3
+    background: $li-3-col
+  .theme--color-4
+    background: $li-4-col

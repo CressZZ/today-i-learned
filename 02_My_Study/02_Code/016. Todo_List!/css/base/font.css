@@ -1,0 +1,23 @@
+html {
+  font-family: "Spoqa Han Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5rem;
+}
+
+#new-list-input {
+  font-size: 1.4rem;
+}
+
+.todo-list {
+  font-size: 1.4rem;
+}
+
+button {
+  font-size: 1.5rem;
+}
+
+footer {
+  font-size: 0.8rem;
+}
+
+/*# sourceMappingURL=data:application/json;base64,ewoJInZlcnNpb24iOiAzLAoJImZpbGUiOiAiY3NzL2Jhc2UvZm9udC5jc3MiLAoJInNvdXJjZXMiOiBbCgkJInNhc3MvYmFzZS9mb250LnNhc3MiLAoJCSJzYXNzL3V0aWxzL21peGluX2Z1bmN0aW9uLnNhc3MiCgldLAoJIm5hbWVzIjogW10sCgkibWFwcGluZ3MiOiAiQUFLQSxBQUFBLElBQUksQ0FBQztFQUNILFdBQVcsRUFBRSw0QkFBNEI7RUFDekMsU0FBUyxFQUxNLElBQUk7RUFNbkIsV0FBVyxFQUxNLE1BQU07Q0FLVTs7QUFFbkMsQUFBQSxlQUFlLENBQUM7RUFDZCxTQUFTLEVBQUUsTUFBTTtDQUFJOztBQUV2QixBQUFBLFVBQVUsQ0FBQztFQUNULFNBQVMsRUFBRSxNQUFNO0NBQUk7O0FBRXZCLEFBQUEsTUFBTSxDQUFDO0VBQ0wsU0FBUyxFQUFFLE1BQU07Q0FBSTs7QUFFdkIsQUFBQSxNQUFNLENBQUM7RUFDTCxTQUFTLEVBQUUsTUFBTTtDQUFJIgp9 */
