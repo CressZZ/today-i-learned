@@ -1,4 +1,15 @@
 /**
+ * JavaScript 데이터 유형을 체크해주는 헬퍼 함수
+ *
+ * @author   cressZZ
+ * @version  1.0.0
+ * @param    {string} selector_str
+ * @param    {} context
+ * @return   {ElementNode} 문서 요소 노드 반환
+ */
+
+
+/**
  *  요소 노드를 생성하는 헬퍼 함수
  *  @param   {String}  el_name   생성하고자 하는 노드 이름
  *  @return  {HTMLElement}       생성된 요소 노드 반환
