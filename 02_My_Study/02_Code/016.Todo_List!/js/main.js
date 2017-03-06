@@ -25,6 +25,10 @@ for (i=0; i < del_btn.length; i++){
   }
 }
 
+//데모
+// query('.fade-finished').tra
+
+
 //삭제 버튼 보이게 하기
 var selected_list = document.getElementsByClassName("todo-list-span");
 for (i=0; i<selected_list.length; i++){
@@ -104,5 +108,5 @@ add_btn.onclick = function() {
         }, 1000)
     }
   }
-  
+
 }

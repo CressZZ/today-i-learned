@@ -1,12 +1,77 @@
 /**
  * JavaScript 데이터 유형을 체크해주는 헬퍼 함수
- *
+ * prototype에 대한 공부가 필요할 것으로 사료됨
  * @author   cressZZ
  * @version  1.0.0
- * @param    {string} selector_str
- * @param    {} context
- * @return   {ElementNode} 문서 요소 노드 반환
+ *  @param  {everything}  data JavaScript 데이터 유형
+ *  @return {String}           체크된 데이터 유형을 문자열로 반환
  */
+function checkType(data) {
+  return
+  Object.prototype.tostring.call(data).slice(8, -1).toLowerCase();
+}
+
+
+/**
+ * 해당 data가 숫자 데이터 유혀인지 감지하는 헬퍼함수
+ * @author   cressZZ
+ * @version  1.0.0
+ *  @param  {everything}  data JavaScript 데이터 유형
+ *  @return {Boolean}          체크된 데이터 유형이 숫자 유형인지 참/거짓 반환
+ */
+ function isNumber(data){
+   return checkType(data) === 'number';
+ }
+
+ /**
+  *  JavaScript 문자 데이터 유형인지 감지하는 헬퍼 함수
+  *  @param  {everything}  data JavaScript 데이터 유형
+  *  @return {Boolean}          체크된 데이터 유형이 문자 유형인지 참/거짓 반환
+  */
+ function isString(data) {
+   return checkType(data) === 'string';
+ }
+ /**
+  *  JavaScript 불리언 데이터 유형인지 감지하는 헬퍼 함수
+  *  @param  {everything}  data JavaScript 데이터 유형
+  *  @return {Boolean}          체크된 데이터 유형이 불리언 유형인지 참/거짓 반환
+  */
+ function isBoolean(data) {
+   return checkType(data) === 'boolean';
+ }
+ /**
+  *  JavaScript 함수 데이터 유형인지 감지하는 헬퍼 함수
+  *  @param  {everything}  data JavaScript 데이터 유형
+  *  @return {Boolean}          체크된 데이터 유형이 함수 유형인지 참/거짓 반환
+  */
+ function isFunction(data) {
+   return checkType(data) === 'function';
+ }
+ /**
+  *  JavaScript 배열 데이터 유형인지 감지하는 헬퍼 함수
+  *  @param  {everything}  data JavaScript 데이터 유형
+  *  @return {Boolean}          체크된 데이터 유형이 배열 유형인지 참/거짓 반환
+  */
+ function isArray(data) {
+   return checkType(data) === 'array';
+ }
+ /**
+  *  JavaScript 객체 데이터 유형인지 감지하는 헬퍼 함수
+  *  @param  {everything}  data JavaScript 데이터 유형
+  *  @return {Boolean}          체크된 데이터 유형이 객체 유형인지 참/거짓 반환
+  */
+ function isObject(data) {
+   return checkType(data) === 'object';
+ }
+ /**
+  *  요소노드 데이터 유형인지 감지하는 헬퍼 함수
+  *  @param  {Node}    node  노드 유형
+  *  @return {Boolean}       체크된 데이터 유형이 요소노드 유형인지 참/거짓 반환
+  */
+ function isElementNode(node) {
+   return node && node.nodeType === 1;
+ }
+
 
 
 /**
@@ -26,6 +91,45 @@ function createElement(el_name) {
  */
 function createText(content) {
   return document.createTextNode(content);
+}
+
+
+/**
+ * 요소노드를 생성하거나, 생성후 특정부모노드 아래 자식노드로 삽입하는 헬퍼 함수
+ * @author   cressZZ
+ * @version  1.0.0
+ * @param    {string} el_name 생성할 노드 이름
+ * @param    {string} html_str 노드값
+ * @param    {HTMLElement} target 노드위치 (부모)
+ * @param    {String} metod 부모앞인지 뒤에인지 등..
+ [append, prepend, before, after]
+ [beforeend, afterbegin, beforebegin, afterend]
+ * @return   {HTMLElement} 생성된 노드 반환
+ */
+
+function makeEl(el_name, html_str, target, method){
+  var el = createElement(el_name); //helper
+  //el.innerHTML 정의, 3항식
+  el.innerHTML = (!html_str || !isString(html_str))?'':html_str;
+
+  //target
+  if(target && isElementNode(target) && target.parentNode) {
+    switch(method){
+      default:
+      case 'append': target.insertAdjacentElement('beforeend', el);
+      break;
+      case 'prepend':
+        target.insertAdjacentElement('afterbegin', el);
+      break;
+      case 'before':
+        target.insertAdjacentElement('beforebegin', el);
+      break;
+      case 'after':
+        target.insertAdjacentElement('afterend', el);
+      break;
+    }
+  }
+  return el;
 }
 
 
@@ -49,6 +153,8 @@ function query(selector_str, context) {
     parent = document;
   }
   return parent.querySelector(selector_str);
+  //**!!! return (context || document).querySelector(selector_str);
+
 };
 
 
@@ -72,33 +178,71 @@ function queryAll(selector_str, context) {
   return parent.querySelectorAll(selector_str);
 };
 
+//
+// /**
+// * 선택한 노드의 부모노드 아래 첫번째 자식으로 삽입 헬퍼 함수
+// * @author   cressZZ
+// * @version  1.0.0
+// * @param    {string} parent_Node
+// * @param    {string} insert_Node
+// * @return   N/A
+// */
+//
+// function prepend(insert, parent_Node) {
+//   parent_Node.insertBefore(insert, parent_Node.children[0]);
+// }
+
 
 /**
-* 선택한 노드의 부모노드 아래 첫번째 자식으로 삽입 헬퍼 함수
-* @author   cressZZ
-* @version  1.0.0
-* @param    {string} parent_Node
-* @param    {string} insert_Node
-* @return   N/A
-*/
-
-function prepend(insert, parent_Node) {
-  parent_Node.insertBefore(insert, parent_Node.children[0]);
+ *  부모 노드 내부에 첫번째 자식노드로 요소를 추가하는 헬퍼 함수
+ *  @param    {HTMLElement|Selector}  parent 부모노드 또는 선택자(문자열)
+ *  @param    {HTMLElement|Selector}  child  자식노드 또는 선택자(문자열)
+ *  @return   {HTMLElement}           자식노드
+ */
+function prepend(parent, child) {
+  if ( parent.nodeType !== 1 ) {
+    parent = query(parent);
+  }
+  if ( child.nodeType !== 1 ) {
+    child = query(child);
+  }
+  // parent.insertBefore(child, parent.children[0]);
+  // return child;
+  return parent.insertAdjacentElement('afterbegin', child);
 }
 
 
-/**
-* 선택한 노드의 부모노드 아래 마지막 자식으로 삽입 헬퍼 함수
-* @author   cressZZ
-* @version  1.0.0
-* @param    {string} parent_Node
-* @param    {string} insert_Node
-* @return   N/A
-*/
 
-function append(parent_Node, insert) {
-  parent_Node.appendChild(insert);
+// /**
+// * 선택한 노드의 부모노드 아래 마지막 자식으로 삽입 헬퍼 함수
+// * @author   cressZZ
+// * @version  1.0.0
+// * @param    {string} parent_Node
+// * @param    {string} insert_Node
+// * @return   N/A
+// */
+//
+// function append(parent_Node, insert) {
+//   parent_Node.appendChild(insert);
+// }
+
+/**
+ *  부모 노드 내부에 마지막 자식노드로 요소를 추가하는 헬퍼 함수
+ *  @param    {HTMLElement|Selector}  parent 부모노드 또는 선택자(문자열)
+ *  @param    {HTMLElement|Selector}  child  자식노드 또는 선택자(문자열)
+ *  @return   {HTMLElement}                  자식노드
+ */
+function append(parent, child) {
+  if ( parent.nodeType !== 1 ) {
+    parent = query(parent);
+  }
+  if ( child.nodeType !== 1 ) {
+    child = query(child);
+  }
+  // return parent.appendChild(child);
+  return parent.insertAdjacentElement('beforeend', child);
 }
+
 
 
 /**
