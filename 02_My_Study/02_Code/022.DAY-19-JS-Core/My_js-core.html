@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Patterns - JavaScript Core</title>
+  <link rel="stylesheet" href="css/My_js-core.css">
+</head>
+<body>
+  <section>
+    <h1 class="hidden">section title</h1>
+    <div>
+      <a href="" class="target_link">anchor element</a>
+    </div>
+  </section>
+
+  <script>
+    var target_link = document.querySelector('.target_link');
+
+    var assignStyles = function(styles){  //assignStyles 변수를 함수로 선언
+      for (var i in styles){  // styles라는 매개변수를 순차 탐색 (i)는 매개변수 맴버
+        if (styles.hasOwnProperty(i)){  //만약 styles라는 매개변수에 i가 있다면???
+                                        // 순차 탐색인데 당연히 있지 않나요?
+          this.style[i] = styles[i];    //this즉, 함수실행한 this의 스타일의 값(value)를 바꾼다.
+        }
+      }
+    };
+
+
+    target_link.onclick = function (e){
+      e.preventDefault();
+      assignStyles.call(this, {   //원래 assignStyles에 속해 있는 맴버,(능력, 함수)를
+                                  // 빌려온다. 뒤는 매개 변수
+        'color': 'aqua',
+        'font-size': '22px'
+      });
+    };
+  </script>
+
+  <script src="js/My_js-core.js"></script>
+  <script src="js/My_js-map.js"></script>
+  <script src="js/My_forEach.js"></script>
+
+  <script>
+    console.log('cressZZ?');
+
+  </script>
+
+
+</body>
+</html>
