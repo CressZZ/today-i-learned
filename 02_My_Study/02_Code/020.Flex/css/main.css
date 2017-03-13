@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper{
+  display: flex;
+  flex-flow: row nowrap;
+  width: 80%;
+  margin: auto;
+  background-color: #f9ddb8;
+}
+
+ul{
+  width: 25%;
+  background-color: rgb(173, 199, 118);
+}
+
+li{
+  height: 0;
+  padding-bottom: 100%;
+  border: 1px dashed rgb(9, 198, 188)
+}
+
+.d-h-2{
+  padding-bottom: 200%;
+}
+
+.no-content{
+  padding-bottom: 0;
+}
