@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax 비동기 통신 스터디</title>
+</head>
+<body>
+  <button type="button" class="call-ajax-data" onclick="sendRequest()">cal Data</button>
+  <p class="print-callback-location"></p>
+  <script>
+    (function(global){
+      'use strict';
+
+      // 통신 객체 생성!
+      var xhr = new XMLHttpRequest();
+      var print_callback_location = document.querySelector('.print-callback-location');
+
+      xhr.open('GET', './data/db.txt'); //통신하겠다고 설정함!
+
+      // 받을 준비에 대한 상황 변경시 계속 이벤트 트리거!!!
+      xhr.onreadystatechange = function (){
+        if (this.status === 200){
+          if(this.readyState === 4){
+            console.log('통신 성공!! ^^');
+            // Text로 옴
+            print_callback_location.innerText = xhr.responseText;
+          } else {
+            console.error('데이터 로드에 실패!! ㅠㅠ');
+          }
+        }
+      };
+        window.sendRequest = function(){
+          xhr.send(null);
+        };
+      global.xhr = xhr;
+    })(window);
+  </script>
+</body>
+</html>

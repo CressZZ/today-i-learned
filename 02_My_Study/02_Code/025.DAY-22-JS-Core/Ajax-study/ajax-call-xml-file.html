@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax 비동기 통신 스터디 - XML</title>
+</head>
+<body>
+  <button type="button" class="call-ajax-data" onclick="sendRequest()">Call Data</button>
+
+  <div class="print-callback-locatoin"></div>
+
+  <script>
+    (function(){
+      'use strict';
+      var print_callback_location = document.querySelector('.print-callback-data');
+      var xhr = global.xhr = new XMLHttpRequest();
+
+      xhr.open('GET', './data/people.xml');
+
+      xhr.onreadystatechange = function(){
+        if(this.status === 200){
+          if(this.readyState === 4){
+            console.log(success);
+            var html_template = '<ul>';
+            var xmlDoc = this.responseXML //#document 반환?
+            xmlDoc.querySelectorAll('user > results').forEach(function(results, index, resultes_list){
+              var title = results.querySelector('name title').textContent;
+              var first = results.querySelector('name first').textContent;
+              var last = results.querySelector('name last').textContent;
+            });
+            var name = title + '. '+first+' '+last;
+            html_template += '</ul>';
+            print_callback_data.innerHTML = html_template;
+
+          }
+        }
+        else {
+          // dpfj
+        }
+        }
+        global.sendRequest = function (){
+          xhr.send(null);
+      };
+    })()
+  </script>
+</body>
+</html>

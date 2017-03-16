@@ -31,7 +31,28 @@ btn_play.onclick  = audio.play.call(audio);
 - oncanplay
 - oncanplaythrough
 
+## data 생성자 함수로 data 생성 시 여러개 생성 할 수 있게 하는것
+```javascript
+var Model = (function(){
+  'use strict';
+  //일단 data를 저장할 배열, 그리고 배열이 '몇개째'인지 확인해 줄 카운트 변수를 함수에 선언함으로서 이 두 변수는 모두가 공유한다.
+  // 전역에서는 접근 불가 합수.
+  var data_list=[];
+  var generated_count = 0;
 
+
+  // 아래 생성자 함수로 데이터가 생성 될 때.
+  function _Model(data){
+    if(data && !Array.isArray(data)){
+      throw new Error ("초기 데이터 유형은 배열만 가능한다.");
+    }
+    // this!!즉 생성자 함수로 생성 될때 마다 생성된 객체는 고유의 .g값을 가지고 있다. 우앙......시리얼 넘버 같은걸 준다.
+    // data_list에는 배열이 하나씩 추가된다.
+
+    this.g = generated_count++;
+    data_list.push(data || []);
+  }
+```
 
 
 

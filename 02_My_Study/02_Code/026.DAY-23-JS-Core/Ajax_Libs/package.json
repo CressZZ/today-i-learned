@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "json-server": "./node_modules/.bin/json-server",
+    "dev": "npm run json-server -- ./DB/generateEmployees.js -w",
+    "dev-2": "npm run json-server -- ./DB/employees-test.js -w"
+
+  },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "json-server": "^0.9.6"
+  }
+}
