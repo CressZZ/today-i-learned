@@ -1,0 +1,248 @@
+{
+  "info": {
+    "version": "0.0.1",
+    "author": "cressZZ"
+  },
+  "employees": [
+    {
+      "id": 1,
+      "name": "Christian.Schmitt",
+      "email": "Ethyl.OReilly@yahoo.com",
+      "company": "Windler, Hartmann and Medhurst"
+    },
+    {
+      "id": 2,
+      "name": "Shaniya_Jacobi",
+      "email": "Keara.Jenkins3@hotmail.com",
+      "company": "Runolfsson, Hegmann and Kris"
+    },
+    {
+      "id": 3,
+      "name": "Antonetta.West98",
+      "email": "Blake3@hotmail.com",
+      "company": "Nitzsche - Wiegand"
+    },
+    {
+      "id": 4,
+      "name": "Victor.Hammes78",
+      "email": "Yvonne48@hotmail.com",
+      "company": "Kreiger - Murazik"
+    },
+    {
+      "id": 5,
+      "name": "Rhianna_Koepp79",
+      "email": "Briana.Dibbert@gmail.com",
+      "company": "Greenholt - Luettgen"
+    },
+    {
+      "id": 6,
+      "name": "Lenny78",
+      "email": "Jaiden78@hotmail.com",
+      "company": "Kautzer, Blick and Nitzsche"
+    },
+    {
+      "id": 7,
+      "name": "Mattie_Hilpert89",
+      "email": "Aubrey_Langosh@gmail.com",
+      "company": "Block - Hauck"
+    },
+    {
+      "id": 8,
+      "name": "Rowan79",
+      "email": "Norris.Hoppe@hotmail.com",
+      "company": "Gibson, Lesch and Abshire"
+    },
+    {
+      "id": 9,
+      "name": "Kitty85",
+      "email": "Dejuan.Lebsack83@yahoo.com",
+      "company": "Corwin, Anderson and Jaskolski"
+    },
+    {
+      "id": 10,
+      "name": "Joyce.Sawayn",
+      "email": "Otho1@hotmail.com",
+      "company": "Abbott Group"
+    },
+    {
+      "id": 11,
+      "name": "Gertrude58",
+      "email": "Adolph.Runolfsdottir@yahoo.com",
+      "company": "Orn - Bartell"
+    },
+    {
+      "id": 12,
+      "name": "Barrett20",
+      "email": "Ursula.Cormier31@yahoo.com",
+      "company": "Abernathy, Reichel and Ankunding"
+    },
+    {
+      "id": 13,
+      "name": "Casimir21",
+      "email": "Prince20@gmail.com",
+      "company": "Kub - Rippin"
+    },
+    {
+      "id": 14,
+      "name": "Laurine.Schiller",
+      "email": "Cooper_Cronin11@gmail.com",
+      "company": "Wuckert Group"
+    },
+    {
+      "id": 15,
+      "name": "Isaiah.Smith1",
+      "email": "Afton73@gmail.com",
+      "company": "Zboncak - Bergnaum"
+    },
+    {
+      "id": 16,
+      "name": "Malvina.Stracke31",
+      "email": "Stanley69@hotmail.com",
+      "company": "Nicolas and Sons"
+    },
+    {
+      "id": 17,
+      "name": "Gabrielle.Brekke",
+      "email": "Vada37@yahoo.com",
+      "company": "Kilback, Gorczany and Beer"
+    },
+    {
+      "id": 18,
+      "name": "Ricardo_Mraz46",
+      "email": "Ed.Haley@hotmail.com",
+      "company": "Wehner, Connelly and Hahn"
+    },
+    {
+      "id": 19,
+      "name": "Friedrich_Graham40",
+      "email": "Anika_McCullough@hotmail.com",
+      "company": "Deckow, Effertz and Rempel"
+    },
+    {
+      "id": 20,
+      "name": "Bruce_Schimmel",
+      "email": "Millie_Brakus@hotmail.com",
+      "company": "Farrell - Reynolds"
+    },
+    {
+      "id": 1,
+      "name": "Loraine_Frami76",
+      "email": "Frida.Lockman99@gmail.com",
+      "company": "Brown - Rice"
+    },
+    {
+      "id": 2,
+      "name": "Meagan.Homenick61",
+      "email": "Hyman56@yahoo.com",
+      "company": "Wintheiser - Yundt"
+    },
+    {
+      "id": 3,
+      "name": "Arden.Cummerata77",
+      "email": "Sonya_Larkin97@yahoo.com",
+      "company": "Kertzmann - Harris"
+    },
+    {
+      "id": 4,
+      "name": "Ismael47",
+      "email": "Rebekah97@yahoo.com",
+      "company": "Ebert - Von"
+    },
+    {
+      "id": 5,
+      "name": "Kaylie76",
+      "email": "Trace_Bauch53@hotmail.com",
+      "company": "Kertzmann - Marvin"
+    },
+    {
+      "id": 6,
+      "name": "Dolly94",
+      "email": "Alyson.Roberts@gmail.com",
+      "company": "Bechtelar - Gleason"
+    },
+    {
+      "id": 7,
+      "name": "Carlee_Botsford50",
+      "email": "Adolfo48@gmail.com",
+      "company": "D'Amore - West"
+    },
+    {
+      "id": 8,
+      "name": "Afton_Toy51",
+      "email": "Hershel.Kuhic@yahoo.com",
+      "company": "Blanda - Hoppe"
+    },
+    {
+      "id": 9,
+      "name": "Daphney47",
+      "email": "Lou69@yahoo.com",
+      "company": "Koelpin - Mertz"
+    },
+    {
+      "id": 10,
+      "name": "Kane.Hermann",
+      "email": "Chester_Block@hotmail.com",
+      "company": "Jakubowski - Price"
+    },
+    {
+      "id": 11,
+      "name": "Jordane_Lang4",
+      "email": "Maya32@yahoo.com",
+      "company": "Kreiger LLC"
+    },
+    {
+      "id": 12,
+      "name": "Kieran36",
+      "email": "Reyna7@gmail.com",
+      "company": "Orn - McDermott"
+    },
+    {
+      "id": 13,
+      "name": "Zakary.Schuppe32",
+      "email": "Carrie_Dickinson@yahoo.com",
+      "company": "Harvey, Cassin and Ratke"
+    },
+    {
+      "id": 14,
+      "name": "Johann_Koch",
+      "email": "Janie.OKon17@hotmail.com",
+      "company": "Schiller Inc"
+    },
+    {
+      "id": 15,
+      "name": "Andre87",
+      "email": "Leland.Schmidt7@gmail.com",
+      "company": "Deckow, Lang and Conroy"
+    },
+    {
+      "id": 16,
+      "name": "Dawn.Reynolds",
+      "email": "Milo_Williamson@yahoo.com",
+      "company": "Grimes Group"
+    },
+    {
+      "id": 17,
+      "name": "Kennedy.Bode",
+      "email": "Dennis43@yahoo.com",
+      "company": "Bosco Inc"
+    },
+    {
+      "id": 18,
+      "name": "Beverly.Lindgren",
+      "email": "Sonya_Grimes56@gmail.com",
+      "company": "Jacobi, Hoeger and Blanda"
+    },
+    {
+      "id": 19,
+      "name": "Ruth_Schmidt",
+      "email": "Skylar_Rath5@hotmail.com",
+      "company": "Orn Inc"
+    },
+    {
+      "id": 20,
+      "name": "Leslie_Tromp49",
+      "email": "Pearlie_Bernhard@gmail.com",
+      "company": "Cronin, Lueilwitz and Kunde"
+    }
+  ]
+}
