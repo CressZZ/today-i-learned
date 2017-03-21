@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue js 데이터 순환</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app" v-cloak>
+    <h1></h1>
+    <ul>
+      <template v-for ="(feature, index) of vue_features">
+        <li>
+          {{feature.context}}
+        </li>
+        <li>
+          {{feature.desc}}
+        </li>
+      </template>
+    </ul>
+    <pre>{{ vue_features }}</pre>
+    
+  </div>
+  <script>
+  var vue_features =[];
+  vue_features.push({context:'High Speed', desc:'고속 렌더링'});
+  vue_features.push({context:'Reactivity', desc:'반응형 시스템'});
+  vue_features.push({context:'Rendering', desc:'선언적 렌더링'});
+  vue_features.push({context:'Easy', desc:'비교적 쉬운 학습 난이도'});
+  vue_features.push({context:'SPA', desc:'단일 페이지 애플리케이션 구현 기능에 필요한 모든 기능 제공'});
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      app_name: "cressZZ",
+      vue_features: vue_features
+    }
+  });
+  </script>
+</body>
+</html>

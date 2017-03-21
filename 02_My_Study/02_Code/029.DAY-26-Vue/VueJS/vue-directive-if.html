@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue &amp; if</title>
+  <script src="https://unpkg.com/vue"></script>
+
+</head>
+<body>
+  <div id="app">
+    <p v-if="a === 'yap'">yap</p>
+    <p v-else-if="a === 'hum'">hum</p>
+    <p v-else>no yap &amp; hum</p>
+    <p v-show="shooow">shooow</p>
+  </div>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data:{
+      a:'yap',
+      shooow:'true'
+    }
+  });
+</script>
+</body>
+</html>
