@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    [v-cloak] {display: none;}
+  </style>
+  <script src="https://unpkg.com/vue"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app" v-cloak>
+    <p v-once>'Vue JS 인기 급상승 중!!!  {{ comment }}</p>
+    <hr>
+    <p v-text="comment" v-once>Vue JS 인기 급상승 중!!! </p>
+    <p>
+      <div v-html = "html_string">
+
+      </div>
+      <pre v-text="html_string">
+
+      </pre>
+      <div v-if="type === 'A'">
+        A
+      </div>
+      <div v-else-if="type === 'B'">
+        B
+      </div>
+      <div v-else-if="type === 'C'">
+        C
+      </div>
+
+    </p>
+  </div>
+
+  <script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      comment: '프레임계의 아이돌',
+      html_string:`
+      <ul>
+        <li><a>ddddd</a></li>
+      </ul>
+      `,
+      type: "B"
+    }
+  });
+  </script>
+</body>
+</html>

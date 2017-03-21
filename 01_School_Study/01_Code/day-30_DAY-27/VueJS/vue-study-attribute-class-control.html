@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue js : 속성, class 속성, style 속성</title>
+  <script src="https://unpkg.com/vue"></script>
+  <style>
+    body {margin: 4rem;}
+    [v-cloak]{display: none;}
+    .external-link{
+      border-bottom: 2px solid currentColor;
+      padding-bottom: 0.1em;
+      text-decoration: none;
+      background: #eee;
+      color: #474cc5;
+      position: relative;
+    }
+    .external-link::after{
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      content:"->";
+      font-size: 10px;
+      transform: rotate(-45deg);
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    {{dummy}}
+    <h2>{{links_list_name}}</h2>
+    <ul class="links_list">
+      <li v-for="link in links">
+        <a v-bind:class="['always', {'external-link': true}]" v-bind:href="encodingURI(link.href)" v-bind:targer="link.external ? '_blank' : null" v-bind:title="link.external ? '새 탭 열림': ''">{{readableLink(link.href)}}</a>
+      </li>
+    </ul>
+  </div>
+  <script>
+  var app = new Vue({
+    data:{
+      dummy: "Lorem ipsum dolor.",
+      links_list_name: "Favorite",
+      links:[
+        {
+          href: 'http://google.com/',
+          external: true
+        },
+        {
+          href: 'https://developer.mozilla.org/ko/',
+          external: false
+        },
+        {
+          href: 'https://kr.vuejs.org/v2/guide/syntax.html#v-on',
+          external: false
+        }
+      ]
+    },
+    methods:{
+      isExternal: function(is_ex){
+        return is_ex ? '_blank' :null;
+      },
+      readableLink:function(link){
+        return link.replace(/(^https?:\/\/|\/$)/g, '');
+      },
+      encodingURI: function(link){
+        return window.encodeURI(link);
+      }
+    }
+  }).$mount('#app');
+  </script>
+</body>
+</html>

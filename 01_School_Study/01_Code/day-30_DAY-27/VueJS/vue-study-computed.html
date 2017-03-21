@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <p class="fullname method">{{combineFullName()}}</p>
+    <p class="fullname computed">{{combineFullNameComputed}}</p>
+    <p>
+      <label for="first">firstName:</label>
+      <input type="text" id="first" v-model="first">
+      <label for="last">lasttName:</label>
+      <input type="text" id="last" v-model="last">
+
+    </p>
+    <!-- <p>{{message}}</p>
+    <p class="reverse-message">{{reverseMessage}}</p> -->
+  </div>
+  <script>
+    var app = new Vue({
+      'el': '#app',
+      'data': {
+        'first': 'cress',
+        'last': 'ZZ',
+        'message': '오늘 하루도 수고했어, 행복하자'
+      },
+      'methods':{'combineFullName': function(){
+        return this.first + this.last
+      }
+    },
+      'computed':{
+        //getter function
+        'reverseMessage': function(){
+          return this.message.split('').reverse().join('');
+        },
+        'combineFullNameComputed': function(){
+          return this.first + this.last
+        }
+      }
+
+    });
+  </script>
+</body>
+</html>
