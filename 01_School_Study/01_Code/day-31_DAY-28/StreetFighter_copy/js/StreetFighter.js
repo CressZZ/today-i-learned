@@ -42,6 +42,8 @@
   // ryu, factory, palace, air
   var model = {
     stageClass: null,
+    //승자
+    winner
     is_started: false,
     settings: {
       logo:{ src: './images/Logo/sfv-logo.png', alt: 'Street Fighter'},
@@ -88,7 +90,8 @@
       },
       playerSrc: function(name) {
         return './images/Chracter/'+ name +'.png'
-      }
+      },
+
     }
   });
 })(window, window.Vue, window.bgm);
