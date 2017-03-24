@@ -1,0 +1,13 @@
+body {margin: 4rem;}
+[v-cloak]{display: none;}
+
+.app-header{
+  padding: 1.45rem;
+  background: yellow;
+}
+
+.app-brand{
+  background: #181818;
+  padding: 0.4rem;
+  color: #fff;
+}
