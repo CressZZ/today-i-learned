@@ -229,4 +229,46 @@
 
 - **img
 
+
+## (추가)6. 이미지 센터링
+```css
+.game__character-cover {
+  /*background: pink;*/
+  position: relative;
+  width: 40%;
+  height: 0;
+  padding-bottom: 40%;
+}
+
+.game__character-cover-img {
+  /*background-color: yellow;*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*부모 width에 맞추어 이미지를 늘이거나 축소하고 싶다면 width 100% */
+  /*width: 100%;*/
+
+  /*부모 height에 맞추어 이미지를 늘이거나 축소하고 싶다면 height 100% */
+  height: 100%;
+  display: block;
+
+}
+
+```
+- 이미지 센터링 할때, 넓이, 높이가 다른 이미지 두장이 있다고 가정하자.
+- 하나는 넓이가 300px, 높이가 400px 인반면
+- 다른 하나는 넓이가 400px, 높이가 300px 이다.
+- 부모의 경우 300px, 300px이라고 한다면 난.
+- 넓이가 400px 짜리를 넓이 300px로,
+- 높이가 400px 짜리를 높이 300px로 자르려고 할것이다.
+- 늘리기는 싫으니까.   
+- 이때, position absolute를 써서, 이미지의 height 100%가 부모의 height기준(기준에 padding-bottom 포함)으로 움직이게 만든 다음.
+- top 50%, right 50% 에 transform: translate(-50%, -50%)로 중앙 정렬 후
+- 부모 width에 맞추어 이미지를 늘이거나 축소하고 싶다면 width 100%
+- 부모 height에 맞추어 이미지를 늘이거나 축소하고 싶다면 height 100%
+- 그리고 overflow-hidden 하면
+- 쨘~~
+- 무슨 소린지 모르겠지?
+
   ​
