@@ -13,24 +13,83 @@
     <div class="scene">
 
       <!-- start newgame -->
-      <div class="scene__before-start">
-        <img src="" alt="" class="game__logo">
-        <a href class="game__start"></a>
+      <div
+        class="scene__before-start">
+
+        <img src="images/Logo/sfv-logo.png" alt="logo" class="game__logo">
+        <a href class="game__start">game-start</a>
       </div>
+
+
       <!-- game started -->
       <div class="scene__started">
+        <div class="game__characters">
+
+          <!-- character 1-->
+          <div class="game__character">
+            <!-- character hp -->
+            <div class="game__character-hp">
+              <div class="game__character-hp--state">100</div>
+            </div>
+
+            <!-- character image -->
+            <div class="game__character-cover">
+              <img src="images/Chracter/Chun-li.png" alt="" class="game__character-cover-img">
+            </div>
+
+        </div>
+
+        <!-- character 2 -->
+        <div class="game__character">
+          <!-- character hp -->
+          <div class="game__character-hp">
+            <div class="game__character-hp--state">100</div>
+          </div>
+
+          <!-- character image -->
+          <div class="game__character-cover">
+            <img src="images/Chracter/ryu.png" alt="" class="game__character-cover-img">
+          </div>
+        </div>
 
       </div>
-      <!-- character hp -->
 
-      <!-- character image -->
-
+      <img src="images/vs.png" alt="vs" class="verse">
       <!-- buttons -->
+      <div class="game__controller">
+        <div class="buttons">
 
-      <!-- finish game -->
-      <div class="scene__finished">
-
+          <button
+            type="button">
+              del
+          </button>
+          <button
+            type="button">
+              dr
+          </button>
+          <button
+            type="button">
+              ef
+          </button>
+          <button
+            type="button">
+                wer
+          </button>
+        </div>
       </div>
+    </div>
+
+    <!-- finish game -->
+    <div class="scene__finished">
+      <h2 class="scene__finished-message">win</h2>
+      <div class="scene__finished-buttons">
+        <h3>Try Again Game?</h3>
+        <button>Yes</button>
+        <button>No</button>
+      </div>
+    </div>
+
+
 
     </div>
   </div>

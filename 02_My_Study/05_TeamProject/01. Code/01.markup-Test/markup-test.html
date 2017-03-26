@@ -14,6 +14,7 @@
         <img src="#" alt="">
         <p>Gori</p>
       </div>
+      <button class="header__main-menu__btn" type="btn">햄버거</button>
       <ul class="header__main-menu">
         <li><a href="">serch</a></li>
         <li><a href="">튜터등록</a></li>
@@ -27,18 +28,16 @@
     <div class="main">
       <!-- banner -->
       <div class="banner">
-        <ul class="banner-content">
+        <ul class="banner__content">
           <li>
-            <iframe src="https://www.youtube.com/">
-
-            </iframe>
+            <iframe class="class-info__movie" width="854" height="480" src="https://www.youtube.com/embed/ySRweBPSj30?ecver=1" frameborder="0" allowfullscreen></iframe>
           </li>
           <li><img src="#" alt=""></li>
           <li><img src="#" alt=""></li>
         </ul>
         <!-- find -->
         <!-- 캐러셀 왼쪽 -->
-        <button>
+        <button class="banner__carousel_left" type="button">
 
         </button>
 
@@ -46,41 +45,79 @@
           <label>
             <input type="text">
           </label>
-          <button type="button">
+
+          <button>
 
           </button>
         </form>
 
-        <!-- 캐러셀 왼쪽 -->
-        <button>
+        <!-- 캐러셀 오른쪽 -->
+        <button class="banner__carousel_left" type="button">
 
         </button>
+        <ul class="banner__carousel__location">
+          <li class="banner__carousel__location__each"></li>
+          <li class="banner__carousel__location__each"></li>
+          <li class="banner__carousel__location__each"></li>
+          <li class="banner__carousel__location__each"></li>
+        </ul>
       </div>
         <!-- categori -->
       <div class="categori">
         <ul class="categori__lists">
           <li class="categori__lists__list">
+            <img class="categori__lists__list-img" src="#" alt="">
+            <a href="" class="categori__lists__list-link"></a>
+          </li>
+          <li class="categori__lists__list">
+            <img class="categori__lists__list-img" src="#" alt="">
+            <a href="" class="categori__lists__list-link"></a>
+          </li>
+          <li class="categori__lists__list">
+            <img class="categori__lists__list-img" src="#" alt="">
+            <a href="" class="categori__lists__list-link"></a>
+          </li>
+          <li class="categori__lists__list">
+            <img class="categori__lists__list-img" src="#" alt="">
+            <a href="" class="categori__lists__list-link"></a>
+          </li>
+          <li class="categori__lists__list">
+            <img class="categori__lists__list-img" src="#" alt="">
             <a href="" class="categori__lists__list-link"></a>
           </li>
         </ul>
 
       </div>
+
+
         <!-- class -->
-        <div class>
+        <div class="calss">
           <!-- 캐러셀 오른쪽 -->
           <button>
 
           </button>
           <ul class="class__lists">
+            <!-- is_new class -->
             <li class="class__lists__list">
-              <img src="#" alt="" class="class-tutor-picture">
-              <p class="class-tutor-name"></p>
-              <img src="#" alt="" class="class-review-star">
-              <p>그룹수</p>
-              <p>후기 갯수</p>
-              <p>신사</p>
-              <p>4회</p>
-              <p>1시</p>
+              <div class="class__is_new">new</div>
+              <img src="#" alt="" class="class__tutor-picture">
+              <img src="#" alt="" class="class__is_wish">
+              <p class="class__tutor-name"></p>
+              <div class="class__star__total">
+                <div class="stars__list__each"></div>
+                <div class="stars__list__each"></div>
+                <div class="stars__list__each"></div>
+                <div class="stars__list__each"></div>
+                <div class="stars__list__each"></div>
+              </div>
+              <div class="class__info">
+                <p>그룹수</p>
+                <p>후기 갯수</p>
+                <p>신사</p>
+                <p>4회</p>
+                <p>1시</p>
+
+              </div>
             </li>
           </ul>
           <!-- 캐러셀 왼쪽 -->
@@ -90,11 +127,12 @@
 
         </div>
         <!-- join as tuttor -->
-        <div class="reg-tutor">
+        <!-- <div class="reg-tutor">
           <img src="#" alt="" class="ad">
           <p class="ad_intro"></p>
           <button></button>
-        </div>
+        </div> -->
+
         <!-- footer -->
         <div class="footer">
           <div class="footer__category">

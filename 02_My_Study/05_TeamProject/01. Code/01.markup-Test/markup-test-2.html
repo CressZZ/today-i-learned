@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style type="text/css">
+      #map { height: 300px; }
+    </style>
+  <title>Gori 고리-강의보기</title>
+</head>
+<body>
+  <div class="wrapper">
+  <!-- header -->
+    <div class="header">
+      <div class="header__logo">
+        <img src="#" alt="">
+        <p>Gori</p>
+      </div>
+      <ul class="header__main-menu">
+        <li><a href="">serch</a></li>
+        <li><a href="">튜터등록</a></li>
+        <li><a href="">서비스소개</a></li>
+        <li><a href="">로그인</a></li>
+        <li><a href="">회원가입</a></li>
+        <li><a href="" class="is_login">마이페이지</a></li>
+      </ul>
+    </div>
+
+    <!-- request -->
+    <div class="request">
+      <ul class="request__info">
+        <li>
+          <strong>신촌</strong>
+          <span>지역상의후 변경가능</span>
+        </li>
+        <li>
+          <strong>1시간/회</strong>
+          <span>AM 9:30-PM 5:00</span>
+        </li>
+        <li>
+          <strong>최대4인</strong>
+          <span>최소인원 3명</span>
+        </li>
+        <li>
+          <strong>월/수/금</strong>
+          <span>총4회 / 240,000원</span>
+        </li>
+        <li>
+          <strong>추가비용 있음</strong>
+          <span>개인카페음료</span>
+        </li>
+      </ul>
+      <div class="request__btns">
+        <button class="request__btns__request">수업신청하기</button>
+        <button class="request__buns__wish">찜하기
+           <div class="wish__heart"></div>
+        </button>
+      </div>
+    </div>
+    <!-- main -->
+    <div class="heading">
+      <div class="heading__review">
+        <div class="heading__review__star">
+
+        </div>
+        <span class="heading__review__num"></span>
+      </div>
+      <h2 class="heading__title is_new">초심자를 위한 주식 사용 설명서</h2>
+      <div class="heading__gen-info">
+        <span class="heading__gen-info__group-num">그룹</span>
+        <span class="heading__gen-info__detail-location">장소협의</span>
+        <span class="heading__gen-info__class-num">4회</span>
+        <span class="heading__gen-info__class-time">1시간</span>
+      </div>
+      <div class="heading__price-info">
+        <span class="heading__price-info__total">20,000</span>
+        <span class="heaidng__price-info__each">총4회 240,000원</span>
+      </div>
+      <div class="heading__tutor">
+        <img src="#" alt="tutor picture" class="heading__tutor__picture">
+        <sapn class="heading__tutor__name">아이디 | 홍길동</sapn>
+      </div>
+    </div>
+
+
+    <!-- menu -->
+    <ul class="menu">
+      <li><a href="#">수업소개</a></li>
+      <li><a href="#">리뷰보기(32)</a></li>
+      <li><a href="#">문의하기</a></li>
+    </ul>
+
+    <!-- intro -->
+    <div class="intro">
+      <img src="#" alt="" class="intro__picture">
+      <strong class="intro__talk">그 누구보다 세심히, 꼼꼼하게 가르칠 수 있습니다.</strong>
+      <p class="intro__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, voluptate laboriosam. Ipsa id eligendi voluptatem asperiores perferendis, sequi dicta optio!</p>
+    </div>
+
+    <!-- info -->
+    <div class="class-info">
+      <h2 class="class-info__heading">수업소개</h2>
+      <iframe class="class-info__movie" width="854" height="480" src="https://www.youtube.com/embed/ySRweBPSj30?ecver=1" frameborder="0" allowfullscreen></iframe>
+      <span class="class-info__descrip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit aperiam quas quae aliquam veniam blanditiis similique dignissimos, quo quisquam sunt.</span>
+    </div>
+
+    <!-- curriculum -->
+    <div class="curriculum">
+      <ul class="curriculum__list">
+        <h2 class="curriculum__list__heading">커리큘럼</h2>
+        <li>
+          <strong>1회차</strong>
+          <span>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Наш ведущими однажды точках взгляд предупреждал! Языкового вопрос осталось запятой.</span>
+        </li>
+        <li>
+          <strong>2회차</strong>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nisi sapiente laboriosam, fugiat nemo fugit, temporibus dolorem nulla non incidunt.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- location -->
+    <div class="location">
+      <h2 class="locatoin__heading">위치</h2>
+      <div id="map"></div>
+    </div>
+
+    <!-- review -->
+    <div class="review">
+      <!-- 숫자는 ::before나 비슷한걸로 -->
+      <h2 class="review__heading">리뷰 '32'</h2>
+      <button type="button" class="review__btn">리뷰작성</button>
+      <div class="reivew__stars">
+        <li>
+          <strong>종합점수</strong>
+          <div class="stars__list__total">
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+          </div>
+        </li>
+        <li>
+          <strong>전달력</strong>
+          <div class="stars__list__transfer">
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+          </div>
+        </li>
+        <li>
+          <strong>준비성</strong>
+          <div class="stars__list__ready">
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+          </div>
+        </li>
+        <li>
+          <strong>친절도</strong>
+          <div class="stars__list__kind">
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+          </div>
+        </li>
+        <li>
+          <strong>시간준수</strong>
+          <div class="stars__list__sincerity">
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+          </div>
+        </li>
+        <li>
+          <strong>커리큘럼</strong>
+          <div class="stars__list__corriculum">
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+            <div class="stars__list__each"></div>
+          </div>
+        </li>
+      </div>
+      <ul class="review__content">
+        <li>
+          <div class="review__content__writer">
+            <img class="review__content__writer__picture" src="#" alt="">
+            <name class="review__content__writerr__name"></name>
+            <date class="review__content__date"></date>
+            <review-star class="review__content__writer__stars">
+              <div class="stars__list__each"></div>
+              <div class="stars__list__each"></div>
+              <div class="stars__list__each"></div>
+              <div class="stars__list__each"></div>
+              <div class="stars__list__each"></div>
+            </review-star>
+          </div>
+        </li>
+        <li>
+          <div class="review__content__writer">
+            <img class="review__content__writer__picture" src="#" alt="">
+            <name class="review__content__writer__name"></name>
+            <date class="review__content__date"></date>
+            <review-star class="review__content__writer__stars">
+              <div class="stars__list__each"></div>
+              <div class="stars__list__each"></div>
+              <div class="stars__list__each"></div>
+              <div class="stars__list__each"></div>
+              <div class="stars__list__each"></div>
+            </review-star>
+          </div>
+        </li>
+      </ul>
+      <div class="review__page">
+        <button class="review__page__btn">1</button>
+        <button class="review__page__btn">2</button>
+        <button class="review__page__btn">3</button>
+      </div>
+    </div>
+
+    <!-- QnA -->
+    <div class="QnA">
+      <h2 class="QnA__heading">문의하기 32</h2>
+      <div class="QnA__input">
+        <textarea name="name" rows="8" cols="80"></textarea>
+        <button type="button">등록</button>
+      </div>
+      <div class="QnA__Q">
+        <div class="QnA__Q__writer">
+          <span class="QnA__Q_wirter__name">작성자</span>
+          <span class="QnA__Q_wirter__date">17/03/03</span>
+          <span class="QnA__Q_wirter__time">12:13:32</span>
+        </div>
+        <div class="QnA__Q__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, provident, qui. Beatae temporibus maiores praesentium natus debitis veritatis, aliquid fuga.</div>
+      </div>
+      <div class="QnA_A">
+        <div class="QnA__A__writer">
+          <span class="QnA__A_wirter__name">작성자</span>
+          <span class="QnA__A_wirter__date">17/03/03</span>
+          <span class="QnA__A_wirter__time">12:13:32</span>
+        </div>
+        <div class="QnA__A__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, provident, qui. Beatae temporibus maiores praesentium natus debitis veritatis, aliquid fuga.</div>
+      </div>
+      <div class="QnA__page">
+        <button class="QnA__page__btn">1</button>
+        <button class="QnA__page__btn">2</button>
+        <button class="QnA__page__btn">3</button>
+      </div>
+    </div>
+
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="footer__category">
+        <ul class="footer__category__company">
+          <li>서비스 소개</li>
+          <li>블로그</li>
+          <li>언론보도</li>
+        </ul>
+        <ul class="fotter__category__polices">
+          <li>이용약관</li>
+          <li>결제 서비스 약관</li>
+          <li>개인정보 취급방침</li>
+        </ul>
+        <ul class="fotter__catergory__support">
+          <li>FAQ</li>
+          <li>탈잉센터</li>
+        </ul>
+
+      </div>
+      <div class="contact">
+        <div class="footer__contact__logo">
+          <img src="#" alt="">
+          <p>TALING</p>
+        </div>
+        <p class="address">
+          상호, 주소, 사업자 등록번호, 대표자
+        </p>
+        <ul class="footer__contact__links">
+          <li><a href="#"><img src="#" alt=""></a></li>
+          <li><a href="#"><img src="#" alt=""></a></li>
+          <li><a href="#"><img src="#" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+     <script>
+       function initMap() {
+         // Create a map object and specify the DOM element for display.
+         var map = new google.maps.Map(document.getElementById('map'), {
+           center: {lat: -34.397, lng: 150.644},
+           scrollwheel: false,
+           zoom: 8
+         });
+       }
+
+     </script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjUnvTeaPsjSyxabVD9CFTNbEbnS8mZ4o&callback=initMap"
+     async defer></script>
+
+  </div>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+
+*{
+  box-sizing: border-box;
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+p{
+  margin: 0
+}
+button{
+  border: 0;
+  border-radius: 8px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+
+
+/*scene__before-start*/
+.scene__before-start {
+  display: none !important;
+}
+
+.scene__started {
+  /*display: none !important;*/
+}
+.scene__finished{
+  /*display: none !important;*/
+
+}
+.scene__before-start {
+  background: url("../images/Stage/stage__ryu.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+.game__logo{
+
+}
+
+.game__start{
+  font-family: 'Kalam', cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  color: red;
+}
+
+
+/*scene__started*/
+
+
+.scene__started {
+  background: url("../images/Stage/stage__ryu.jpg") center no-repeat ;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game__characters {
+  /*background: rgba(255, 255, 0, 0.5);*/
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.game__character{
+  /*background: rgba(255, 0, 0, 0.5);*/
+  position: relative;
+  height: 600px;
+  flex: 0.4;
+  display: flex;
+  flex-flow: column;
+  align-items: center
+}
+
+.game__character-hp{
+  border: 3px solid red;
+  width: 50%;
+  margin-bottom: 150px;
+}
+
+.game__character-hp--state{
+  background: yellow;
+  padding: 5px 0;
+  width: 60%;
+  text-align: center;
+}
+
+.game__character-cover {
+  /*background: pink;*/
+  position: relative;
+  width: 90%;
+  height: 0;
+  padding-bottom: 60%;
+  overflow: hidden;
+}
+
+.game__character-cover-img {
+  /*background-color: yellow;*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*부모 width에 맞추어 이미지를 늘이거나 축소하고 싶다면 width 100% */
+  /*width: 100%;*/
+
+  /*부모 height에 맞추어 이미지를 늘이거나 축소하고 싶다면 height 100% */
+  height: 100%;
+  display: block;
+}
+
+.verse {
+  position: absolute;
+  width: 10%
+}
+
+.game__controller{
+  /*background-color: blue;*/
+  position: absolute;
+  top: 80vh;
+  width: 90%;
+  height: 80px;
+  text-align: center;
+}
+.buttons {
+  width: 80%;
+  /*background-color: green;*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.game__controller button{
+  margin: 0 10px;
+  width: 18%;
+  height: 60px;
+}
+
+.scene__finished{
+  background: rgba(255, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  text-align: center;
+  color: white;
+}
+
+.scene__finished h2 {
+  margin-top: 25%;
+  font-family: 'Kalam', cursive;
+  font-size: 9rem;
+  text-shadow: 2px -2px #181818, -2px 2px #181818,-2px -2px #181818, 2px 2px #181818;
+
+}
+
+.scene__finished h3 {
+  margin-top: 10%;
+  font-family: 'Kalam', cursive;
+  font-size: 2rem;
+}
+
+.scene__finished button{
+  background-color: #fff;
+  padding: 15px 50px;
+  margin: 0 20px;
+  font-size: 1.4rem;
+
+}
