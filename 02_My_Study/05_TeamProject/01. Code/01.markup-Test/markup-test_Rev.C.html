@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Gori 과외매칭서비스</title>
+</head>
+<body>
+  <!-- skip-nav -->
+  <a href="#" class="skip-nav">본문 바로가기</a>
+  <div class="wrapper">
+
+    <!-- header -->
+    <header class="header">
+      <!-- 고리 로고 -->
+      <h1 class="header__logo">
+        <a href="#">
+          <!-- 이미지 로고는 생략할 예정 -->
+          <img class ="header__logo--pc" src="pc-images/logo.png" alt="Gori">
+          <img class ="header__logo--mobile" src="mobile-images/logo.png" alt="Gori">
+          <p class="header__logo--title">Gori</p>
+        </a>
+      </h1>
+      <!-- menu -->
+      <nav class="header__navi">
+        <!-- 감추는 제목(h2)의 class는 'hidden__heading'으로 통일 -->
+        <h2 class="hidden__heading">메인 메뉴</h2>
+        <!-- menu button of mobile -->
+        <!-- 메뉴열고 닫는 마크업음 div>img 에서 그냥 button으로 변경 해보았습니다. -->
+        <!-- 햄버거 표시는 폰트를 사용하거나 CSS를 사용하는게 어떨까요? img 대신 -->
+        <!-- <div class="header__navi__btn-menu--open">
+          <img alt="menu open button" src="#">
+        </div>
+        <div class="header__navi__btn-menu--close">
+          <img alt="menu close button" src="#">
+        </div> -->
+        <button class="header__navi__btn-menu--open" type="button" name="button">햄버거 폰트</button>
+        <button class="header__navi__btn-menu--close" type="button" name="button">X</button>
+
+        <!-- 검색 버튼(돋보기)는빼는거죠? -->
+        <ul class="header__navi__lnb">
+          <li><a href="#" >튜터등록</a></li>
+          <li><a href="#" >서비스소개</a></li>
+          <li><a href="#" class="is_logout">로그인</a></li>
+          <li><a href="#" class="is_login">로그아웃</a></li>
+          <li><a href="#" class="is_logout">회원가입</a></li>
+          <li><a href="#" class="is_login">마이페이지</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+      <h2 class="hidden__heading">서비스 광고 영상 및 배너</h2>
+      <!-- Carousel -->
+      <div class="banner__carousel" id="carousel">
+        <!-- Carousel list -->
+        <ul class="banner__carousel__list">
+          <li>
+            <iframe width="854" height="480" src="https://www.youtube.com/embed/ySRweBPSj30?ecver=1" frameborder="0" allowfullscreen></iframe>
+          </li>
+          <li><img src="#" alt="">홍보배너</li>
+          <li><img src="#" alt="">검색</li>
+        </ul>
+        <!-- 캐러셀 버튼위치를 css작업시 직관적으로 배치할수 있게 바꿔보았습니다. < .... > -->
+        <!-- Carousel left button-->
+        <button class="banner__carousel__left" type="button"></button>
+        <!-- Carousel nav ( ○○●○○ )  -->
+        <ul call="banner__carousel__nav">
+          <li><a href="#" class=""></a></li>
+          <li><a href="#" class=""></a></li>
+          <li><a href="#" class=""></a></li>
+        </ul>
+        <!-- Carousel right button-->
+        <button class="banner__carousel__right" type="button"></button>
+      </div>
+      <!-- Banner-input -->
+      <input class="banner__search" type="search" autofocus >
+    </section>
+
+    <!-- Categori -->
+    <section class="categori">
+      <h2 class="categori__heading">CATEGORI</h2>
+      <p class="categori__subtitle">당신이 배우고 모든것,무엇이든 Gori에서!</p>
+      <ul class="categori__list">
+        <!-- categori list 하나 삭제. 어학? -->
+        <!-- 반응형 이미지를 구현하기 위해 img를 div에 한번 더 넣음. 괜히 복잡해보이므로 수정 가능하다면 수정 추천 -->
+        <li>
+          <a href="#">
+            <div class="">
+              <img src="#" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="">
+              <img src="#" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="">
+              <img src="#" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="">
+              <img src="#" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="">
+              <img src="#" alt="">
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- class -->
+    <section class="class-list">
+      <h2 class="class-list__heading">CLASS</h2>
+      <p class="class-list__subtitle">이달의 인기강의</p>
+      <!-- ::before 선택자로 '+' 기호 추가 요망 -->
+      <a href="#" class="class-list__more" title="인기강의 더보기">+더보기</a>
+      <!-- Carousel -->
+      <div class="class-list__carousel" id="carousel-class">
+        <!-- Carousel list -->
+        <ul class="class-list__carousel__list">
+          <!-- is_new class -->
+          <li>
+
+            <!-- <a class="class">는 재활용이 가능 하도록 별도관리. -->
+            <a href="#" class="class">
+              <!-- 아래 <div class="is_new"> 는 가상선택자로 하는 것을 추천  -->
+              <div class="is_new"></div>
+              <img src="#" alt="" class="class__is_wish">
+              <img src="#" alt="" class="class__tutor-picture">
+              <p class="class__tutor-name"></p>
+              <div class="class__star-total">
+                <div class="star-1st"></div>
+                <div class="star-2nd"></div>
+                <div class="star-3rd"></div>
+                <div class="star-4th"></div>
+                <div class="star-5th"></div>
+                <p class="start-total-num">3</p>
+              </div>
+              <dl class="class__intro">
+                <dt class="class__intro__title">강의 제목입니다. </dt>
+                <dd class="class__intro__group">그룹수업</dd>
+                <dd class="class__intro__review-num">후기 갯수</dd>
+                <dd class="class__intro__location">신사</dd>
+                <dd class="class__intro__times">4회</dd>
+                <dd class="class__intro__time">1시</dd>
+              </dl>
+            </a>
+
+          </li>
+          <li>
+
+            <!-- <a class="class">는 재활용이 가능 하도록 별도관리 -->
+            <a href="#" class="class">
+              <!-- 아래 <div class="is_new"> 는 가상선택자로 하는 것을 추천  -->
+              <div class="is_new"></div>
+              <img src="#" alt="" class="class__is_wish">
+              <img src="#" alt="" class="class__tutor-picture">
+              <p class="class__tutor-name"></p>
+              <div class="class__star-total">
+                <div class="star-1st"></div>
+                <div class="star-2nd"></div>
+                <div class="star-3rd"></div>
+                <div class="star-4th"></div>
+                <div class="star-5th"></div>
+                <p class="start-total-num">3</p>
+              </div>
+              <dl class="class__intro">
+                <dt class="class__intro__title">강의 제목입니다. </dt>
+                <dd class="class__intro__group">그룹수업</dd>
+                <dd class="class__intro__review-num">후기 갯수</dd>
+                <dd class="class__intro__location">신사</dd>
+                <dd class="class__intro__times">4회</dd>
+                <dd class="class__intro__time">1시</dd>
+              </dl>
+            </a>
+
+          </li>
+          <li>
+
+            <!-- <a class="class">는 재활용이 가능 하도록 별도관리 -->
+            <a href="#" class="class">
+              <!-- 아래 <div class="is_new"> 는 가상선택자로 하는 것을 추천  -->
+              <div class="is_new"></div>
+              <img src="#" alt="wish list" class="class__is_wish">
+              <img src="#" alt="tutor picture" class="class__tutor-picture">
+              <p class="class__tutor-name"></p>
+              <!-- 재활용을 위해 [class*=__stars]를 활용하는 것을 추천 -->
+              <!-- 1.class__stars, 2.intro__review__stars -->
+              <div class="class__stars">
+                <div class="star-1st"></div>
+                <div class="star-2nd"></div>
+                <div class="star-3rd"></div>
+                <div class="star-4th"></div>
+                <div class="star-5th"></div>
+                <p class="start-total-num">3</p>
+              </div>
+              <dl class="class__intro">
+                <dt class="class__intro__title">강의 제목입니다.</dt>
+                <dd class="class__intro__group">그룹수업</dd>
+                <dd class="class__intro__review-num">후기 갯수</dd>
+                <dd class="class__intro__location">신사</dd>
+                <dd class="class__intro__times">4회</dd>
+                <dd class="class__intro__time">1시</dd>
+              </dl>
+            </a>
+
+          </li>
+          <li>
+
+            <!-- <a class="class">는 재활용이 가능 하도록 별도관리 -->
+            <a href="#" class="class">
+              <!-- 아래 <div class="is_new"> 는 가상선택자로 하는 것을 추천  -->
+              <div class="is_new"></div>
+              <img src="#" alt="" class="class__is_wish">
+              <img src="#" alt="" class="class__tutor-picture">
+              <p class="class__tutor-name"></p>
+              <div class="class__star-total">
+                <div class="star-1st"></div>
+                <div class="star-2nd"></div>
+                <div class="star-3rd"></div>
+                <div class="star-4th"></div>
+                <div class="star-5th"></div>
+                <p class="start-total-num">3</p>
+              </div>
+              <dl class="class__intro">
+                <dt class="class__intro__title">강의 제목입니다. </dt>
+                <dd class="class__intro__group">그룹수업</dd>
+                <dd class="class__intro__review-num">후기 갯수</dd>
+                <dd class="class__intro__location">신사</dd>
+                <dd class="class__intro__times">4회</dd>
+                <dd class="class__intro__time">1시</dd>
+              </dl>
+            </a>
+
+          </li>
+        </ul>
+        <!-- Carousel left button-->
+        <button class="class-list__carousel__left" type="button"></button>
+        <!-- Carousel right button-->
+        <button class="class-list__carousel__right" type="button"></button>
+        <!-- carousel 끝! -->
+      </div>
+    </section>
+
+    <!-- footer 조금 수정 했슴다. -->
+    <!-- footer -->
+    <footer class="footer">
+      <h2 class="hidden__heading">회사 정보 및 서비스 안내</h2>
+      <div class="footer__left">
+        <div>
+          <h3>Company</h3>
+          <ul class="footer__left__company is_large">
+            <li><a href="#">서비스 소개</a></li>
+            <li><a href="#">블로그</a></li>
+            <li><a href="#">언론보도</a></li>
+          </ul>
+          <img src="#" alt="">
+        </div>
+        <div>
+          <h3>policies</h3>
+          <ul class="footer__left__policies is_large">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">결제서비스 약관</a></li>
+            <li><a href="#">개인정보 취급방침</a></li>
+          </ul>
+          <img src="#" alt="">
+        </div>
+        <div>
+          <h3>Support</h3>
+          <ul class="footer__left__support is_large">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">탈잉센터</a></li>
+          </ul>
+          <img src="#" alt="">
+        </div>
+      </div>
+      <div class="footer__right">
+        <div class="footer__right__logo"><img src="#" alt="gori company logo">Gori</div>
+        <address class="footer__right__address">
+          <span>상호: (주)Gori | 전화: 02-234-5678 | 운영시간: 10:00~20:00 (평일) |</span>
+          <span>주소: 서울시 마포구 상수동 123-12 한주빌딩 5층 |</span>
+          <span>사업자번호: 123-45-67890 | 대표자명: 홍길동</span>
+        </address>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

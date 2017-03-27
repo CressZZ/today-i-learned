@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Gori 과외매칭서비스</title>
+  <style type="text/css">
+      #map { height: 300px; }
+    </style>
+
+</head>
+<body>
+  <a href="#" class="skip-nav">본문 바로가기</a>
+  <div class="wrapper">
+    <header class="header">
+      <!-- 고리 로고 -->
+      <h1 class="header__logo">
+        <a href="/">
+          <img src="pc-images/logo.png" class= "logo_on" alt="Gori">
+          <img src="mobile-images/logo.png" alt="Gori">
+          <p>Gori</p>
+        </a>
+      </h1>
+      <!-- menu -->
+      <!-- menu -->
+      <nav class="navigation">
+        <h2 class="hidden">메인 메뉴</h2>
+        <!-- menu images of mobile -->
+          <div class="btn-menu">
+            <img alt="menu" class="" src="#">
+          </div>
+          <div class="btn-close">
+            <img alt="menu" class="" src="#">
+          </div>
+          <div class="btn-search">
+            <img alt="menu" class="" src="#">
+          </div>
+          <input type="search">
+          <ul class="lnb">
+            <li><a href="#">튜터등록</a></li>
+            <li><a href="#">서비스소개</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">로그아웃</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">마이페이지</a></li>
+          </ul>
+      </nav>
+    </header>
+    <section>
+      <h2 class="hidden">수업 안내</h2>
+      <div class="heading__review">
+        <div class="heading__review__star">
+
+        </div>
+        <span class="heading__review__num"></span>
+      </div>
+      <h3 class="heading__title is_new">초심자를 위한 주식 사용 설명서</h3>
+      <div class="heading__gen-info">
+        <span class="heading__gen-info__group-num">그룹</span>
+        <span class="heading__gen-info__detail-location">장소협의</span>
+        <span class="heading__gen-info__class-num">4회</span>
+        <span class="heading__gen-info__class-time">1시간</span>
+      </div>
+      <div class="heading__price-info">
+        <span class="heading__price-info__total">20,000</span>
+        <span class="heaidng__price-info__each">총4회 240,000원</span>
+      </div>
+      <div class="heading__tutor">
+        <img src="#" alt="tutor picture" class="heading__tutor__picture">
+        <sapn class="heading__tutor__name">아이디 | 홍길동</sapn>
+      </div>
+    </section>
+    <section>
+      <h2 class="hidden">수업 상세정보</h2>
+      <div class="hidden-mobile">
+        <ul>
+          <li class="class-apply location">
+            <span class="class-apply-title">장소</span>
+            <span class="class-apply-subtitle">장소</span>
+          </li>
+          <li class="class-apply location">
+            <span class="class-apply-title">장소</span>
+            <span class="class-apply-subtitle">장소</span>
+          </li>
+          <li class="class-apply location">
+            <span class="class-apply-title">장소</span>
+            <span class="class-apply-subtitle">장소</span>
+          </li>
+          <li class="class-apply location">
+            <span class="class-apply-title">장소</span>
+            <span class="class-apply-subtitle">장소</span>
+          </li>
+          <li class="class-apply location">
+            <span class="class-apply-title">장소</span>
+            <span class="class-apply-subtitle">장소</span>
+          </li>
+        </ul>
+      </div>
+      <div class="buttons">
+        <button >수업 신청하기</button>
+        <button class="hidden-mobile">찜하기</button>
+        <div class="wish__heart hidden-mobile">하트</div>
+      </div>
+    </section>
+    <nav class="class_navi">
+			<ul>
+				<li><a href="#" class="on">수업소개</a></li>
+				<li><a href="#" class="">리뷰보기</a></li>
+				<li><a href="#" class="">문의하기</a></li>
+			</ul>
+		</nav>
+    <section class="intro-tutor">
+  		<h2 class="hidden">튜터소개</h2>
+  		<img src="#" alt="">
+      <strong> " 그 누구보다 세심히, 꼼꼼하게 가르칠 수 있습니다. "</strong>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </section>
+    <hr>
+    <section class="intro-class">
+  		<h2 class="intro-lecture">수업소개</h2>
+      <iframe class="class-info__movie" width="854" height="480" src="https://www.youtube.com/embed/ySRweBPSj30?ecver=1" frameborder="0" allowfullscreen></iframe>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </section>
+    <hr>
+    <section class="curriculum">
+      <h2 class="curriculum__list__heading">커리큘럼</h2>
+      <ul class="curriculum__list">
+        <li>
+          <strong>1회차</strong>
+          <span>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Наш ведущими однажды точках взгляд предупреждал! Языкового вопрос осталось запятой.</span>
+        </li>
+        <li>
+          <strong>2회차</strong>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nisi sapiente laboriosam, fugiat nemo fugit, temporibus dolorem nulla non incidunt.</span>
+        </li>
+      </ul>
+    </section>
+    <hr>
+    <section class="location">
+      <h2 class="locatoin__heading">위치</h2>
+      <div id="map"></div>
+    </section>
+    <hr>
+    <section class="review">
+      <h2 class="">리뷰</h2>
+      <button type="button" class="review__btn">리뷰작성</button>
+
+        <ul>
+          <li>
+            <strong>종합점수</strong>
+            <div class="st_off">
+              <button type="button" title="0" class="_pointStarRatingList btn_star on">0점 선택됨</button>
+              <button type="button" title="1" class="_pointStarRatingList btn_star">1점</button>
+              <button type="button" title="2" class="_pointStarRatingList btn_star st_r">2점</button>
+              <button type="button" title="3" class="_pointStarRatingList btn_star">3점</button>
+              <button type="button" title="4" class="_pointStarRatingList btn_star st_r">4점</button>
+              <button type="button" title="5" class="_pointStarRatingList btn_star">5점</button>
+              <button type="button" title="6" class="_pointStarRatingList btn_star st_r">6점</button>
+              <button type="button" title="7" class="_pointStarRatingList btn_star">7점</button>
+              <button type="button" title="8" class="_pointStarRatingList btn_star st_r">8점</button>
+              <button type="button" title="9" class="_pointStarRatingList btn_star">9점</button>
+              <button type="button" title="10" class="_pointStarRatingList btn_star st_r">10점</button>
+            </div>
+          </li>
+          <li>
+            <strong>종합점수</strong>
+            <div class="st_off">
+              <button type="button" title="0" class="_pointStarRatingList btn_star on">0점 선택됨</button>
+              <button type="button" title="1" class="_pointStarRatingList btn_star">1점</button>
+              <button type="button" title="2" class="_pointStarRatingList btn_star st_r">2점</button>
+              <button type="button" title="3" class="_pointStarRatingList btn_star">3점</button>
+              <button type="button" title="4" class="_pointStarRatingList btn_star st_r">4점</button>
+              <button type="button" title="5" class="_pointStarRatingList btn_star">5점</button>
+              <button type="button" title="6" class="_pointStarRatingList btn_star st_r">6점</button>
+              <button type="button" title="7" class="_pointStarRatingList btn_star">7점</button>
+              <button type="button" title="8" class="_pointStarRatingList btn_star st_r">8점</button>
+              <button type="button" title="9" class="_pointStarRatingList btn_star">9점</button>
+              <button type="button" title="10" class="_pointStarRatingList btn_star st_r">10점</button>
+            </div>
+          </li>
+          <li>
+            <strong>종합점수</strong>
+            <div class="st_off">
+              <button type="button" title="0" class="_pointStarRatingList btn_star on">0점 선택됨</button>
+              <button type="button" title="1" class="_pointStarRatingList btn_star">1점</button>
+              <button type="button" title="2" class="_pointStarRatingList btn_star st_r">2점</button>
+              <button type="button" title="3" class="_pointStarRatingList btn_star">3점</button>
+              <button type="button" title="4" class="_pointStarRatingList btn_star st_r">4점</button>
+              <button type="button" title="5" class="_pointStarRatingList btn_star">5점</button>
+              <button type="button" title="6" class="_pointStarRatingList btn_star st_r">6점</button>
+              <button type="button" title="7" class="_pointStarRatingList btn_star">7점</button>
+              <button type="button" title="8" class="_pointStarRatingList btn_star st_r">8점</button>
+              <button type="button" title="9" class="_pointStarRatingList btn_star">9점</button>
+              <button type="button" title="10" class="_pointStarRatingList btn_star st_r">10점</button>
+            </div>
+          </li>
+          <li>
+            <strong>종합점수</strong>
+            <div class="st_off">
+              <button type="button" title="0" class="_pointStarRatingList btn_star on">0점 선택됨</button>
+              <button type="button" title="1" class="_pointStarRatingList btn_star">1점</button>
+              <button type="button" title="2" class="_pointStarRatingList btn_star st_r">2점</button>
+              <button type="button" title="3" class="_pointStarRatingList btn_star">3점</button>
+              <button type="button" title="4" class="_pointStarRatingList btn_star st_r">4점</button>
+              <button type="button" title="5" class="_pointStarRatingList btn_star">5점</button>
+              <button type="button" title="6" class="_pointStarRatingList btn_star st_r">6점</button>
+              <button type="button" title="7" class="_pointStarRatingList btn_star">7점</button>
+              <button type="button" title="8" class="_pointStarRatingList btn_star st_r">8점</button>
+              <button type="button" title="9" class="_pointStarRatingList btn_star">9점</button>
+              <button type="button" title="10" class="_pointStarRatingList btn_star st_r">10점</button>
+            </div>
+          </li>
+          <li>
+            <strong>종합점수</strong>
+            <div class="st_off">
+              <button type="button" title="0" class="_pointStarRatingList btn_star on">0점 선택됨</button>
+              <button type="button" title="1" class="_pointStarRatingList btn_star">1점</button>
+              <button type="button" title="2" class="_pointStarRatingList btn_star st_r">2점</button>
+              <button type="button" title="3" class="_pointStarRatingList btn_star">3점</button>
+              <button type="button" title="4" class="_pointStarRatingList btn_star st_r">4점</button>
+              <button type="button" title="5" class="_pointStarRatingList btn_star">5점</button>
+              <button type="button" title="6" class="_pointStarRatingList btn_star st_r">6점</button>
+              <button type="button" title="7" class="_pointStarRatingList btn_star">7점</button>
+              <button type="button" title="8" class="_pointStarRatingList btn_star st_r">8점</button>
+              <button type="button" title="9" class="_pointStarRatingList btn_star">9점</button>
+              <button type="button" title="10" class="_pointStarRatingList btn_star st_r">10점</button>
+            </div>
+          </li>
+          <li>
+            <strong>종합점수</strong>
+            <div class="st_off">
+              <button type="button" title="0" class="_pointStarRatingList btn_star on">0점 선택됨</button>
+              <button type="button" title="1" class="_pointStarRatingList btn_star">1점</button>
+              <button type="button" title="2" class="_pointStarRatingList btn_star st_r">2점</button>
+              <button type="button" title="3" class="_pointStarRatingList btn_star">3점</button>
+              <button type="button" title="4" class="_pointStarRatingList btn_star st_r">4점</button>
+              <button type="button" title="5" class="_pointStarRatingList btn_star">5점</button>
+              <button type="button" title="6" class="_pointStarRatingList btn_star st_r">6점</button>
+              <button type="button" title="7" class="_pointStarRatingList btn_star">7점</button>
+              <button type="button" title="8" class="_pointStarRatingList btn_star st_r">8점</button>
+              <button type="button" title="9" class="_pointStarRatingList btn_star">9점</button>
+              <button type="button" title="10" class="_pointStarRatingList btn_star st_r">10점</button>
+            </div>
+          </li>
+        </ul>
+        <div class="review-after-lecture">
+          <div class="tutor-container">
+            <img class="profile-img" src="#">
+            <div class="profile-name">홍길동</div>
+            <time class="time" data-time="1490167752" data-type="date">
+            2017-03-22
+            </time>
+          </div>
+          <div class="rating-box">
+            <span class="icon active"></span>
+            <span class="icon active"></span>
+            <span class="icon active"></span>
+            <span class="icon active"></span>
+            <span class="icon active"></span>
+          </div>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="review-after-lecture">
+          <div class="tutor-container">
+            <img class="profile-img" src="#">
+            <div class="profile-name">홍길동</div>
+            <time class="time" data-time="1490167752" data-type="date">
+            2017-03-22
+            </time>
+          </div>
+          <div class="rating-box">
+            <span class="icon active"></span>
+            <span class="icon active"></span>
+            <span class="icon active"></span>
+            <span class="icon active"></span>
+            <span class="icon active"></span>
+          </div>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="paging" style="">
+          <a href="#" class="btn_page_on">1</a>
+          <a href="#" class="btn_page">2</a>
+          <a href="#" class="btn_page">3</a>
+        </div>
+    </section>
+    <section>
+      <h2 class="">문의하기</h2>
+      <div class="write">
+        <textarea name="qna_content" rows="8" cols="80" placeholder="input text" wrap="on"></textarea>
+				<button type="button" class="">질문등록</button>
+      </div>
+      <ul>
+        <li class="" >
+          <span class="">
+          	<img src="#" alt="">
+            <span class=""><em>jhm***@na</em></span>
+          </span>
+          <span class="date" title="2017.03.24 15:08:05">17.03.24 15:08</span>
+          <p class="text">Lorem ipsum dolor.</p>
+        </li>
+        <li class="" >
+          <span class="">
+          	<img src="#" alt="">
+            <span class=""><em>jhm***@na</em></span>
+          </span>
+          <span class="date" title="2017.03.24 15:08:05">17.03.24 15:08</span>
+          <p class="text">Lorem ipsum dolor.</p>
+        </li>
+      </ul>
+      <div class="paging" style="">
+        <a href="#" class="btn_page_on">1</a>
+        <a href="#" class="btn_page">2</a>
+        <a href="#" class="btn_page">3</a>
+      </div>
+    </section>
+</div>
+<footer class="footer">
+<h2 class="hidden footer-heading">회사 정보 및 서비스 안내</h2>
+<div class="footer-section-1">
+  <ul class="footer__category__company">
+    <li>서비스 소개</li>
+    <li>블로그</li>
+    <li>언론보도</li>
+  </ul>
+  <ul class="footer__category__polices">
+    <li>이용약관</li>
+    <li>결제 서비스 약관</li>
+    <li>개인정보 취급방침</li>
+  </ul>
+  <ul class="footer__catergory__support">
+    <li>FAQ</li>
+    <li>탈잉센터</li>
+  </ul>
+</div>
+<div class="footer-section-2">
+  <div class="logo"><img src="#" alt="gori company logo">Gori</div>
+  <address>
+    <span class="company">
+      상호: (주)Gori |
+    </span>
+    <span class="tel">
+      전화: 02-234-5678 |
+    </span>
+    <span class="time">
+      운영시간: 10:00~20:00 (평일) |
+    </span>
+    <span class="address">
+      주소: 서울시 마포구 상수동 123-12 한주빌딩 5층 |
+    </span>
+    <span class="business-infor">
+      사업자번호: 123-45-67890 | 대표자명: 홍길동
+    </span>
+  </address>
+  <ul class="tech-logo">
+    <li><a href="#" title="facebook 바로가기"><img src="/" alt="facebook"></a></li>
+    <li><a href="#" title="youtube 바로가기"><img src="/" alt="Dribbble"></a></li>
+    <li><a href="#" title="Instagram 바로가기"><img src="/" alt="Instagram"></a></li>
+    <li><a href="#" title="kakaotlak 으로 문의하기"><img src="/" alt="kakaotlak yellow ID"></a></li>
+  </ul>
+</div>
+</footer>
+
+
+<script>
+  function initMap() {
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -34.397, lng: 150.644},
+      scrollwheel: false,
+      zoom: 8
+    });
+  }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjUnvTeaPsjSyxabVD9CFTNbEbnS8mZ4o&callback=initMap"
+async defer></script>
+</body>
+</html>

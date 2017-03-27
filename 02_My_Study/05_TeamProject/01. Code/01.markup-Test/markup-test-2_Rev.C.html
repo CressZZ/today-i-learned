@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Gori 과외매칭서비스</title>
+  <style type="text/css">
+      #map { height: 300px; }
+    </style>
+
+</head>
+<body>
+  <a href="#" class="skip-nav">본문 바로가기</a>
+  <div class="wrapper">
+
+    <!-- header -->
+    <header class="header">
+      <!-- 고리 로고 -->
+      <h1 class="header__logo">
+        <a href="#">
+          <!-- 이미지 로고는 생략할 예정 -->
+          <img class ="header__logo--pc" src="pc-images/logo.png" alt="Gori">
+          <img class ="header__logo--mobile" src="mobile-images/logo.png" alt="Gori">
+          <p class="header__logo--title">Gori</p>
+        </a>
+      </h1>
+      <!-- menu -->
+      <nav class="header__navi">
+        <!-- 감추는 제목(h2)의 class는 'hidden__heading'으로 통일 -->
+        <h2 class="hidden__heading">메인 메뉴</h2>
+        <!-- menu button of mobile -->
+        <!-- 메뉴열고 닫는 마크업음 div>img 에서 그냥 button으로 변경 해보았습니다. -->
+        <!-- 햄버거 표시는 폰트를 사용하거나 CSS를 사용하는게 어떨까요? img 대신 -->
+        <!-- <div class="header__navi__btn-menu--open">
+          <img alt="menu open button" src="#">
+        </div>
+        <div class="header__navi__btn-menu--close">
+          <img alt="menu close button" src="#">
+        </div> -->
+        <button class="header__navi__btn-menu--open" type="button" name="button">햄버거 폰트</button>
+        <button class="header__navi__btn-menu--close" type="button" name="button">X</button>
+
+        <!-- 검색 버튼(돋보기)는빼는거죠? -->
+        <ul class="header__navi__lnb">
+          <li><a href="#" >튜터등록</a></li>
+          <li><a href="#" >서비스소개</a></li>
+          <li><a href="#" class="is_logout">로그인</a></li>
+          <li><a href="#" class="is_login">로그아웃</a></li>
+          <li><a href="#" class="is_logout">회원가입</a></li>
+          <li><a href="#" class="is_login">마이페이지</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- summery -->
+    <section class="summery">
+      <h2 class="hidden__heading">수업 안내</h2>
+      <div class="summery__review">
+        <!-- 재활용을 위해 [class*=__stars]를 활용하는 것을 추천 -->
+        <!-- 1.class__stars, 2.summery__stars -->
+        <div class="summery__review__stars">
+          <div class="star-1st"></div>
+          <div class="star-2nd"></div>
+          <div class="star-3rd"></div>
+          <div class="star-4th"></div>
+          <div class="star-5th"></div>
+        </div>
+        <span class="into__review__num">후기 23개</span>
+      </div>
+      <h3 class="summery__class-title is_new">초심자를 위한 주식 사용 설명서</h3>
+      <div class="summery__gen-info">
+        <span class="summery__gen-info__group">그룹</span>
+        <span class="summery__gen-info__location-detail">장소협의</span>
+        <span class="summery__gen-info__times">4회</span>
+        <span class="summery__gen-info__time">1시간</span>
+      </div>
+      <div class="summery__price-info">
+        <span class="summery__price-info__total">20,000</span>
+        <span class="summery__price-info__each">총4회 240,000원</span>
+      </div>
+      <div class="summery__tutor">
+        <img src="#" alt="tutor picture" class="summery__tutor__picture">
+        <sapn class="summery__tutor__name">아이디 | 홍길동</sapn>
+      </div>
+    </section>
+
+    <!-- apply -->
+    <section class="apply">
+      <h2 class="hidden__heading">수업 상세정보</h2>
+      <!-- div빼고 ul만 살림 (이전에는 div가 ul을 감싸는 구조로, div가 필요 없다고 판단) -->
+      <ul class="apply__info">
+        <li class="apply__info__location">
+          <strong>신촌</strong>
+          <span>지역상의후 변경가능</span>
+        </li>
+        <li class="apply__info__time">
+          <strong>1시간/회</strong>
+          <span>AM 9:30-PM 5:00</span>
+        </li>
+        <li class="apply__info__group">
+          <strong>최대4인</strong>
+          <span>최소인원 3명</span>
+        </li>
+        <li class="apply__info__week">
+          <strong>월/수/금</strong>
+          <span>총4회 / 240,000원</span>
+        </li>
+        <li class="apply__info__additional-cost">
+          <strong>추가비용 있음</strong>
+          <span>개인카페음료</span>
+        </li>
+      </ul>
+      <div class="apply__buttons">
+        <button class="apply__buttons__btn-apply">수업 신청하기</button>
+        <button class="apply__buttons__btn-wish">찜하기</button>
+        <!-- 하트를 div에서 a로 change 함. 클릭이 되야 한다고 판단 -->
+        <a href="#" class="apply__buttons__heart">하트</a>
+      </div>
+    </section>
+
+    <!-- class_nav -->
+    <nav class="class-nav">
+			<ul>
+				<li><a href="#" class="on">수업소개</a></li>
+				<li><a href="#" class="">리뷰보기</a></li>
+				<li><a href="#" class="">문의하기</a></li>
+			</ul>
+		</nav>
+
+    <!-- speaking -->
+    <section class="speaking">
+  		<h2 class="hidden__heading">튜터소개</h2>
+      <img src="#" alt="tutor picture" class="speaking__tutor-picture">
+      <strong> " 그 누구보다 세심히, 꼼꼼하게 가르칠 수 있습니다. "</strong>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </section>
+
+    <!-- hr은 일단 삭제 해 보았습니다.  -->
+    <!-- intro -->
+    <section class="intro">
+  		<h2 class="intro__heading">수업소개</h2>
+      <iframe class="intro__movie" width="854" height="480" src="https://www.youtube.com/embed/ySRweBPSj30?ecver=1" frameborder="0" allowfullscreen></iframe>
+      <p class="intro__description">Lorem ipsum dolor sit amet.</p>
+    </section>
+
+    <!-- curriculum -->
+    <section class="curriculum">
+      <h2 class="curriculum__heading">커리큘럼</h2>
+      <ul class="curriculum__list">
+        <li>
+          <strong>1회차</strong>
+          <span>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Наш ведущими однажды точках взгляд предупреждал! Языкового вопрос осталось запятой.</span>
+        </li>
+        <li>
+          <strong>2회차</strong>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nisi sapiente laboriosam, fugiat nemo fugit, temporibus dolorem nulla non incidunt.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- location(map) -->
+    <section class="location">
+      <h2 class="locatoin__heading">위치</h2>
+      <div id="map"></div>
+    </section>
+
+    <!-- review -->
+    <section class="review">
+      <h2 class="">리뷰</h2>
+      <button type="button" class="review__btn">리뷰작성</button>
+
+      <ul class="review__stars">
+        <li>
+          <strong>종합점수</strong>
+          <div class="reveiw__stars__total">
+            <div class="star-1st"></div>
+            <div class="star-2nd"></div>
+            <div class="star-3rd"></div>
+            <div class="star-4th"></div>
+            <div class="star-5th"></div>
+          </div>
+        </li>
+        <li>
+          <strong>전달력</strong>
+          <div class="reveiw__stars__transfer">
+            <div class="star-1st"></div>
+            <div class="star-2nd"></div>
+            <div class="star-3rd"></div>
+            <div class="star-4th"></div>
+            <div class="star-5th"></div>
+          </div>
+        </li>
+        <li>
+          <strong>준비성</strong>
+          <div class="reveiw__stars__ready">
+            <div class="star-1st"></div>
+            <div class="star-2nd"></div>
+            <div class="star-3rd"></div>
+            <div class="star-4th"></div>
+            <div class="star-5th"></div>
+          </div>
+        </li>
+        <li>
+          <strong>친절도</strong>
+          <div class="reveiw__stars__kind">
+            <div class="star-1st"></div>
+            <div class="star-2nd"></div>
+            <div class="star-3rd"></div>
+            <div class="star-4th"></div>
+            <div class="star-5th"></div>
+          </div>
+        </li>
+        <li>
+          <strong>시간준수</strong>
+          <div class="reveiw__stars__sincerity">
+            <div class="star-1st"></div>
+            <div class="star-2nd"></div>
+            <div class="star-3rd"></div>
+            <div class="star-4th"></div>
+            <div class="star-5th"></div>
+          </div>
+        </li>
+        <li>
+          <strong>커리큘럼</strong>
+          <div class="reveiw__stars__curriculum">
+            <div class="star-1st"></div>
+            <div class="star-2nd"></div>
+            <div class="star-3rd"></div>
+            <div class="star-4th"></div>
+            <div class="star-5th"></div>
+          </div>
+        </li>
+      </ul>
+      <div class="review__write">
+        <!-- css작업 고려해서 div로 나누어 보았습니다. -->
+        <div class="review__write__writer">
+          <img class="review__write__writer__picture" src="#">
+          <div class="review__write__writer__info">
+            <div class="review__write__writer__info__id">
+              홍길동
+            </div>
+            <time class="review__write__writer__info__date" data-time="1490167752" data-type="date">
+              2017-03-22
+            </time>
+            <div class="review__write__writer__info__stars">
+              <div class="star-1st"></div>
+              <div class="star-2nd"></div>
+              <div class="star-3rd"></div>
+              <div class="star-4th"></div>
+              <div class="star-5th"></div>
+            </div>
+          </div>
+          <p class="review__write__writer__descrip">Lorem ipsum dolor sit amet.</p>
+        </div>
+        <!-- css작업 고려해서 div로 나누어 보았습니다. -->
+        <div class="review__write__writer">
+          <img class="review__write__writer__picture" src="#">
+          <div class="review__write__writer__info">
+            <div class="review__write__writer__info__id">
+              홍길동
+            </div>
+            <time class="review__write__writer__info__date" data-time="1490167752" data-type="date">
+              2017-03-22
+            </time>
+            <div class="review__write__writer__info__stars">
+              <div class="star-1st"></div>
+              <div class="star-2nd"></div>
+              <div class="star-3rd"></div>
+              <div class="star-4th"></div>
+              <div class="star-5th"></div>
+            </div>
+          </div>
+          <p class="review__write__writer__descrip">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      <div class="review__page" style="">
+        <a href="#" class="review__page__btn on_page">1</a>
+        <a href="#" class="review__page__btn">2</a>
+        <a href="#" class="review__page__btn">3</a>
+      </div>
+    </section>
+
+    <!-- QnA -->
+    <section class="qna">
+      <h2 class="qna__heading">문의하기 32</h2>
+      <div class="qna__write">
+        <textarea name="" rows="8" cols="80" placeholder="input text" wrap="on"></textarea>
+				<button type="button" class="">등록</button>
+      </div>
+      <ul class="qna__list">
+        <li class="qna__list_q">
+          <span class="qna__list__q__writer">
+          	<div>q</div>
+            <span>작성자</span>
+          </span>
+          <span class="qna__list__q__date">17.03.24 15:08</span>
+          <p class="qna__list__q__descrip">Lorem ipsum dolor.</p>
+        </li>
+        <li class="qna__list_a">
+          <span class="qna__list__a__writer">
+          	<div>a</div>
+            <span>작성자</span>
+          </span>
+          <span class="qna__list__a__date">17.03.24 15:08</span>
+          <p class="qna__list__a__descrip">Lorem ipsum dolor.</p>
+        </li>
+        <li class="qna__list_q">
+          <span class="qna__list__q__writer">
+          	<div>q</div>
+            <span>작성자</span>
+          </span>
+          <span class="qna__list__q__date">17.03.24 15:08</span>
+          <p class="qna__list__q__descrip">Lorem ipsum dolor.</p>
+        </li>
+        <li class="qna__list_a">
+          <span class="qna__list__a__writer">
+          	<div>a</div>
+            <span>작성자</span>
+          </span>
+          <span class="qna__list__a__date">17.03.24 15:08</span>
+          <p class="qna__list__a__descrip">Lorem ipsum dolor.</p>
+        </li>
+      </ul>
+      <div class="qna__page">
+        <a href="#" class="qna__page__btn on_page">1</a>
+        <a href="#" class="qna__page__btn">2</a>
+        <a href="#" class="qna__page__btn">3</a>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+      <h2 class="hidden__heading">회사 정보 및 서비스 안내</h2>
+      <div class="footer__left">
+        <div>
+          <h3>Company</h3>
+          <ul class="footer__left__company is_large">
+            <li><a href="#">서비스 소개</a></li>
+            <li><a href="#">블로그</a></li>
+            <li><a href="#">언론보도</a></li>
+          </ul>
+          <img src="#" alt="">
+        </div>
+        <div>
+          <h3>policies</h3>
+          <ul class="footer__left__policies is_large">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">결제서비스 약관</a></li>
+            <li><a href="#">개인정보 취급방침</a></li>
+          </ul>
+          <img src="#" alt="">
+        </div>
+        <div>
+          <h3>Support</h3>
+          <ul class="footer__left__support is_large">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">탈잉센터</a></li>
+          </ul>
+          <img src="#" alt="">
+        </div>
+      </div>
+      <div class="footer__right">
+        <div class="footer__right__logo"><img src="#" alt="gori company logo">Gori</div>
+        <address class="footer__right__address">
+          <span>상호: (주)Gori | 전화: 02-234-5678 | 운영시간: 10:00~20:00 (평일) |</span>
+          <span>주소: 서울시 마포구 상수동 123-12 한주빌딩 5층 |</span>
+          <span>사업자번호: 123-45-67890 | 대표자명: 홍길동</span>
+        </address>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <script>
+    function initMap() {
+      // Create a map object and specify the DOM element for display.
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        scrollwheel: false,
+        zoom: 8
+      });
+    }
+
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjUnvTeaPsjSyxabVD9CFTNbEbnS8mZ4o&callback=initMap"
+  async defer></script>
+</body>
+</html>
