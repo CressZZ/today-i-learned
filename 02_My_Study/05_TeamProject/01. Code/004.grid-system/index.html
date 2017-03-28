@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Zzageung</title>
+</head>
+<body>
+  <!-- <div class="grid-view"></div> -->
+  <div class="wrapper">
+
+    <header class="header h-4 row">
+      <h1 class="logo h-2 col-2-4 ">
+        <img src="image/logo.png" alt="GD-SYSTEM">
+      </h1>
+      <nav class="navigation">
+        <h2 class="hidden">메인메뉴</h2>
+        <button class="btn-main-menu h-2 col-1-4 push-3" type="button"></button>
+        <ul class="main-menu">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">WORK</a></li>
+          <li><a href="#">SERVICES</a></li>
+          <li><a href="#">BLOG</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <div class="main">
+
+      <div class="movies h-4 row">
+        <button class="left h-4 col-1-4">왼쪽으로 넘기기</button>
+        <button class="btn-play h-4 col-2-4 push-1">영상 재생</button>
+        <button class="right h-4 col-1-4 push-3">오른쪽으로 넘기기</button>
+      </div>
+
+      <div class="pictures">
+        <h2 class="h-2 row">글이 작품이 되는 공간</h2>
+        <!-- <div class="h-4">diq</div> -->
+        <ul class="pictures-list">
+          <li>
+            <figure>
+              <img src="#" alt="아픈사진" class="h-9">
+              <figcaption class="h-2">크려고 아픈 거야</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="#" alt="의문 사진" class="h-9">
+              <figcaption class="h-2">아파야만 클 수 있을까?</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="#" alt="청춘 사진" class="h-9">
+              <figcaption class="h-2">아픔만 있는 요즘 청춘들</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="images h-12">
+        <h2 class="hidden">이미지 보여주기</h2>
+        <div class="row"><div class="page h-1 col-1-4 push-3"> 1 / 5 </div></div>
+        <div class="row">
+          <button class="left h-4 col-1-4">사진 왼쪽으로 넘기기</button>
+          <button class="right h-4 col-1-4 push-3">사진 오른쪽으로 넘기기</button>
+        </div>
+        <ul class="images-list h-12 col-4-4">
+          <li><img src="#" alt="이미지1"></li>
+          <li><img src="#" alt="이미지2"></li>
+          <li><img src="#" alt="이미지3"></li>
+          <li><img src="#" alt="이미지4"></li>
+          <li><img src="#" alt="이미지5"></li>
+        </ul>
+      </div>
+
+      <div class="peoples">
+        <div class="row"><h2 class="h2 col4-4"작품을 만드는 사람들</h2></div>
+        <section class="row">
+
+          <img class="h-5 col-1-4" src="#" alt="스테르담 사진">
+
+          <strong class="name h-1 col-1-2 push-1">스테르담</strong>
+
+          <p class="descrip h4 col-3-4 push-1">글쓰고,노래하고,강의하는,나는 스테르담입니다.</p>
+        </section>
+        <section class="row">
+          <img class="h-5 col-1-4" src="#" alt="작은바이킹 사진">
+          <strong class="name h-1 col-1-2 push-1">작은바이킹</strong>
+          <p class="descrip h4 col-3-4 push-1">그림을 못 그려 사진일기를 쓰는 카피라이터 입니다.</p>
+        </section>
+        <section class="row">>
+          <img class="h-5 col-1-4" src="#" alt="라이카 사진">
+          <strong class="name h-1 col-1-2 push-1">라이카</strong>
+          <p class="descrip h4 col-3-4 push-1">고용주를 찾아 헤매는 프리랜서 에디터 겸 반백수 입니다.</p>
+        </section>
+        <section class="row">>
+          <img class="h-5 col-1-4" src="#" alt="기타치는 사진가 사진">
+          <strong class="name h-1 col-1-2 push-1">기타치는 사진가</strong>
+          <p class="descrip h4 col-3-4 push-1">글과 사진이 만나 좀 넓고 재미난 세상 이야기를 만들어 나가고 싶습니다</p>
+        </section>
+      </div>
+
+      <div class="map">
+        <img src="#" alt="지도">
+      </div>
+
+      <div class="question">
+        <h2>작가 문의 하기</h2>
+        <form action="javascript:alert('메세지를 전송합니다.')">
+          <fieldset class="message">
+            <legend>메세지 전송</legend>
+            <input class="your-name" type="text" required placeholder="Your Name" aria-label="이름입력">
+            <input class="your-email" type="email" required placeholder="Your Email" aria-label="이메일 입력">
+            <input class="your-name" type="text" required placeholder="Your Message" aria-label="메세지 입력">
+            <button class="btn-message" type="submit">
+              메세지 전송
+            </button>
+          </fieldset>
+        </form>
+      </div>
+
+
+    </div>
+      <!-- 메인메뉴 끝 -->
+    <div class="footer">
+      copyright 2016 Inyoung.
+    </div>
+  </div>
+
+</body>
+</html>

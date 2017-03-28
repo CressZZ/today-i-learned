@@ -1,0 +1,26 @@
+//실제 디자인 값
+$base-font-family: "NanumGothic", sans-serif
+
+// @media screen and (min-width: 680px)
+
+$base-font-size: 10px
+$base-font-weight: normal
+$base-line-height: 24px
+$base-font-color: #5a5e65
+
+$logo-width: 115px
+
+$body-width: 480px
+$wrapper-width: 420px
+$col-num: 4
+$col-width: 90px
+$col-gap: 20px
+$col-height: 24px
+$body-padding: 30px
+
+//자동 변화 값
+$wrapper-width-pt: ($wrapper-width / $body-width) * 100%
+$col-width-pt: ($col-width / $wrapper-width ) * 100%
+$col-gap-pt: ($col-gap / $wrapper-width ) * 100%
+
+$push: $col-width-pt + $col-gap-pt

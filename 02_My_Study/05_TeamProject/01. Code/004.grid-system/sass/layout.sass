@@ -1,0 +1,145 @@
+@import "grid-system"
+@import "variable"
+@import "utility"
+
+html
+  box-sizing: border-box
+
+.hidden
+  display: none
+
+.wrapper
+  box-sizing: border-box
+  width: 100%
+  margin: 0 auto
+  padding: 0
+  border: 0
+  background-color: green
+
+
+.header
+  $num-height: 1
+  padding: padding($num-height)
+  // padding: ($col-height * 1) ($body-padding / $body-width * 100%)
+  box-sizing: border-box
+
+
+.logo
+  position: relative
+  img
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    width: ($logo-width / (($col-width * 2) + $col-gap)) * 100%
+
+.btn-main-menu
+  background: url("../image/menu-icon.png") no-repeat
+  background-position: right
+
+
+.main-menu
+  display: none
+
+
+
+.movies
+  $num-height: 4
+  padding-top: $num-height * $col-height
+  padding-bottom: $num-height * $col-height
+
+
+  .left
+    background: url("../image/arrow-left.png") no-repeat
+    background-position: left
+    +btn-name
+  .right
+    background: url("../image/arrow-right.png") no-repeat
+    background-position: right
+    +btn-name
+  .btn-play
+    background: url("../image/fa-play-circle.png") no-repeat
+    background-position: center
+    +btn-name
+
+
+.pictures
+
+  h2
+    $num-height: 1
+    margin: margin($num-height)
+    +text-center-center(2)
+  img
+    background-color: yellow
+    box-sizing: border-box
+    margin-left: ($body-padding / $body-width * 100%)
+    margin-right: ($body-padding / $body-width * 100%)
+  figcaption
+      $num-height: 1
+      margin-bottom: ($num-height * $col-height)
+      margin-left: ($body-padding / $body-width * 100%)
+      margin-right: ($body-padding / $body-width * 100%)
+      +text-center-left(2)
+      padding-left: (20px / 420px * 100%)
+
+.images
+  $num-height: 1
+  position: relative
+  margin: margin($num-height)
+
+  .page
+    // box-sizing: border-box
+    padding-top: (1 * $col-height)
+    padding-bottom: (2 * $col-height)
+    text-align: right
+    // z-index: 100
+
+
+
+  .left
+    background: url("../image/arrow-left.png") no-repeat
+    background-position: left
+    // color: white
+    +btn-name
+
+  .right
+    background: url("../image/arrow-right.png") no-repeat
+    background-position: right
+    +btn-name
+
+  .images-list
+    position: absolute
+    top: 0
+    left: 0
+    overflow: hidden
+    li
+      height: 100%
+      width: 100%
+      float: left
+      img
+        width: 100%
+        height: 100%
+
+
+.peoples
+  margin-left: ($body-padding / $body-width * 100%)
+  margin-right: ($body-padding / $body-width * 100%)
+  h2
+    background-color: yellow
+    margin-bottom: (1 * $col-height)
+  img
+    background-color: pink
+    margin-bottom: (1 * $col-height)
+
+
+  strong
+    background-color: lime
+    padding-top: (1 * $col-height)
+    padding-left: (30px / $body-width * 100%)
+
+  p
+    // background-color: red
+    padding-top: (2 * $col-height)
+    padding-left: (30px / $body-width * 100%)
+    word-break: keep-all
+    @extend %reset-boxsizing

@@ -1,0 +1,50 @@
+@import "variable"
+
+
+html, body
+  margin: 0
+  padding: 0
+
+body
+  // background-color: pink
+
+[class*=col]
+  float: left
+  margin-right: -100%
+
+
+
+.col-1-4
+  width: ($col-width-pt * 1) + ($col-gap-pt * 0)
+
+.col-2-4
+  width: ($col-width-pt * 2) + ($col-gap-pt * 1)
+
+.col-3-4
+  width: ($col-width-pt * 3) + ($col-gap-pt * 2)
+
+.col-4-4
+  width: ($col-width-pt * 4) + ($col-gap-pt * 3)
+
+
+
+.push-1
+  margin-left: ($push * 1)
+
+.push-2
+  margin-left: ($push * 2)
+
+.push-3
+  margin-left: ($push * 3)
+
+
+.row
+  &::after
+    clear: both
+    content: ""
+    display: block
+
+.h
+  @for $i from 1 through 30
+    &-#{$i}
+      height: $col-height * $i
