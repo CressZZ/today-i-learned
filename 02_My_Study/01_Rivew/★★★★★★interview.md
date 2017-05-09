@@ -155,7 +155,7 @@ audio, canvas, emved, iframe, .....
 Local storage는 데이터에 유효기한이 없고, session storage는 창을 닫으면 데이터가 초기화되는 점만 제외하면 완전히 같습니다.
 쿠키는 HTML header에서 서버와 통신을 하지만, 웹스토리지는 그렇지 않기 때문에 속도적 측면에서 약간 더 우위를 갖고 있습니다.
 -> 쿠키는 매번 서버로 전송된다.
-웹 사이트에서 쿠키를 설정하면 이후 모든 웹 요청은 쿠키정보를 포함하여 서버로 전송됩니다. Web Storage 는 저장된 데이터가 클라이언트에 존재할 뿐 서버로 전송은 이루어지지 않습니다. 이것은 네트워크 트래픽 비용을 줄여 준다는 주요한 장점이 됩니다.
+`웹 사이트에서 쿠키를 설정하면 이후 모든 웹 요청은 쿠키정보를 포함하여 서버로 전송됩니다. Web Storage 는 저장된 데이터가 클라이언트에 존재할 뿐 서버로 전송은 이루어지지 않습니다. 이것은 네트워크 트래픽 비용을 줄여 준다는 주요한 장점이 됩니다.`
 
 # Javascript
 
@@ -385,7 +385,6 @@ var person = new Person()
 - this는 현재 객체로 호출한 객체를 참조합니다.
 
 
- 
 ## AJAX에 관해 가능한 자세히 설명하세요.
 -> AJAX (Asynchronous JAvaScript and XML) XMLHttpRequest객체를 이요아여 비동기 방식으로 서버와 통신하는 것
 - Ajax는 서버로부터 데이터를 가져와 전체페이지를 새로 고치지 않고 일부만 로드할 수 있게 하는 기법이다.
@@ -409,3 +408,163 @@ var person = new Person()
 
 ## FOUC가 무엇이며 FOUC를 어떻게 방지하나요?
 -> FOUC(Flash Of Unstyled Content)는 외부의 CSS가 불러오기 전에 잠시 스타일이 적용되지 않은 웹 페이지가 나타나는 현상이다. 이를 해결하기 위해서 CSS 관련 로딩 구문은 반드시 head 안에 포함시켜 css 로드 전에 D.O.M 트리를 구성하는 것을 방지 주는 것이 좋다.
+
+## JSONP가 무엇인가요?(Same Origin Police / Cross-Origine Resource Sharing)
+->웹 브라우저에서 CSS나 js같은 리소스 파일들은 동일 출처 정책에 영향을 받지않고 로딩이 가능하다. 이런점을 응용해서 외부 서버에서 읽어온 JS파일을 Json으로 바꿔주는 일종의 편법적인 방법이다. 단점은 리 소스 파일을 GET메서드로 읽어오기 때문에 GET방식의 API만 요청이 가능하다.
+-> ‘JSONP’라는 데이터 타입 요청이 아닌 `script` 호출 방식
+
+## 이벤트 버블링(Bubbling)에 대해서 설명하세요.
+-> 이벤트가 부모를 타고 올라가는 것.
+` event.stopPropagation()`
+`event.preventDefault()`
+
+## "속성(Attribute)"와 "요소(property)"의 차이가 무엇인가요?
+-> attribute 는 element가 가지고 있는 것. element의 형식을 지정한다. (html tag의 속성)
+-> property는 object가 가지고 있는 구성요소 이다. window object가 가 지고 있는 prioperty로는 name, parent, history, innerHeight, self, status 등등 object가 이들의 property를 가지고 object자신의 역할을 합니다. property는 object가 가지고 있는 것들입니다. 또 CSS style에 지정한 것들도W3C에서 property라고 부ㅠ릅니다. `<div style-"color:red; font-size:15pt;">` 에서 굵은 글자들이 style property 입니다.
+
+## Javascript 객체를 확장하는 것이 좋지 않은 이유는 무엇인가요?
+Javascript의 객체를 Object.prototype 을 이용해서 확장하는 것은 좋은 방법이 아니다. 이는 기본적으로 참조 무결성을 깨틀여 버리게 된다 Object.prototype 을 확장하거나 변경하는 행위는 해당 prototype을 참조로 하는 모든 객체에 영향을 미치게 된다. 즉 특정 영역에서 변경을 위해 수행된 코드로 인해 애플리케이션 전체에 영향을 주게 된다는 것이다.
+이는 극히 위험한 일이다. 상황에 따라 변형되어버리는 이런 구조로는 프로그램을 예측할수도 없을 뿐아니라 추후 코드 실행의 무결성을 보장하지 않는다.
+
+## Document Load 이벤트와 Ready 이벤트의 차이가 무엇인가요?
+-> 두 이벤트 모두 DOM을 다루기위한 이벤트 이다.
+1) Ready 이벤트 : DOM트리가 만들어 지면 실행됨. 단 Resouce(이미지, 동영상등)은 아직 로드되지 않은 상황이여서, DOM 접근은 가능하나 Resource를 핸들링 하려 하면 오류를 내밷음.
+2) load 이벤트 : window를 로드하고난 이후에 실행되는 코드들은 모든 객체나 프레임들(외부 contents를 담는 프레임까지), 이미지까지 모두 로드한 이후에 실행되므로 document에서 제한된 작업을 진행할 수 있겠습니다. 다만, 그렇게된다면 페이지의 로드타임만큼 사용자는 오랜 시간을 모니터앞에서 답답하게 기다려야하겠죠.
+
+## ==와 ===의 차이점은 무엇인가요?
+-> `==`은 값만 비교 `===`는 타입까지 비교. 즉 `===`더 확실하다.
+
+## 브라우저의 URL에서 파라메터를 얻을 수 있는 방법에 대해서 설명하세요.
+-> `var a = String(document.location).split("/")`
+
+## 이벤트 딜리게이션(Event Delegation)에 대해서 설명하세요.
+코드를 통해 살펴보자. 예를 들어, 다음과 같은 마크업을 가진 메뉴가 있다고 하자.
+```html
+<ul id="menu">
+    <li><button id="file">파일</button></li>
+    <li><button id="edit">편집</button></li>
+    <li><button id="view">보기</button></li>
+</ul>
+```
+각각의 기능 클릭 시 특정 동작을 하게 하려면 보통은 다음과 같이 이벤트를 등록한다.
+```javascript
+document.getElementById('file').addEventListener('click', function(e) {
+    // 파일 메뉴 동작
+});
+document.getElementById('edit').addEventListener('click', function(e) {
+    // 편집 메뉴 동작
+});
+document.getElementById('view').addEventListener('click', function(e) {
+    // 보기 메뉴 동작
+});
+```
+메뉴가 추가될 때마다 이벤트 핸들러가 하나씩 늘어날 것이다.
+
+하지만 이벤트 위임을 사용하면 상위 엘리먼트인 <div id='menu'>에만 이벤트 리스너를 추가하면 된다.
+```javascript
+document.getElementById('menu').addEventListener('click', function(e) {
+    var target = e.target;
+    if (target.id === 'file') {
+        // 파일 메뉴 동작
+    } else if (target.id === 'edit') {
+        // 편집 메뉴 동작
+    } else if (target.id === 'view') {
+        // 보기 메뉴 동작
+    }
+});
+```
+파일, 편집, 보기 등을 클릭하면 `항상 부모에 등록된 핸들러를 거치게 된다.` target(또는 srcElement)은 이벤트가 발생한 엘리먼트를 반환하기 때문에 엘리먼트의 특징에 따라 분기 처리만 하면 된다. 메뉴가 추가될 때마다 핸들러를 추가할 필요도 없다.
+이와 같이 이벤트 위임 이용하면 각주 개발 시 고민했던 매번 이벤트를 붙여야 하는 문제를 해결할 수 있을 것이다.
+동적인 엘리먼트에 대한 이벤트 처리가 수월하다.
+상위 엘리먼트에서만 이벤트 리스너를 관리하기 때문에 하위 엘리먼트는 자유롭게 추가 삭제할 수 있다.
+### 이벤트 위임(Event Delegation)의 장점
+- `이벤트 핸들러 관리가 쉽다. `
+동일한 이벤트에 대해 한 곳에서 관리하기 때문에 각각의 엘리먼트를 여러 곳에 등록하여 관리하는 것보다 관리가 수월하다.
+- `메모리 사용량이 줄어든다. `
+동적으로 추가되는 이벤트가 없어지기 때문에 당연한 결과이다. 1000건의 각주를 등록한다고 생각해보면 고민할 필요로 없는 일이다.
+- `메모리 누수 가능성도 줄어든다. `
+등록 핸들러 자체가 줄어들기 때문에 메모리 누수 가능성도 줄어든다.
+
+
+## 다음 코드를 동작하게 만드세요. javascript [1,2,3,4,5].duplicator(); // [1,2,3,4,5,1,2,3,4,5]
+
+```javascript
+Array.property.duplicatior = function(){
+  var self = this;
+  return self.concat(self);
+};
+
+console.log([1,2,3,4,5].duplicator() );
+// [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+```
+
+## Javascript에서 메모이제이션(memoization, 중복 계산 방지)에 대한 전략을 설명해주세요.
+- `메모이제이션 패턴` : 함수내에 불필요한 작업을 피하기 위해 이전에 연산된 결과를 저장하고 사용하는 패턴
+
+
+아래 함수를 수행하면 무려 fibonacci함수가 453번이 실해된다(count1를 확인해보라) 이렇게 되면 성능에 막대한 영향을 준다. 따라서 위에 함수를 메모제이셔패턴으로 아래처럼 변경해보자.
+```javascript
+var count = 0;
+fibo(n){
+  count++;
+  return n < 2 ? n : fibo(i-2) + fibo(i-1);
+}
+
+for (var i=0; i<=10; i+=1){
+  console.log("i=", fibo(i))
+}
+```
+이렇게 변경되면 29번만 함수가 실행된다(count2를 확인해보자) 전자의 경우에는 1~10번까지의 모든 각각의 수를 비교하기 위해서 fibonacci 함수가 호출되었으나. 후자인 경우에는 핵심은 memo라는 배열을 만들고 그 배열을 클로저 를 통해 접근한다. 로직을 처리하는 클로저 가 반복되서(피보니치수열을 찾을때까지) 수행됨으로 더 빠르게 처리할 수 있는 것이다.
+```javascript
+var count = 0;
+(fibo(){
+  var memo = [0, 1];
+  var count = 0;
+  var fib(n){
+    count++
+    var result = memo[n];
+    if (typeof result !== 'number'){
+      result = fib(n-1) + fib(n-2);
+      memo[n] = result;
+    }
+    return reusult;
+  }
+  return fib;
+})();
+
+```
+
+## 결과가 무엇일까요~?
+```javascript
+var foo = "Hello";
+(function() {
+  var bar = " World";
+  alert(foo + bar);
+})();
+alert(foo + bar);
+```
+
+# CSS
+
+## media print
+```html
+<style type="text/css">
+
+@media print {
+    .advertising {display:none;}
+}
+
+</style>
+
+<div class="advertising">광고</div>
+
+본문
+```
+
+## 점수 환산
+- `!important` : 10,000점
+- `inline style`: 1,000점
+- `id` : 100점
+- `class` : 10점
+- `tag` : 1점
+- `*`: -점
