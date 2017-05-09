@@ -385,6 +385,7 @@ var person = new Person()
 - this는 현재 객체로 호출한 객체를 참조합니다.
 
 
+ 
 ## AJAX에 관해 가능한 자세히 설명하세요.
 -> AJAX (Asynchronous JAvaScript and XML) XMLHttpRequest객체를 이요아여 비동기 방식으로 서버와 통신하는 것
 - Ajax는 서버로부터 데이터를 가져와 전체페이지를 새로 고치지 않고 일부만 로드할 수 있게 하는 기법이다.
@@ -407,4 +408,4 @@ var person = new Person()
 -> code refactoring 할때?
 
 ## FOUC가 무엇이며 FOUC를 어떻게 방지하나요?
--> FOUC(Flash Of Unstyled Content)는 외부의 CSS가 불러오기 전에 잠시 스타일이 적용되지 않은 웹 페이지가 나타나는 현상이다. 이를 해결하기 위해서 CSS 관련 로딩 구문은 반드시 head 안에 포함시켜 css 로드 전에 D.O.M 트리를 구성하는 것을 방지 주는 것이 좋다.  
+-> FOUC(Flash Of Unstyled Content)는 외부의 CSS가 불러오기 전에 잠시 스타일이 적용되지 않은 웹 페이지가 나타나는 현상이다. 이를 해결하기 위해서 CSS 관련 로딩 구문은 반드시 head 안에 포함시켜 css 로드 전에 D.O.M 트리를 구성하는 것을 방지 주는 것이 좋다.
