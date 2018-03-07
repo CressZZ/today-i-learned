@@ -186,6 +186,7 @@ Local storage는 데이터에 유효기한이 없고, session storage는 창을 
 -> Object.create() : IE9부터 지원함ㅁㅂ₩ ㄱ
 
 ## apply 와 call (소유자인 함수를 호출하면서 this를 넘긴다.)
+
 ->
 
 ## scope
@@ -517,7 +518,7 @@ for (var i=0; i<=10; i+=1){
 이렇게 변경되면 29번만 함수가 실행된다(count2를 확인해보자) 전자의 경우에는 1~10번까지의 모든 각각의 수를 비교하기 위해서 fibonacci 함수가 호출되었으나. 후자인 경우에는 핵심은 memo라는 배열을 만들고 그 배열을 클로저 를 통해 접근한다. 로직을 처리하는 클로저 가 반복되서(피보니치수열을 찾을때까지) 수행됨으로 더 빠르게 처리할 수 있는 것이다.
 ```javascript
 var count = 0;
-(fibo(){
+var fibo = (function(n){
   var memo = [0, 1];
   var count = 0;
   var fib(n){
@@ -568,3 +569,44 @@ alert(foo + bar);
 - `class` : 10점
 - `tag` : 1점
 - `*`: -점
+
+## javascript Selector
+```javascript
+// select하는법 5개
+getElementById('id')
+getElementByClassName('className') //IE9+
+querySelector('.class')
+querySelectorAll('.class')
+getElementByTagName('tagName')
+
+//탐색하는법 5개
+.parentNode
+.previousSibling
+.nextSibling
+.firstChild
+.lastChild
+//공백이 있으면 쫌 그럼/...
+
+.nodeValue // 텍스트 노드에 접근/변경하기
+.innerHTML // ** HTML 컨텐츠 추가 / 제거하기 ** -> 보안에 취약함
+.textContent // 텍스트에 접근/변경하기
+.innerText // 텍스트에 접근/변경하기
+// DOM 조작방식으로 요소 추가하기 (.ineerHTML)
+.createElement()
+.createTextNode()
+.appendChild()
+
+//HTML 컨텐츠를 수정하는 기법
+.document.write() // 이거 쓰면 기존의 컨텐층를 모두 덮어 써버린다.
+.element.innerHTML // 보안상 문제
+DOM조작 방식 //좋음. 근데 느리다. 코드작성이 어마어마 하다.
+
+```
+
+## 웹접근성 4원칙
+- 인식, 운용, 이해, 견고
+-  장애인, 고령자 등이 웹 사이트에서 제공하는 정보에 비장애인과 동등하게 접근하고 이해할 수 있도록 보장하는 것입니다.
+
+## 거지같은 IE8
+- addEventListner 안됨
+- event객체 안됨 (e.)

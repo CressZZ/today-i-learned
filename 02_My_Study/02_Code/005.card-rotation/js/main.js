@@ -2,13 +2,6 @@ var cards = document.getElementsByClassName("card");
 
 //*
 //실험
-console.log(cards);
-console.log(cards[0]);
-console.log(cards.item(0));
-console.log(cards.item(0).children.item(0));
-console.log(document.getElementsByClassName("card").item(0).children.item(0));
-var a = [1, 2, 3, 4, 5]
-console.log(a[0])
 //*
 
 
@@ -16,9 +9,6 @@ var first_card = cards[0];
 
 //*
 //실험
-console.log("first_card = ", first_card)
-console.log(first_card.children[0]);
-console.log(first_card.children[1]);
 //*
 
 var card_front = first_card.children[0];
@@ -26,10 +16,6 @@ var card_back = first_card.children[first_card.children.length - 1];
 
 //*
 //실험
-console.log("card_front :", card_front);
-console.log(first_card);
-console.log(first_card.children.length);
-console.log("card_back :", card_back);
 //*
 //
 // card_front.onclick = function() {
@@ -50,7 +36,6 @@ console.log("card_back :", card_back);
 
 for (var i=0; i < cards.length; i=i+1) {
     var card_front = cards[i].children[0];
-    console.log(card_front)
     var card_back = cards[i].children[cards[i].children.length - 1];
     card_front.onclick = function(){
       this.parentNode.style.cssText='transform: rotatey(180deg) translateX(100%)';

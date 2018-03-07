@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <ul id="shoppingList">
+    <li style="transform = ''" class="complete"><div class="img-wrap">A</div></li>
+    <li style="transform = ''"class="complete"><div class="img-wrap">B</div></li>
+    <li style="transform = ''"class="complete"><div class="img-wrap">C</div></li>
+
+  </ul>
+
+  <div class="btns">
+    <button type="button" class="btn_r"><</button>
+    <button type="button" class="btn_l">></button>
+  </div>
+
+  <script src="./main.js"></script>
+  <style media="screen">
+    *{
+      box-sizing: border-box;
+    }
+    li{
+      list-style: none;
+      float: left;
+      width: 100%;
+      width: 300px;
+
+    }
+
+    ul{
+      /*height: 300px;*/
+      overflow: hidden;
+    }
+    ul::after{
+      display: block;
+      content: "";
+      clear: both;
+
+    }
+    .img-wrap{
+      height: 300px;
+      background: rgb(163, 132, 28);
+      border: 1px solid black;
+    }
+
+
+  </style>
+  <script type="text/javascript">
+    var btn_r = document.querySelector(".btn_r")
+    var btn_l = document.querySelector(".btn_l")
+    var lists = document.querySelectorAll(".complete")
+
+    var move_r = function(){
+      lists.style.transform = "translate(-100%)";
+      return;
+    };
+
+    var move_l = function(){
+      lists.style.transform = "translate(100%)";
+      return;
+    }
+    btn_r.addEventListener("click", move_r())
+    btn_l.addEventListener("click", move_l())
+
+
+
+
+  </script>
+</body>
+</html>

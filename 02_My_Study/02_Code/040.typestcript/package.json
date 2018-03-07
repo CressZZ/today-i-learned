@@ -1,0 +1,17 @@
+{
+  "name": "040.typestcript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^2.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "transpile": "tsc",
+    "transpile:watch": "tsc --watch"
+    
+  },
+  "author": "",
+  "license": "ISC"
+}
