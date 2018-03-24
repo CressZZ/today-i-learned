@@ -29,4 +29,13 @@
 - 리덕스는 어플리케이션 스테이트를 구조화 하는데 도움을 주고
 - 리액트는 이것들을 디스플레이 하는 뷰를 제공한다. 
 
+# Action, Action Creator, Reducer
+- Action creattor is function to return some action.
+- Action is a object flowing to all reducer.
+- Reducer make value for specific state.
+
+# Action
+- Action is a object made two value 'type' and 'payload'
+- type is named as uppercase with '_'.
+- payload hvae many information.
 
