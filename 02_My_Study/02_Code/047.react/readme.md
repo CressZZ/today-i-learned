@@ -11,7 +11,7 @@
 ## 컴포넌트 레벨 스테이트
 - 컨테이너 만의 스테이트 
 
-## 리덕스 레벨 스테이트
+r 리덕스 레벨 스테이트
 - 어플리케이션 레벨 스테이드. 즉, 어플리 케이션 전체 
 
 # 리듀서
@@ -39,3 +39,4 @@
 - type is named as uppercase with '_'.
 - payload hvae many information.
 
+# 
