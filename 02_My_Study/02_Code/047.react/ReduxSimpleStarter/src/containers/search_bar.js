@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchWeather } from '../actions/index';
+
+
+
 
 export default class SearchBar extends Component {
 	constructor(props){
@@ -14,6 +20,7 @@ export default class SearchBar extends Component {
 
 	onFormSubmit(event){
 		event.preventDefault();
+
 	}
 
 	render(){ 
@@ -34,5 +41,11 @@ export default class SearchBar extends Component {
 	}
 
 }
+
+function mapDispatchToProps(dispatch){
+	return bindActionCreators({ fetchWeather }, dispatch)
+}
+
+export default connect(null, mapDispatchToPtops)(SerachBar)
 
 // https://home.openweathermap.org/     API_KEY = 32bfd5a4869b93d8231aef7a8990847a
