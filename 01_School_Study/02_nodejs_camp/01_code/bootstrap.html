@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Practict Bootstrap</title>
+
+    <script url="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+        .container{margin-top:10px;}
+    </style>
+</head>
+
+<body>
+
+   <div class="container">
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        브랜드이미지
+                    </a>
+                </div>
+
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="">home</a></li>
+                    <li><a href="">posts</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <table class="table table-bordered table-hover">
+           <tr>
+               <td>Subject</td>
+               <td>Date</td>
+               <td>Delete</td>
+           </tr>
+           <tr>
+               <td>Nodejs</td>
+               <td>2018-05-14</td>
+               <td>
+                   <a class="btn btn-danger" href="#">Delete</a>
+               </td>
+           </tr>
+           <tr>
+                <td>Nodejs</td>
+                <td>2018-05-14</td>
+                <td>
+                    <a class="btn btn-danger" href="#">Delete</a>
+                </td>
+           </tr>
+       </table>  
+
+       <button class="btn btn-default">작성하기</button>
+   </div>
+</body>
+
+</html>
