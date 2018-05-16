@@ -14,7 +14,7 @@
 - CSURF 로 xss공격막기, multer를 이용한 파일 업로드, 회원가입 페이지 작성, 단방향 해시를 이용한 암호화
 ---
 ## 7회차 - passport를 이용한 로그인 및 소셜 로그인 구현
-- Passport 로그인페이지 구현, Flash 메시지 활용, Facebook로그인 구현
+- Passport 로그인페이지 구현, Flash 메시지 활용****, Facebook로그인 구현
 ## 8회차 - soket.io로 구현하는 패팅 및 Express 익숙해지기
 - Socket.io이해, 회원간의 채팅 구현, Express미들웨어, session, local 변수 사용
 ---
