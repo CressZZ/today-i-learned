@@ -31,3 +31,4 @@ $ sudo chown $USER /data/db
 ```sh
 $ mongod 
 ```
+### romongo 실행
