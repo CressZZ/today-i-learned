@@ -1,0 +1,19 @@
+{
+  "name": "camp8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "dev": "nodemon appljs"
+  },
+  "author": "cressZZ",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongodb": "^3.1.0-beta4",
+    "mongoose": "^4.11.2",
+    "mongoose-auto-increment": "^5.0.1"
+  }
+}
