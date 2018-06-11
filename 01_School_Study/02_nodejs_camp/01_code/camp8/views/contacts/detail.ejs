@@ -4,49 +4,31 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <%= product.name %>
+        <%= contacts.title %>
     </div>
     <div class="panel-body">
         <div style="padding-bottom: 10px">
             작성일 :
-            <%= product.getDate.year%> - 
-            <%= product.getDate.month%> - 
-            <%= product.getDate.day%>
+            <%= contacts.getDate.year%> - 
+            <%= contacts.getDate.month%> - 
+            <%= contacts.getDate.day%>
         </div>
         <div style="padding-bottom: 10px">
 
-        <% if(product.thumbnail){%>
-        <p>
-            <img src="/uploads/<%=product.thumbnail%>" style="max-width: 100%"/>
-        </p>
-        <% } %>
-        <%=product.description%>
-
-        <!-- 댓글영역  -->
-        <hr />
-        <div id="comment_area">
-            <% comments.forEach(function(comment){ %>
-                <div>
-                    <%= comment.content %>
-                    ( <a class='comment_delete' comment_id='<%=comment.id%>'>삭제</a> ) 
-                </div>
-            <%});%>
+       
+        <%=contacts.content%>
         </div>
-        <!-- 댓글 작성하기 -->
         <div>
-        댓글작성하기
-        <form id="commentForm" action="" method="post">
-            <input type="hidden" name="product_id" value="<%=product.id%>" />
-            <textarea class="form-control" name="content"></textarea>
-            <button class="btn btn-primary" style="margin-top: 10px">댓글작성</button>
-        </form>
+        <%=contacts.user%>
+
         </div>
-        <!-- 댓글영역  -->
+
+       
     </div>
 </div>
 
-<a href="/admin/products" class="btn btn-default">목록으로</a>
-<a href="/admin/products/edit/<%=product.id%>" class="btn btn-primary">수정</a>
+<a href="/admin/contactss" class="btn btn-default">목록으로</a>
+<a href="/admin/contactss/edit/<%=contacts.id%>" class="btn btn-primary">수정</a>
 
 
 <script>
@@ -55,11 +37,11 @@
             $('#commentForm').submit(function(){
                 var $contentVal = $(this).children('textarea[name=content]').val();
                 $.ajax({
-                    url: '/admin/products/ajax_comment/insert',
+                    url: '/admin/contactss/ajax_comment/insert',
                     type: 'POST',
                     data: $(this).serialize(),
                     // data: {
-                    //     product_id : $('[product_id]').val()
+                    //     contacts_id : $('[contacts_id]').val()
                     // }
                 })
                 .done(function(args) {
@@ -83,7 +65,7 @@
             if(confirm('삭제하시겠습니까?')){ //확인창 예 눌렀을 시만 진행
                 var $self = $(this);
                 $.ajax({
-                    url: '/admin/products/ajax_comment/delete',
+                    url: '/admin/contactss/ajax_comment/delete',
                     type: 'POST',
                     data: { comment_id : $self.attr('comment_id') },
                 })

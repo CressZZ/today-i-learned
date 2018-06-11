@@ -4,13 +4,19 @@ var autoincrement = require('mongoose-auto-increment');
 
 // 생성된 필드명을 정한다. 
 var ProductsSchema = new Schema({
-    name: String, //제품명
+    name : { //제품명
+        type : String,
+        required: [true, '제목은 입력해주세요']
+    }, 
+    thumbnail : String, // 이미지 파일명 
     price: Number, //가격
     description: String,
     created_at : { // 작성일
         type: Date,
         default: Date.now()
-    }
+    },
+    username: String //작성자 추가
+    // etc: String,
 });
 
 // object create 의 get과 set과 비슷함
