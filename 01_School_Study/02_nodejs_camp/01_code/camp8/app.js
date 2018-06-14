@@ -55,14 +55,34 @@ app.use(cookieParser());
 app.use('/uploads', express.static('uploads'));
 
 //session 관련 셋팅
-app.use(session({
+// app.use(session({
+//     secret: 'fastcampus',
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: {
+//       maxAge: 2000 * 60 * 60 //지속시간 2시간
+//     }
+// }));
+
+//session 관련 셋팅
+var connectMongo = require('connect-mongo');
+var MongoStore = connectMongo(session);
+
+var sessionMiddleWare = session({
     secret: 'fastcampus',
     resave: false,
     saveUninitialized: true,
     cookie: {
       maxAge: 2000 * 60 * 60 //지속시간 2시간
-    }
-}));
+    },
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection,
+        ttl: 14 * 24 * 60 * 60
+    })
+});
+app.use(sessionMiddleWare);
+
+
 
 //passport 적용
 app.use(passport.initialize());
@@ -95,7 +115,17 @@ app.get('/', function(req, res){
     res.send('first app?');
 })
 
-// app이 실행되었을때
-app.listen(port, function(){
-    console.log('Express listening on port', port)
+
+
+var server = app.listen( port, function(){
+    console.log('Express listening on port', port);
+});
+
+var listen = require('socket.io');
+var io = listen(server);
+
+io.use(function(socket, next){
+    sessionMiddleWare(socket.request, socket.request.res, next)
 })
+
+require('./libs/socketConnection')(io)

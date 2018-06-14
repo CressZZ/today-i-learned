@@ -10,20 +10,20 @@
         <% contacts.forEach(function(contact){ %>
         <tr>
             <td>
-                <a href="/admin/Contacts/detail/<%=contact.id%>"><%=contact.title%></a> 
+                <a href="/contacts/detail/<%=contact.id%>"><%=contact.title%></a> 
             </td>
             <td>
                 <%= contact.getDate.year%>년 <%= contact.getDate.month%>월 <%= contact.getDate.day%>일
                 
             </td>
             <td>
-                <a href="/admin/Contacts/delete/<%=contact.id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+                <a href="/contacts/delete/<%=contact.id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
             </td>
             </td>
         </tr>
         <% }) %>
     </table>
     
-    <a href="/admin/Contacts/write" class="btn btn-default">작성하기</a>
+    <a href="/contacts/write" class="btn btn-default">작성하기</a>
 
 <% include ../footer.ejs %>

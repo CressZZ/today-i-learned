@@ -18,16 +18,20 @@ passport.deserializeUser(function (user, done) {
     done(null, result);
 });
 
-passport.use(new LocalStrategy({
-        usernameField: 'username',
-        passwordField : 'password',
+passport.use(new LocalStrategy(
+    {
+        // usernameField: 'username', //필드명과 같으면(body.params) 없어도 도미 
+        // passwordField : 'password',
         passReqToCallback : true
     }, 
     function (req, username, password, done) {
         UserModel.findOne({ username : username , password : passwordHash(password) }, function (err,user) {
             if (!user){
-                return done(null, false, { message: '아이디 또는 비밀번호 오류 입니다.' });
+                console.log('aa')
+               return done(null, false, { message: '아이디 또는 비밀번호 오류 입니다.' });
             }else{
+                console.log('bb')
+
                 return done(null, user );
             }
         });

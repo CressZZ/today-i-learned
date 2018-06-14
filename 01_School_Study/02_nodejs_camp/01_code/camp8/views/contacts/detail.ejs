@@ -40,9 +40,6 @@
                     url: '/admin/contactss/ajax_comment/insert',
                     type: 'POST',
                     data: $(this).serialize(),
-                    // data: {
-                    //     contacts_id : $('[contacts_id]').val()
-                    // }
                 })
                 .done(function(args) {
                     if(args.message==="success"){

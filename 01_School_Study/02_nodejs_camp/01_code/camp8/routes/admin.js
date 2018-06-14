@@ -3,6 +3,7 @@ var router = express.Router();
 var ProductsModel = require('../models/ProductsModel')
 var CommentsModel = require('../models/CommentsModel')
 var loginRequired = require('../libs/loginRequired')
+var co = require('co');
 
 
 
@@ -28,18 +29,12 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 
-function testMiddleWare(req, res, next){
-    console.log('middlieware');
-    next();
-}
-
 
 router.get('/', function(req, res){
     res.send('admin app11111')
 })
 
-router.get('/products', testMiddleWare, function(req, res){
-    // res.send('admin products');
+router.get('/products', function(req, res){
     ProductsModel.find(function(err, products){
         res.render( 'admin/products' , {products: products} );
     });
@@ -73,7 +68,7 @@ router.post('/products/write',loginRequired, upload.single('thumbnail'), csrfPro
 
 
 });
-
+/* 
 router.get('/products/detail/:id' , function(req, res){
     //url 에서 변수 값을 받아올떈 req.params.id 로 받아온다
     ProductsModel.findOne( { 'id' :  req.params.id } , function(err ,product){
@@ -82,6 +77,23 @@ router.get('/products/detail/:id' , function(req, res){
         CommentsModel.find({ product_id : req.params.id } , function(err, comments){
             res.render('admin/productsDetail', { product: product , comments : comments });
         });        
+    });
+});
+ */
+
+router.get('/products/detail/:id' , function(req, res){
+    var getData =  async () => {
+
+      
+        return {
+            product :  await ProductsModel.findOne( { 'id' :  req.params.id }).exec(),
+            comments : await CommentsModel.find( { 'product_id' :  req.params.id }).exec()
+        };
+    };
+    getData().then( function(result){
+        res.render('admin/productsDetail', { product: result.product , comments : result.comments });
+
+        // res.send(result);
     });
 });
 
