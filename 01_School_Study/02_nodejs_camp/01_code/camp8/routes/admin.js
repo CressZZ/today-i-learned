@@ -2,7 +2,9 @@ var express = require('express')
 var router = express.Router();
 var ProductsModel = require('../models/ProductsModel')
 var CommentsModel = require('../models/CommentsModel')
+var CheckoutModel = require('../models/CheckoutModel');
 var loginRequired = require('../libs/loginRequired')
+var paginate = require('express-paginate')
 var co = require('co');
 
 
@@ -34,13 +36,25 @@ router.get('/', function(req, res){
     res.send('admin app11111')
 })
 
-router.get('/products', function(req, res){
-    ProductsModel.find(function(err, products){
-        res.render( 'admin/products' , {products: products} );
-    });
-})
+router.get('/products', paginate.middleware(5, 50), async (req,res) => {
 
-router.get('/products/write', csrfProtection, function(req,res){
+    const [ results, itemCount ] = await Promise.all([
+        ProductsModel.find().sort('-created_at').limit(req.query.limit).skip(req.skip).exec(),
+        ProductsModel.count({})
+    ]);
+    const pageCount = Math.ceil(itemCount / req.query.limit);
+    
+    const pages = paginate.getArrayPages(req)( 4 , pageCount, req.query.page);
+
+    res.render('admin/products', { 
+        products : results , 
+        pages: pages,
+        pageCount : pageCount,
+    });
+
+});
+
+router.get('/products/write',loginRequired, csrfProtection, function(req,res){
     res.render( 'admin/form', {product:"", csrfToken : req.csrfToken()});
 });
 
@@ -154,4 +168,22 @@ router.post('/products/ajax_comment/delete', function(req, res){
     })
 })
 
+router.post('/products/ajax_summernote', loginRequired, upload.single('thumbnail'), function(req,res){
+    res.send( '/uploads/' + req.file.filename);
+});
+
+router.get('/order', function(req,res){
+    CheckoutModel.find( function(err, orderList){ //첫번째 인자는 err, 두번째는 받을 변수명
+        res.render( 'admin/orderList' , 
+            { orderList : orderList }
+        );
+    });
+});
+router.get('/order/edit/:id', function(req,res){
+    CheckoutModel.findOne( { id : req.params.id } , function(err, order){
+        res.render( 'admin/orderForm' , 
+            { order : order }
+        );
+    });
+});
 module.exports = router;
