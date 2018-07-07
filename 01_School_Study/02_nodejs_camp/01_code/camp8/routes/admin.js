@@ -3,8 +3,9 @@ var router = express.Router();
 var ProductsModel = require('../models/ProductsModel')
 var CommentsModel = require('../models/CommentsModel')
 var CheckoutModel = require('../models/CheckoutModel');
-var loginRequired = require('../libs/loginRequired')
+var adminRequired = require('../libs/adminRequired')
 var paginate = require('express-paginate')
+
 var co = require('co');
 
 
@@ -54,11 +55,11 @@ router.get('/products', paginate.middleware(5, 50), async (req,res) => {
 
 });
 
-router.get('/products/write',loginRequired, csrfProtection, function(req,res){
+router.get('/products/write',adminRequired, csrfProtection, function(req,res){
     res.render( 'admin/form', {product:"", csrfToken : req.csrfToken()});
 });
 
-router.post('/products/write',loginRequired, upload.single('thumbnail'), csrfProtection, function(req,res){
+router.post('/products/write',adminRequired, upload.single('thumbnail'), csrfProtection, function(req,res){
     console.log(req.file)
 
     var product = new ProductsModel({
@@ -168,7 +169,7 @@ router.post('/products/ajax_comment/delete', function(req, res){
     })
 })
 
-router.post('/products/ajax_summernote', loginRequired, upload.single('thumbnail'), function(req,res){
+router.post('/products/ajax_summernote', adminRequired, upload.single('thumbnail'), function(req,res){
     res.send( '/uploads/' + req.file.filename);
 });
 
@@ -186,4 +187,97 @@ router.get('/order/edit/:id', function(req,res){
         );
     });
 });
+
+router.post('/order/edit/:id', adminRequired, function(req,res){
+    var query = {
+        status : req.body.status,
+        song_jang : req.body.song_jang
+    };
+
+    CheckoutModel.update({ id : req.params.id }, { $set : query }, function(err){
+        res.redirect('/admin/order');
+    });
+});
+
+// router.get('/statistics', adminRequired, function(req,res){
+//     CheckoutModel.find( function(err, orderList){ 
+
+//         var barData = [];   // 넘겨줄 막대그래프 데이터 초기값 선언
+//         var pieData = [];   // 원차트에 넣어줄 데이터 삽입
+//         orderList.forEach(function(order){
+//             // 08-10 형식으로 날짜를 받아온다
+//             var date = new Date(order.created_at);
+//             var monthDay = (date.getMonth()+1) + '-' + date.getDate();
+            
+//             // 날짜에 해당하는 키값으로 조회
+//             if(monthDay in barData){
+//                 barData[monthDay]++; //있으면 더한다
+//             }else{
+//                 barData[monthDay] = 1; //없으면 초기값 1넣어준다.
+//             }
+
+//             // 결재 상태를 검색해서 조회
+//             if(order.status in pieData){
+//                 pieData[order.status]++; //있으면 더한다
+//             }else{
+//                 pieData[order.status] = 1; //없으면 결재상태+1
+//             }
+
+//         });
+
+//         res.render('admin/statistics' , { barData : barData , pieData:pieData });
+//     });
+// });
+
+router.get('/statistics', adminRequired, async(req,res) => {
+
+    // 년-월-일 을 키값으로 몇명이 결제했는지 확인한다
+    // barData._id.count 결제자수에 접근
+    var barData = []
+    var cursor = await CheckoutModel.aggregate(
+            [ 
+                { $sort : { created_at : -1 } },
+                { 
+                    $group : {  
+                        _id : { 
+                            year: { $year: "$created_at" },
+                            month: { $month: "$created_at" }, 
+                            day: { $dayOfMonth: "$created_at" }
+                        }, 
+                        count: { $sum: 1 } 
+                    } 
+                } 
+            ]
+        ).cursor().exec()
+    
+    await cursor.eachAsync(function(doc) {
+        if(doc !== null){
+            barData.push(doc)
+        }
+    });
+    
+    // 배송중, 배송완료, 결제완료자 수로 묶는다
+    var pieData = [];
+    // 배송중, 배송완료, 결제완료자 수로 묶는다
+    var cursor = CheckoutModel.aggregate([ 
+        { $group : { _id : "$status", count: { $sum: 1 } } } ])
+        .cursor({ batchSize: 1000 }).exec();
+    
+    await cursor.eachAsync(function(doc) {
+        if(doc !== null){
+            pieData.push(doc)
+        }
+    });
+    
+    res.render('admin/statistics' , { barData : barData , pieData:pieData });
+    
+});
+
+
+router.get('/test', function(req, res){
+    console.log(req.cookies.test)
+    res.cookie('random', '랜덤')
+    res.send('admin app11111')
+})
+
 module.exports = router;

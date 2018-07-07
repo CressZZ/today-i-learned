@@ -64,18 +64,18 @@ app.use('/static', express.static('static'));
 var connectMongo = require('connect-mongo');
 var MongoStore = connectMongo(session);
 
-// var sessionMiddleWare = session({
-//     secret: 'fastcampus',
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: {
-//         maxAge: 2000 * 60 * 60 //지속시간 2시간
-//     },
-//     store: new MongoStore({
-//         mongooseConnection: mongoose.connection,
-//         ttl: 14 * 24 * 60 * 60
-//     })
-// });
+var sessionMiddleWare = session({
+    secret: 'fastcampus',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 2000 * 60 * 60 //지속시간 2시간
+    },
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection,
+        ttl: 14 * 24 * 60 * 60
+    })
+});
 
 //session 관련 셋팅
 app.use(session({
@@ -91,7 +91,7 @@ app.use((req, res, next)=>{
     console.log(req.session)
     next()
 })
-// app.use(sessionMiddleWare);
+app.use(sessionMiddleWare);
 
 
 
@@ -108,7 +108,7 @@ app.use(flash());
 app.use(function(req, res, next) {
     app.locals.isLogin = req.isAuthenticated();
     //app.locals.urlparameter = req.url; //현재 url 정보를 보내고 싶으면 이와같이 셋팅
-    //app.locals.userData = req.user; //사용 정보를 보내고 싶으면 이와같이 셋팅
+    app.locals.userData = req.user; //사용 정보를 보내고 싶으면 이와같이 셋팅
     next();
 });
 
