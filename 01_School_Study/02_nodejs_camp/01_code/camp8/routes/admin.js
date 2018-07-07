@@ -2,7 +2,10 @@ var express = require('express')
 var router = express.Router();
 var ProductsModel = require('../models/ProductsModel')
 var CommentsModel = require('../models/CommentsModel')
-var loginRequired = require('../libs/loginRequired')
+var CheckoutModel = require('../models/CheckoutModel');
+var adminRequired = require('../libs/adminRequired')
+var paginate = require('express-paginate')
+
 var co = require('co');
 
 
@@ -34,17 +37,29 @@ router.get('/', function(req, res){
     res.send('admin app11111')
 })
 
-router.get('/products', function(req, res){
-    ProductsModel.find(function(err, products){
-        res.render( 'admin/products' , {products: products} );
-    });
-})
+router.get('/products', paginate.middleware(5, 50), async (req,res) => {
 
-router.get('/products/write', csrfProtection, function(req,res){
+    const [ results, itemCount ] = await Promise.all([
+        ProductsModel.find().sort('-created_at').limit(req.query.limit).skip(req.skip).exec(),
+        ProductsModel.count({})
+    ]);
+    const pageCount = Math.ceil(itemCount / req.query.limit);
+    
+    const pages = paginate.getArrayPages(req)( 4 , pageCount, req.query.page);
+
+    res.render('admin/products', { 
+        products : results , 
+        pages: pages,
+        pageCount : pageCount,
+    });
+
+});
+
+router.get('/products/write',adminRequired, csrfProtection, function(req,res){
     res.render( 'admin/form', {product:"", csrfToken : req.csrfToken()});
 });
 
-router.post('/products/write',loginRequired, upload.single('thumbnail'), csrfProtection, function(req,res){
+router.post('/products/write',adminRequired, upload.single('thumbnail'), csrfProtection, function(req,res){
     console.log(req.file)
 
     var product = new ProductsModel({
@@ -152,6 +167,117 @@ router.post('/products/ajax_comment/delete', function(req, res){
     CommentsModel.remove({id:req.body.comment_id}, function(err){
         res.json({message:"success"});
     })
+})
+
+router.post('/products/ajax_summernote', adminRequired, upload.single('thumbnail'), function(req,res){
+    res.send( '/uploads/' + req.file.filename);
+});
+
+router.get('/order', function(req,res){
+    CheckoutModel.find( function(err, orderList){ //첫번째 인자는 err, 두번째는 받을 변수명
+        res.render( 'admin/orderList' , 
+            { orderList : orderList }
+        );
+    });
+});
+router.get('/order/edit/:id', function(req,res){
+    CheckoutModel.findOne( { id : req.params.id } , function(err, order){
+        res.render( 'admin/orderForm' , 
+            { order : order }
+        );
+    });
+});
+
+router.post('/order/edit/:id', adminRequired, function(req,res){
+    var query = {
+        status : req.body.status,
+        song_jang : req.body.song_jang
+    };
+
+    CheckoutModel.update({ id : req.params.id }, { $set : query }, function(err){
+        res.redirect('/admin/order');
+    });
+});
+
+// router.get('/statistics', adminRequired, function(req,res){
+//     CheckoutModel.find( function(err, orderList){ 
+
+//         var barData = [];   // 넘겨줄 막대그래프 데이터 초기값 선언
+//         var pieData = [];   // 원차트에 넣어줄 데이터 삽입
+//         orderList.forEach(function(order){
+//             // 08-10 형식으로 날짜를 받아온다
+//             var date = new Date(order.created_at);
+//             var monthDay = (date.getMonth()+1) + '-' + date.getDate();
+            
+//             // 날짜에 해당하는 키값으로 조회
+//             if(monthDay in barData){
+//                 barData[monthDay]++; //있으면 더한다
+//             }else{
+//                 barData[monthDay] = 1; //없으면 초기값 1넣어준다.
+//             }
+
+//             // 결재 상태를 검색해서 조회
+//             if(order.status in pieData){
+//                 pieData[order.status]++; //있으면 더한다
+//             }else{
+//                 pieData[order.status] = 1; //없으면 결재상태+1
+//             }
+
+//         });
+
+//         res.render('admin/statistics' , { barData : barData , pieData:pieData });
+//     });
+// });
+
+router.get('/statistics', adminRequired, async(req,res) => {
+
+    // 년-월-일 을 키값으로 몇명이 결제했는지 확인한다
+    // barData._id.count 결제자수에 접근
+    var barData = []
+    var cursor = await CheckoutModel.aggregate(
+            [ 
+                { $sort : { created_at : -1 } },
+                { 
+                    $group : {  
+                        _id : { 
+                            year: { $year: "$created_at" },
+                            month: { $month: "$created_at" }, 
+                            day: { $dayOfMonth: "$created_at" }
+                        }, 
+                        count: { $sum: 1 } 
+                    } 
+                } 
+            ]
+        ).cursor().exec()
+    
+    await cursor.eachAsync(function(doc) {
+        if(doc !== null){
+            barData.push(doc)
+        }
+    });
+    
+    // 배송중, 배송완료, 결제완료자 수로 묶는다
+    var pieData = [];
+    // 배송중, 배송완료, 결제완료자 수로 묶는다
+    var cursor = CheckoutModel.aggregate([ 
+        { $group : { _id : "$status", count: { $sum: 1 } } } ])
+        .cursor({ batchSize: 1000 }).exec();
+    
+    await cursor.eachAsync(function(doc) {
+        if(doc !== null){
+            pieData.push(doc)
+        }
+    });
+    
+    res.render('admin/statistics' , { barData : barData , pieData:pieData });
+    
+});
+
+
+router.get('/test', function(req, res){
+    console.log(req.cookies.test)
+    res.cookie('random', '랜덤')
+    res.send('admin app11111')
 })
 
 module.exports = router;

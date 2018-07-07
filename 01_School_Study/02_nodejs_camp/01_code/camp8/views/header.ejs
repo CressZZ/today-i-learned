@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!--bootstrap js 추가 -->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/common.js"></script>
 </head>
 <body>
 <div class="container" style="padding-top: 10px;">
@@ -30,7 +31,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
                 <ul class="nav navbar-nav">
                     <li class="active"> <a href="/">Home</a> </li>
+                    <% if(typeof(userData)!=='undefined' && userData.username === 'admin'){%>
                     <li><a href="/admin/products">ADMIN</a></li>
+                    <%}%>
+                    <li><a href="/cart">CART</a></li>
                     <li><a href="/chat">CHAT</a></li>
 
                     <% if(isLogin){%>
@@ -40,6 +44,9 @@
                         <li><a href="/accounts/login">LOGIN</a></li>  
                     <%}%>
                 </ul> 
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/checkout/nomember">구매조회</a></li> 
+                </ul>
             </div> 
         </div> 
     </nav>
